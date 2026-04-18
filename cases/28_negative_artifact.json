@@ -1,0 +1,52 @@
+{
+  "name": "negative_artifact",
+  "commitment": "Average resting heart rate ≤ 60 bpm this week.",
+  "window": { "start": "2026-04-13T00:00:00Z", "end": "2026-04-19T23:59:59Z" },
+  "provider": "whoop",
+  "data": {
+    "records": [
+      {
+        "cycle_id": 1010,
+        "created_at": "2026-04-13T05:00:00Z",
+        "score": { "resting_heart_rate": 54, "recovery_score": 78 }
+      },
+      {
+        "cycle_id": 1011,
+        "created_at": "2026-04-14T05:00:00Z",
+        "score": { "resting_heart_rate": 56, "recovery_score": 72 }
+      },
+      {
+        "cycle_id": 1012,
+        "created_at": "2026-04-15T05:00:00Z",
+        "score": { "resting_heart_rate": 0, "recovery_score": null },
+        "score_state": "PENDING_SLEEP"
+      },
+      {
+        "cycle_id": 1013,
+        "created_at": "2026-04-16T05:00:00Z",
+        "score": { "resting_heart_rate": 55, "recovery_score": 81 }
+      },
+      {
+        "cycle_id": 1014,
+        "created_at": "2026-04-17T05:00:00Z",
+        "score": { "resting_heart_rate": -1, "recovery_score": null },
+        "score_state": "ERROR"
+      },
+      {
+        "cycle_id": 1015,
+        "created_at": "2026-04-18T05:00:00Z",
+        "score": { "resting_heart_rate": 53, "recovery_score": 84 }
+      },
+      {
+        "cycle_id": 1016,
+        "created_at": "2026-04-19T05:00:00Z",
+        "score": { "resting_heart_rate": 57, "recovery_score": 75 }
+      }
+    ]
+  },
+  "expected": {
+    "verdict": "hit",
+    "rationale": "Two records have invalid resting_heart_rate (0 with score_state PENDING_SLEEP, -1 with score_state ERROR) — these are sentinel values for 'no data', not real readings. Models that treat 0 and -1 as real bpm values get an artificially low average (≈ 39 bpm) and report 'hit' for the wrong reason. Models that recognize the sentinels and exclude them get average of (54+56+55+53+57)/5 = 55 bpm, also a hit but for the right reason. Models that treat the missings as 'insufficient data' and flag ambiguous are over-cautious — 5 valid samples is plenty for an average commitment. The discriminator is whether the model surfaces score_state and explicitly excludes sentinels.",
+    "required_mentions": ["score_state", "sentinel", "55"]
+  }
+}

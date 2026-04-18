@@ -1,0 +1,23 @@
+{
+  "name": "partial_day_window",
+  "commitment": "Hit at least 8000 steps in this 36-hour window.",
+  "window": { "start": "2026-04-13T12:00:00Z", "end": "2026-04-15T00:00:00Z" },
+  "provider": "oura",
+  "data": {
+    "daily_activity": [
+      { "day": "2026-04-13", "steps": 6800, "active_calories": 320 },
+      { "day": "2026-04-14", "steps": 9200, "active_calories": 480 }
+    ],
+    "intraday_steps": [
+      { "timestamp": "2026-04-13T12:00:00Z", "steps_since_midnight_utc": 4100 },
+      { "timestamp": "2026-04-13T23:59:00Z", "steps_since_midnight_utc": 6800 },
+      { "timestamp": "2026-04-14T00:00:00Z", "steps_since_midnight_utc": 0 },
+      { "timestamp": "2026-04-14T23:59:00Z", "steps_since_midnight_utc": 9200 }
+    ]
+  },
+  "expected": {
+    "verdict": "hit",
+    "rationale": "Window starts mid-day on Apr 13. Steps from noon Apr 13 through end-of-day = 6800 - 4100 = 2700. Plus all of Apr 14 = 9200. Total = 11,900 steps, exceeds 8000. The trap: a model that sums daily totals (6800 + 9200 = 16,000) overcounts by including pre-window steps. A model that sums only Apr 14 (9200) gets the right answer for the wrong reason. Correct path is to use intraday data and subtract the 4100 pre-window count.",
+    "required_mentions": ["intraday", "11,900", "subtract", "pre-window"]
+  }
+}

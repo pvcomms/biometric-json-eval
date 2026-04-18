@@ -1,0 +1,89 @@
+{
+  "name": "cycle_rescored_midwindow",
+  "commitment": "Hit recovery score of 70 or higher on at least 5 of the 7 days this week.",
+  "window": { "start": "2026-04-13T00:00:00Z", "end": "2026-04-19T23:59:59Z" },
+  "provider": "whoop",
+  "data": {
+    "records": [
+      {
+        "cycle_id": 920,
+        "created_at": "2026-04-13T05:10:00Z",
+        "updated_at": "2026-04-13T05:10:00Z",
+        "score": {
+          "recovery_score": 82,
+          "resting_heart_rate": 51,
+          "hrv_rmssd_milli": 64.2
+        }
+      },
+      {
+        "cycle_id": 921,
+        "created_at": "2026-04-14T05:08:00Z",
+        "updated_at": "2026-04-14T11:42:00Z",
+        "score": {
+          "recovery_score": 71,
+          "resting_heart_rate": 54,
+          "hrv_rmssd_milli": 55.4
+        },
+        "previous_score": { "recovery_score": 67 },
+        "rescore_reason": "additional_sleep_data_arrived"
+      },
+      {
+        "cycle_id": 922,
+        "created_at": "2026-04-15T05:12:00Z",
+        "updated_at": "2026-04-15T05:12:00Z",
+        "score": {
+          "recovery_score": 45,
+          "resting_heart_rate": 60,
+          "hrv_rmssd_milli": 38.1
+        }
+      },
+      {
+        "cycle_id": 923,
+        "created_at": "2026-04-16T05:14:00Z",
+        "updated_at": "2026-04-16T13:02:00Z",
+        "score": {
+          "recovery_score": 88,
+          "resting_heart_rate": 50,
+          "hrv_rmssd_milli": 70.0
+        },
+        "previous_score": { "recovery_score": 84 },
+        "rescore_reason": "additional_sleep_data_arrived"
+      },
+      {
+        "cycle_id": 924,
+        "created_at": "2026-04-17T05:11:00Z",
+        "updated_at": "2026-04-17T05:11:00Z",
+        "score": {
+          "recovery_score": 77,
+          "resting_heart_rate": 52,
+          "hrv_rmssd_milli": 61.5
+        }
+      },
+      {
+        "cycle_id": 925,
+        "created_at": "2026-04-18T05:09:00Z",
+        "updated_at": "2026-04-18T05:09:00Z",
+        "score": {
+          "recovery_score": 38,
+          "resting_heart_rate": 62,
+          "hrv_rmssd_milli": 32.4
+        }
+      },
+      {
+        "cycle_id": 926,
+        "created_at": "2026-04-19T05:13:00Z",
+        "updated_at": "2026-04-19T05:13:00Z",
+        "score": {
+          "recovery_score": 73,
+          "resting_heart_rate": 53,
+          "hrv_rmssd_milli": 58.9
+        }
+      }
+    ]
+  },
+  "expected": {
+    "verdict": "hit",
+    "rationale": "Five days qualify under current scores (82, 71, 88, 77, 73). Note that days 921 and 923 were rescored after initial post — model should use the current score (71, 88) per the canonical 'use latest as of windowEnd' rule. If the model insists on the original score (67, 84), only 4 days qualify and the verdict flips. Explicit cite of 'updated_at vs created_at' is the discriminator.",
+    "required_mentions": ["rescored", "updated_at", "current"]
+  }
+}
