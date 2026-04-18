@@ -1,0 +1,173 @@
+{
+  "name": "real_param_sleep",
+  "commitment": "Hit a Whoop sleep_performance_percentage of 70 or higher on at least 3 nights in the window April 11-17 (7 nights).",
+  "window": { "start": "2026-04-11T00:00:00Z", "end": "2026-04-17T23:59:59Z" },
+  "provider": "whoop",
+  "data_source": "real_whoop_api_pulled_2026-04-19",
+  "data": {
+    "records": [
+      {
+        "id": "c7fc35cf-9edc-4c14-b688-a7a07074afcc",
+        "cycle_id": 1437029394,
+        "user_id": 30524506,
+        "start": "2026-04-16T19:14:41.680Z",
+        "end": "2026-04-17T02:06:34.150Z",
+        "timezone_offset": "+05:30",
+        "nap": false,
+        "score_state": "SCORED",
+        "score": {
+          "stage_summary": {
+            "total_in_bed_time_milli": 24712470,
+            "total_awake_time_milli": 2641030,
+            "total_light_sleep_time_milli": 9255240,
+            "total_slow_wave_sleep_time_milli": 4472990,
+            "total_rem_sleep_time_milli": 8343210,
+            "sleep_cycle_count": 6,
+            "disturbance_count": 6
+          },
+          "sleep_performance_percentage": 74,
+          "sleep_consistency_percentage": 70,
+          "sleep_efficiency_percentage": 89.312965
+        }
+      },
+      {
+        "id": "b6b0d676-745d-447f-b10f-c275adb2f344",
+        "cycle_id": 1434754384,
+        "user_id": 30524506,
+        "start": "2026-04-15T20:02:08.450Z",
+        "end": "2026-04-16T00:18:37.840Z",
+        "timezone_offset": "+05:30",
+        "nap": false,
+        "score_state": "SCORED",
+        "score": {
+          "stage_summary": {
+            "total_in_bed_time_milli": 15389390,
+            "total_awake_time_milli": 960090,
+            "sleep_cycle_count": 1,
+            "disturbance_count": 10
+          },
+          "sleep_performance_percentage": 49,
+          "sleep_consistency_percentage": 65,
+          "sleep_efficiency_percentage": 93.76135
+        }
+      },
+      {
+        "id": "c1890c6b-c89d-4d37-88e3-c146ba594c4b",
+        "cycle_id": 1432680077,
+        "user_id": 30524506,
+        "start": "2026-04-14T18:22:36.750Z",
+        "end": "2026-04-15T01:43:28.340Z",
+        "timezone_offset": "+05:30",
+        "nap": false,
+        "score_state": "SCORED",
+        "score": {
+          "stage_summary": {
+            "total_in_bed_time_milli": 26451590,
+            "total_awake_time_milli": 3180980,
+            "sleep_cycle_count": 4,
+            "disturbance_count": 7
+          },
+          "sleep_performance_percentage": 78,
+          "sleep_consistency_percentage": 64,
+          "sleep_efficiency_percentage": 87.974335
+        }
+      },
+      {
+        "id": "f53a7f8f-f51a-4e4d-9c7b-4a9dfc00d052",
+        "cycle_id": 1430261567,
+        "user_id": 30524506,
+        "start": "2026-04-13T22:50:05.650Z",
+        "end": "2026-04-14T00:15:35.730Z",
+        "timezone_offset": "+05:30",
+        "nap": true,
+        "score_state": "SCORED",
+        "score": {
+          "stage_summary": {
+            "total_in_bed_time_milli": 5130080,
+            "total_awake_time_milli": 180000,
+            "sleep_cycle_count": 0,
+            "disturbance_count": 2
+          },
+          "sleep_performance_percentage": 24,
+          "sleep_consistency_percentage": 55,
+          "sleep_efficiency_percentage": 96.49128
+        }
+      },
+      {
+        "id": "ceba154a-7d5a-4d73-a2f2-28b7686f5b24",
+        "cycle_id": 1430261567,
+        "user_id": 30524506,
+        "start": "2026-04-13T18:11:05.560Z",
+        "end": "2026-04-13T20:20:05.720Z",
+        "timezone_offset": "+05:30",
+        "nap": false,
+        "score_state": "SCORED",
+        "score": {
+          "stage_summary": {
+            "total_in_bed_time_milli": 7740160,
+            "total_awake_time_milli": 600040,
+            "sleep_cycle_count": 0,
+            "disturbance_count": 3
+          },
+          "sleep_performance_percentage": 27,
+          "sleep_consistency_percentage": 65,
+          "sleep_efficiency_percentage": 92.2477
+        }
+      },
+      {
+        "id": "6181f599-5ca2-4a15-8f9c-9b44ade20ac6",
+        "cycle_id": 1428283380,
+        "user_id": 30524506,
+        "start": "2026-04-12T19:16:34.200Z",
+        "end": "2026-04-13T01:15:25.780Z",
+        "timezone_offset": "+05:30",
+        "nap": false,
+        "score_state": "SCORED",
+        "score": {
+          "stage_summary": {
+            "total_in_bed_time_milli": 21531580,
+            "total_awake_time_milli": 844050,
+            "sleep_cycle_count": 2,
+            "disturbance_count": 11
+          },
+          "sleep_performance_percentage": 68,
+          "sleep_consistency_percentage": 65,
+          "sleep_efficiency_percentage": 96.50128
+        }
+      },
+      {
+        "id": "d25d86c1-19ca-4b38-8497-94245d17892a",
+        "cycle_id": 1426147725,
+        "user_id": 30524506,
+        "start": "2026-04-11T17:54:46.950Z",
+        "end": "2026-04-12T00:23:06.630Z",
+        "timezone_offset": "+05:30",
+        "nap": false,
+        "score_state": "SCORED",
+        "score": {
+          "stage_summary": {
+            "total_in_bed_time_milli": 23299680,
+            "total_awake_time_milli": 1604040,
+            "sleep_cycle_count": 3,
+            "disturbance_count": 16
+          },
+          "sleep_performance_percentage": 69,
+          "sleep_consistency_percentage": 51,
+          "sleep_efficiency_percentage": 93.28782
+        }
+      }
+    ]
+  },
+  "expected": {
+    "verdict": "ambiguous",
+    "rationale": "Real Whoop data, Apr 11-17. Non-nap sleep records with perf >= 70: Apr 17 (74), Apr 15 (78) = 2. That's under 3-night threshold. BUT the data also includes records with nap=true (Apr 14 nap, perf 24) and fragmentary same-cycle records (cycle_id 1430261567 appears twice — once as 2h evening nap-like session, once as real sleep). A good oracle should (a) exclude nap=true records from counting nights, (b) flag the duplicate cycle_id as a data-model question, and (c) note that under any interpretation the count is 2 nights >= 70, below the 3-night threshold. The ambiguity is whether Apr 13 evening 'sleep' (6181f599, perf 68) with both the evening session ceba154a and nap f53a... on same cycle counts as a legitimate night. Safe oracle returns ambiguous and asks for a sleep-definition clarification.",
+    "required_mentions": [
+      "nap",
+      "cycle_id appears twice",
+      "2 nights",
+      "Apr 15",
+      "Apr 17"
+    ],
+    "trap": "Must filter nap=true before counting. Must handle duplicate cycle_id (fragmented sleep). May confuse sleep_performance with sleep_efficiency."
+  }
+}
