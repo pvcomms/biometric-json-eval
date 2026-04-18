@@ -1,0 +1,100 @@
+{
+  "name": "clear_sleep_miss",
+  "commitment": "Sleep at least 7.5 hours (actual sleep, not time in bed) every single night this week.",
+  "window": { "start": "2026-04-13T00:00:00Z", "end": "2026-04-19T23:59:59Z" },
+  "provider": "oura",
+  "data": {
+    "data": [
+      {
+        "id": "s-001",
+        "day": "2026-04-13",
+        "bedtime_start": "2026-04-13T23:14:00+05:30",
+        "bedtime_end": "2026-04-14T07:52:00+05:30",
+        "total_sleep_duration": 28740,
+        "time_in_bed": 31080,
+        "efficiency": 92,
+        "deep_sleep_duration": 5100,
+        "rem_sleep_duration": 6800,
+        "light_sleep_duration": 16840
+      },
+      {
+        "id": "s-002",
+        "day": "2026-04-14",
+        "bedtime_start": "2026-04-14T23:48:00+05:30",
+        "bedtime_end": "2026-04-15T07:15:00+05:30",
+        "total_sleep_duration": 25020,
+        "time_in_bed": 26820,
+        "efficiency": 93,
+        "deep_sleep_duration": 4200,
+        "rem_sleep_duration": 5400,
+        "light_sleep_duration": 15420
+      },
+      {
+        "id": "s-003",
+        "day": "2026-04-15",
+        "bedtime_start": "2026-04-15T22:55:00+05:30",
+        "bedtime_end": "2026-04-16T07:30:00+05:30",
+        "total_sleep_duration": 29400,
+        "time_in_bed": 30960,
+        "efficiency": 95,
+        "deep_sleep_duration": 5600,
+        "rem_sleep_duration": 7200,
+        "light_sleep_duration": 16600
+      },
+      {
+        "id": "s-004",
+        "day": "2026-04-16",
+        "bedtime_start": "2026-04-17T00:42:00+05:30",
+        "bedtime_end": "2026-04-17T06:15:00+05:30",
+        "total_sleep_duration": 18600,
+        "time_in_bed": 19980,
+        "efficiency": 93,
+        "deep_sleep_duration": 3100,
+        "rem_sleep_duration": 3800,
+        "light_sleep_duration": 11700
+      },
+      {
+        "id": "s-005",
+        "day": "2026-04-17",
+        "bedtime_start": "2026-04-17T23:25:00+05:30",
+        "bedtime_end": "2026-04-18T07:40:00+05:30",
+        "total_sleep_duration": 28200,
+        "time_in_bed": 29700,
+        "efficiency": 95,
+        "deep_sleep_duration": 5400,
+        "rem_sleep_duration": 6500,
+        "light_sleep_duration": 16300
+      },
+      {
+        "id": "s-006",
+        "day": "2026-04-18",
+        "bedtime_start": "2026-04-18T23:03:00+05:30",
+        "bedtime_end": "2026-04-19T07:58:00+05:30",
+        "total_sleep_duration": 30600,
+        "time_in_bed": 32100,
+        "efficiency": 95,
+        "deep_sleep_duration": 5900,
+        "rem_sleep_duration": 7400,
+        "light_sleep_duration": 17300
+      },
+      {
+        "id": "s-007",
+        "day": "2026-04-19",
+        "bedtime_start": "2026-04-19T23:18:00+05:30",
+        "bedtime_end": "2026-04-20T07:46:00+05:30",
+        "total_sleep_duration": 29280,
+        "time_in_bed": 30480,
+        "efficiency": 96,
+        "deep_sleep_duration": 5500,
+        "rem_sleep_duration": 7100,
+        "light_sleep_duration": 16680
+      }
+    ]
+  },
+  "expected": {
+    "verdict": "miss",
+    "rationale": "Apr 16 night total_sleep_duration was 18600 seconds = 5.17 hours, below the 7.5-hour (27000 s) threshold. Commitment requires EVERY night; one miss kills it.",
+    "required_mentions": ["Apr 16", "5 hours", "7.5 hour threshold"],
+    "trap": "Model must convert seconds to hours; must notice commitment says EVERY night, not most nights."
+  }
+}

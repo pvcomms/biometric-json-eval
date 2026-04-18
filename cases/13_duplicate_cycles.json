@@ -1,0 +1,61 @@
+{
+  "name": "duplicate_cycles",
+  "commitment": "Hit recovery score 70+ on at least 5 of the 7 days this week.",
+  "window": { "start": "2026-04-13T00:00:00Z", "end": "2026-04-19T23:59:59Z" },
+  "provider": "whoop",
+  "data": {
+    "records": [
+      {
+        "cycle_id": 1301,
+        "created_at": "2026-04-13T05:10:00Z",
+        "score": { "recovery_score": 82 }
+      },
+      {
+        "cycle_id": 1302,
+        "created_at": "2026-04-14T05:08:00Z",
+        "score": { "recovery_score": 71 }
+      },
+      {
+        "cycle_id": 1302,
+        "created_at": "2026-04-14T05:08:00Z",
+        "score": { "recovery_score": 71 }
+      },
+      {
+        "cycle_id": 1303,
+        "created_at": "2026-04-15T05:12:00Z",
+        "score": { "recovery_score": 45 }
+      },
+      {
+        "cycle_id": 1304,
+        "created_at": "2026-04-16T05:09:00Z",
+        "score": { "recovery_score": 88 }
+      },
+      {
+        "cycle_id": 1304,
+        "created_at": "2026-04-16T05:09:00Z",
+        "score": { "recovery_score": 88 }
+      },
+      {
+        "cycle_id": 1305,
+        "created_at": "2026-04-17T05:14:00Z",
+        "score": { "recovery_score": 77 }
+      },
+      {
+        "cycle_id": 1306,
+        "created_at": "2026-04-18T05:11:00Z",
+        "score": { "recovery_score": 38 }
+      },
+      {
+        "cycle_id": 1307,
+        "created_at": "2026-04-19T05:07:00Z",
+        "score": { "recovery_score": 73 }
+      }
+    ]
+  },
+  "expected": {
+    "verdict": "hit",
+    "rationale": "Data contains duplicate cycle_id records (1302 and 1304 appear twice). A good oracle deduplicates by cycle_id before counting. Deduped days with recovery >= 70: Apr 13 (82), 14 (71), 16 (88), 17 (77), 19 (73) = 5 days. Hit exactly. A weak model may count duplicates as separate days (7 hits) or panic and call it ambiguous.",
+    "required_mentions": ["duplicate", "dedupe", "5 days"],
+    "trap": "Dedup by cycle_id, not naive row count."
+  }
+}

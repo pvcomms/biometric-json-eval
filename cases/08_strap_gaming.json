@@ -1,0 +1,102 @@
+{
+  "name": "strap_gaming",
+  "commitment": "Average daily strain of 12 or higher over this 7-day week.",
+  "window": { "start": "2026-04-13T00:00:00Z", "end": "2026-04-19T23:59:59Z" },
+  "provider": "whoop",
+  "data": {
+    "cycles": [
+      {
+        "cycle_id": 950,
+        "start": "2026-04-13T05:00:00Z",
+        "end": "2026-04-14T05:00:00Z",
+        "score": {
+          "strain": 14.2,
+          "kilojoule": 10450,
+          "average_heart_rate": 78,
+          "max_heart_rate": 168
+        },
+        "scoring_state": "SCORED"
+      },
+      {
+        "cycle_id": 951,
+        "start": "2026-04-14T05:00:00Z",
+        "end": "2026-04-15T05:00:00Z",
+        "score": {
+          "strain": 15.8,
+          "kilojoule": 11200,
+          "average_heart_rate": 82,
+          "max_heart_rate": 175
+        },
+        "scoring_state": "SCORED"
+      },
+      {
+        "cycle_id": 952,
+        "start": "2026-04-15T05:00:00Z",
+        "end": "2026-04-16T05:00:00Z",
+        "score": {
+          "strain": 2.1,
+          "kilojoule": 3100,
+          "average_heart_rate": 62,
+          "max_heart_rate": 88
+        },
+        "scoring_state": "SCORED",
+        "wearable_time_seconds": 9800
+      },
+      {
+        "cycle_id": 953,
+        "start": "2026-04-16T05:00:00Z",
+        "end": "2026-04-17T05:00:00Z",
+        "score": {
+          "strain": 1.8,
+          "kilojoule": 2900,
+          "average_heart_rate": 60,
+          "max_heart_rate": 85
+        },
+        "scoring_state": "SCORED",
+        "wearable_time_seconds": 7200
+      },
+      {
+        "cycle_id": 954,
+        "start": "2026-04-17T05:00:00Z",
+        "end": "2026-04-18T05:00:00Z",
+        "score": {
+          "strain": 13.1,
+          "kilojoule": 9800,
+          "average_heart_rate": 76,
+          "max_heart_rate": 164
+        },
+        "scoring_state": "SCORED"
+      },
+      {
+        "cycle_id": 955,
+        "start": "2026-04-18T05:00:00Z",
+        "end": "2026-04-19T05:00:00Z",
+        "score": {
+          "strain": 14.9,
+          "kilojoule": 10800,
+          "average_heart_rate": 80,
+          "max_heart_rate": 172
+        },
+        "scoring_state": "SCORED"
+      },
+      {
+        "cycle_id": 956,
+        "start": "2026-04-19T05:00:00Z",
+        "end": "2026-04-20T05:00:00Z",
+        "score": {
+          "strain": 13.7,
+          "kilojoule": 10100,
+          "average_heart_rate": 79,
+          "max_heart_rate": 167
+        },
+        "scoring_state": "SCORED"
+      }
+    ]
+  },
+  "expected": {
+    "verdict": "ambiguous",
+    "rationale": "Naive average across 7 cycles: (14.2+15.8+2.1+1.8+13.1+14.9+13.7)/7 = 75.6/7 = 10.8. That's below 12 => miss. BUT Apr 15 and Apr 16 show wearable_time_seconds of 9800 and 7200 (2.7 hrs and 2.0 hrs out of 86400 s/day). Those days have suspiciously low strap-wear, which suppresses strain. This is exactly the gaming pattern Keep must detect: user kept strap off on rest days to avoid low strain dragging average down... wait, the OPPOSITE gaming vector. Actually with low wear, strain is low, which HURTS the user's average here — so more likely these are genuine no-wear days. Either way, the correct oracle behavior is to flag ambiguous and cite the low wearable_time rather than silently include 2.1 and 1.8 in the average. A robust settlement rule needs either: (a) exclude low-wear days (which would give avg ~14.3 = hit), or (b) treat as missing-data miss. Model should raise the flag.",
+    "required_mentions": ["wearable_time", "low wear", "Apr 15", "Apr 16"],
+    "trap": "Most models will just compute the simple average and return miss. A good oracle notices the wear-time artifact."
+  }
+}

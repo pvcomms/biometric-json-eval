@@ -1,0 +1,115 @@
+{
+  "name": "real_param_strain",
+  "commitment": "Accumulate at least 30 total strain points across cycles in the 7-day window April 11 through April 17.",
+  "window": { "start": "2026-04-11T00:00:00Z", "end": "2026-04-17T23:59:59Z" },
+  "provider": "whoop",
+  "data_source": "real_whoop_api_pulled_2026-04-19",
+  "data": {
+    "records": [
+      {
+        "id": 1424433657,
+        "user_id": 30524506,
+        "start": "2026-04-10T23:33:44.340Z",
+        "end": "2026-04-11T17:54:46.950Z",
+        "timezone_offset": "+05:30",
+        "score_state": "SCORED",
+        "score": {
+          "strain": 4.085019,
+          "kilojoule": 5535.369,
+          "average_heart_rate": 73,
+          "max_heart_rate": 124
+        }
+      },
+      {
+        "id": 1426147725,
+        "user_id": 30524506,
+        "start": "2026-04-11T17:54:46.950Z",
+        "end": "2026-04-12T19:16:34.200Z",
+        "timezone_offset": "+05:30",
+        "score_state": "SCORED",
+        "score": {
+          "strain": 6.037808,
+          "kilojoule": 8270.64,
+          "average_heart_rate": 77,
+          "max_heart_rate": 124
+        }
+      },
+      {
+        "id": 1428283380,
+        "user_id": 30524506,
+        "start": "2026-04-12T19:16:34.200Z",
+        "end": "2026-04-13T18:11:05.560Z",
+        "timezone_offset": "+05:30",
+        "score_state": "SCORED",
+        "score": {
+          "strain": 4.3889837,
+          "kilojoule": 7271.0337,
+          "average_heart_rate": 75,
+          "max_heart_rate": 131
+        }
+      },
+      {
+        "id": 1430261567,
+        "user_id": 30524506,
+        "start": "2026-04-13T18:11:05.560Z",
+        "end": "2026-04-14T18:22:36.750Z",
+        "timezone_offset": "+05:30",
+        "score_state": "SCORED",
+        "score": {
+          "strain": 4.1678753,
+          "kilojoule": 7665.688,
+          "average_heart_rate": 71,
+          "max_heart_rate": 122
+        }
+      },
+      {
+        "id": 1432680077,
+        "user_id": 30524506,
+        "start": "2026-04-14T18:22:36.750Z",
+        "end": "2026-04-15T20:02:08.450Z",
+        "timezone_offset": "+05:30",
+        "score_state": "SCORED",
+        "score": {
+          "strain": 4.197399,
+          "kilojoule": 8163.147,
+          "average_heart_rate": 72,
+          "max_heart_rate": 118
+        }
+      },
+      {
+        "id": 1434754384,
+        "user_id": 30524506,
+        "start": "2026-04-15T20:02:08.450Z",
+        "end": "2026-04-16T19:14:41.680Z",
+        "timezone_offset": "+05:30",
+        "score_state": "SCORED",
+        "score": {
+          "strain": 4.8015447,
+          "kilojoule": 7520.7666,
+          "average_heart_rate": 79,
+          "max_heart_rate": 138
+        }
+      },
+      {
+        "id": 1437029394,
+        "user_id": 30524506,
+        "start": "2026-04-16T19:14:41.680Z",
+        "end": "2026-04-17T21:03:36.240Z",
+        "timezone_offset": "+05:30",
+        "score_state": "SCORED",
+        "score": {
+          "strain": 6.429176,
+          "kilojoule": 8546.642,
+          "average_heart_rate": 77,
+          "max_heart_rate": 140
+        }
+      }
+    ]
+  },
+  "expected": {
+    "verdict": "hit",
+    "rationale": "Sum of strain across 7 Whoop cycles in window: 4.085+6.038+4.389+4.168+4.197+4.802+6.429 = 34.11. 34.11 >= 30 => hit. Real data; Param had a sedentary week but cycle strain still accumulated from ambient HR. Note: cycles don't align to calendar days — they wrap roughly 6-8 PM IST. Oracle must sum by cycle, not day.",
+    "required_mentions": ["34.1", "sum", "7 cycles"],
+    "trap": "Don't confuse kilojoule with strain. Don't try to re-aggregate by calendar day. Sum the `strain` field across cycles whose start-time falls in window."
+  }
+}

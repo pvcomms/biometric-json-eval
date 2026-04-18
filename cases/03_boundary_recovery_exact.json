@@ -1,0 +1,90 @@
+{
+  "name": "boundary_recovery_exact",
+  "commitment": "Hit recovery score strictly above 70 (not including 70) on at least 4 days this week.",
+  "window": { "start": "2026-04-13T00:00:00Z", "end": "2026-04-19T23:59:59Z" },
+  "provider": "whoop",
+  "data": {
+    "records": [
+      {
+        "cycle_id": 910,
+        "created_at": "2026-04-13T05:11:00Z",
+        "score": {
+          "user_calibrating": false,
+          "recovery_score": 70,
+          "resting_heart_rate": 55,
+          "hrv_rmssd_milli": 50.0
+        }
+      },
+      {
+        "cycle_id": 911,
+        "created_at": "2026-04-14T05:09:00Z",
+        "score": {
+          "user_calibrating": false,
+          "recovery_score": 70,
+          "resting_heart_rate": 55,
+          "hrv_rmssd_milli": 50.2
+        }
+      },
+      {
+        "cycle_id": 912,
+        "created_at": "2026-04-15T05:13:00Z",
+        "score": {
+          "user_calibrating": false,
+          "recovery_score": 71,
+          "resting_heart_rate": 54,
+          "hrv_rmssd_milli": 52.1
+        }
+      },
+      {
+        "cycle_id": 913,
+        "created_at": "2026-04-16T05:07:00Z",
+        "score": {
+          "user_calibrating": false,
+          "recovery_score": 84,
+          "resting_heart_rate": 52,
+          "hrv_rmssd_milli": 63.4
+        }
+      },
+      {
+        "cycle_id": 914,
+        "created_at": "2026-04-17T05:15:00Z",
+        "score": {
+          "user_calibrating": false,
+          "recovery_score": 69,
+          "resting_heart_rate": 56,
+          "hrv_rmssd_milli": 47.8
+        }
+      },
+      {
+        "cycle_id": 915,
+        "created_at": "2026-04-18T05:20:00Z",
+        "score": {
+          "user_calibrating": false,
+          "recovery_score": 77,
+          "resting_heart_rate": 53,
+          "hrv_rmssd_milli": 58.2
+        }
+      },
+      {
+        "cycle_id": 916,
+        "created_at": "2026-04-19T05:08:00Z",
+        "score": {
+          "user_calibrating": false,
+          "recovery_score": 70,
+          "resting_heart_rate": 55,
+          "hrv_rmssd_milli": 50.5
+        }
+      }
+    ]
+  },
+  "expected": {
+    "verdict": "miss",
+    "rationale": "Commitment is STRICTLY above 70. Only days with score > 70: Apr 15 (71), Apr 16 (84), Apr 18 (77) = 3 days. Apr 13, 14, 19 all scored exactly 70, which does NOT satisfy 'strictly above'. 3 days < 4-day threshold.",
+    "required_mentions": [
+      "strictly above",
+      "exactly 70 does not count",
+      "3 days"
+    ],
+    "trap": "Weaker models may treat 'strictly above 70' as '>= 70' and count the three exact-70 days, yielding a false hit verdict."
+  }
+}

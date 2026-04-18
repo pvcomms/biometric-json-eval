@@ -1,0 +1,107 @@
+{
+  "name": "real_param_recovery",
+  "commitment": "Hit recovery score 70 or higher on at least 3 days between April 13 and April 18 (6-day window).",
+  "window": { "start": "2026-04-13T00:00:00Z", "end": "2026-04-18T23:59:59Z" },
+  "provider": "whoop",
+  "data_source": "real_whoop_api_pulled_2026-04-19",
+  "data": {
+    "records": [
+      {
+        "cycle_id": 1428283380,
+        "sleep_id": "6181f599-5ca2-4a15-8f9c-9b44ade20ac6",
+        "user_id": 30524506,
+        "created_at": "2026-04-13T01:24:31.246Z",
+        "score_state": "SCORED",
+        "score": {
+          "user_calibrating": false,
+          "recovery_score": 57,
+          "resting_heart_rate": 67,
+          "hrv_rmssd_milli": 35.299,
+          "spo2_percentage": 95.38461,
+          "skin_temp_celsius": 33.618
+        }
+      },
+      {
+        "cycle_id": 1430261567,
+        "sleep_id": "ceba154a-7d5a-4d73-a2f2-28b7686f5b24",
+        "user_id": 30524506,
+        "created_at": "2026-04-13T21:11:30.359Z",
+        "score_state": "SCORED",
+        "score": {
+          "user_calibrating": false,
+          "recovery_score": 7,
+          "resting_heart_rate": 60,
+          "hrv_rmssd_milli": 22.048824,
+          "spo2_percentage": 95.2,
+          "skin_temp_celsius": 34.157333
+        }
+      },
+      {
+        "cycle_id": 1432680077,
+        "sleep_id": "c1890c6b-c89d-4d37-88e3-c146ba594c4b",
+        "user_id": 30524506,
+        "created_at": "2026-04-15T02:34:40.368Z",
+        "score_state": "SCORED",
+        "score": {
+          "user_calibrating": false,
+          "recovery_score": 74,
+          "resting_heart_rate": 60,
+          "hrv_rmssd_milli": 36.56244,
+          "spo2_percentage": 96.26923,
+          "skin_temp_celsius": 33.384
+        }
+      },
+      {
+        "cycle_id": 1434754384,
+        "sleep_id": "b6b0d676-745d-447f-b10f-c275adb2f344",
+        "user_id": 30524506,
+        "created_at": "2026-04-16T01:18:55.570Z",
+        "score_state": "SCORED",
+        "score": {
+          "user_calibrating": false,
+          "recovery_score": 21,
+          "resting_heart_rate": 66,
+          "hrv_rmssd_milli": 26.355694,
+          "spo2_percentage": 92.5,
+          "skin_temp_celsius": 33.704834
+        }
+      },
+      {
+        "cycle_id": 1437029394,
+        "sleep_id": "c7fc35cf-9edc-4c14-b688-a7a07074afcc",
+        "user_id": 30524506,
+        "created_at": "2026-04-17T02:57:36.535Z",
+        "score_state": "SCORED",
+        "score": {
+          "user_calibrating": false,
+          "recovery_score": 61,
+          "resting_heart_rate": 66,
+          "hrv_rmssd_milli": 33.056168,
+          "spo2_percentage": 95.8,
+          "skin_temp_celsius": 33.528667
+        }
+      },
+      {
+        "cycle_id": 1439174921,
+        "sleep_id": "20e7a5e6-5046-4516-b76f-97fbc662a367",
+        "user_id": 30524506,
+        "created_at": "2026-04-18T03:11:31.695Z",
+        "score_state": "SCORED",
+        "score": {
+          "user_calibrating": false,
+          "recovery_score": 42,
+          "resting_heart_rate": 63,
+          "hrv_rmssd_milli": 27.73443,
+          "spo2_percentage": 94.46154,
+          "skin_temp_celsius": 33.05
+        }
+      }
+    ]
+  },
+  "expected": {
+    "verdict": "miss",
+    "rationale": "Real Whoop data for Param, Apr 13-18 2026. Recovery scores in window: 57 (4/13 01:24Z), 7 (4/13 21:11Z — two cycles same calendar day; the late-night one is the sleep of 4/13 IST evening), 74 (4/15), 21 (4/16), 61 (4/17), 42 (4/18). Only 1 day hit >= 70 (Apr 15 at 74). Threshold requires 3. Verdict: miss. Also note the two-cycles-on-Apr-13 pattern: this is a real artifact of Whoop creating a short cycle when the user goes to bed well after a nap — a real settlement oracle must decide whether to count the nap cycle or only the primary sleep cycle.",
+    "required_mentions": ["1 day", "74", "two cycles", "Apr 13"],
+    "trap": "Real data has two cycles on Apr 13. A naive model may count the sleep_id 6181f599 (recovery 57) as 'Apr 13' and cycle 1430261567 (recovery 7) as 'Apr 14 morning' — but the created_at date is the assignment date. Oracle should clarify counting rule."
+  }
+}

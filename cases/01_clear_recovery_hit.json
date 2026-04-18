@@ -1,0 +1,106 @@
+{
+  "name": "clear_recovery_hit",
+  "commitment": "Hit a Whoop recovery score of 70 or higher on at least 5 of the 7 days in this week.",
+  "window": { "start": "2026-04-13T00:00:00Z", "end": "2026-04-19T23:59:59Z" },
+  "provider": "whoop",
+  "data": {
+    "records": [
+      {
+        "cycle_id": 901,
+        "created_at": "2026-04-13T05:12:00Z",
+        "score": {
+          "user_calibrating": false,
+          "recovery_score": 82,
+          "resting_heart_rate": 52,
+          "hrv_rmssd_milli": 64.2,
+          "spo2_percentage": 97.1,
+          "skin_temp_celsius": 33.4
+        }
+      },
+      {
+        "cycle_id": 902,
+        "created_at": "2026-04-14T05:08:00Z",
+        "score": {
+          "user_calibrating": false,
+          "recovery_score": 71,
+          "resting_heart_rate": 55,
+          "hrv_rmssd_milli": 48.9,
+          "spo2_percentage": 96.8,
+          "skin_temp_celsius": 33.5
+        }
+      },
+      {
+        "cycle_id": 903,
+        "created_at": "2026-04-15T05:10:00Z",
+        "score": {
+          "user_calibrating": false,
+          "recovery_score": 45,
+          "resting_heart_rate": 62,
+          "hrv_rmssd_milli": 28.3,
+          "spo2_percentage": 96.5,
+          "skin_temp_celsius": 33.7
+        }
+      },
+      {
+        "cycle_id": 904,
+        "created_at": "2026-04-16T05:14:00Z",
+        "score": {
+          "user_calibrating": false,
+          "recovery_score": 88,
+          "resting_heart_rate": 51,
+          "hrv_rmssd_milli": 71.0,
+          "spo2_percentage": 97.2,
+          "skin_temp_celsius": 33.3
+        }
+      },
+      {
+        "cycle_id": 905,
+        "created_at": "2026-04-17T05:07:00Z",
+        "score": {
+          "user_calibrating": false,
+          "recovery_score": 77,
+          "resting_heart_rate": 53,
+          "hrv_rmssd_milli": 59.5,
+          "spo2_percentage": 97.0,
+          "skin_temp_celsius": 33.4
+        }
+      },
+      {
+        "cycle_id": 906,
+        "created_at": "2026-04-18T05:22:00Z",
+        "score": {
+          "user_calibrating": false,
+          "recovery_score": 38,
+          "resting_heart_rate": 64,
+          "hrv_rmssd_milli": 25.1,
+          "spo2_percentage": 96.3,
+          "skin_temp_celsius": 33.8
+        }
+      },
+      {
+        "cycle_id": 907,
+        "created_at": "2026-04-19T05:05:00Z",
+        "score": {
+          "user_calibrating": false,
+          "recovery_score": 73,
+          "resting_heart_rate": 54,
+          "hrv_rmssd_milli": 56.2,
+          "spo2_percentage": 97.1,
+          "skin_temp_celsius": 33.5
+        }
+      }
+    ]
+  },
+  "expected": {
+    "verdict": "hit",
+    "rationale": "Days with recovery >= 70: Apr 13 (82), Apr 14 (71), Apr 16 (88), Apr 17 (77), Apr 19 (73). That is 5 days, meeting the threshold exactly.",
+    "required_mentions": ["5 days", "70 threshold"],
+    "required_dates": [
+      "2026-04-13",
+      "2026-04-14",
+      "2026-04-16",
+      "2026-04-17",
+      "2026-04-19"
+    ]
+  }
+}

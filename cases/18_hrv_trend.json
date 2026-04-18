@@ -1,0 +1,88 @@
+{
+  "name": "hrv_trend",
+  "commitment": "Week-over-week HRV improvement: this week's average HRV (rmssd) must be at least 5 ms higher than the prior 7-day baseline.",
+  "window": { "start": "2026-04-13T00:00:00Z", "end": "2026-04-19T23:59:59Z" },
+  "provider": "whoop",
+  "data": {
+    "baseline_week": [
+      {
+        "cycle_id": 1801,
+        "created_at": "2026-04-06T05:10:00Z",
+        "score": { "hrv_rmssd_milli": 48.2 }
+      },
+      {
+        "cycle_id": 1802,
+        "created_at": "2026-04-07T05:08:00Z",
+        "score": { "hrv_rmssd_milli": 52.5 }
+      },
+      {
+        "cycle_id": 1803,
+        "created_at": "2026-04-08T05:12:00Z",
+        "score": { "hrv_rmssd_milli": 41.3 }
+      },
+      {
+        "cycle_id": 1804,
+        "created_at": "2026-04-09T05:09:00Z",
+        "score": { "hrv_rmssd_milli": 55.8 }
+      },
+      {
+        "cycle_id": 1805,
+        "created_at": "2026-04-10T05:14:00Z",
+        "score": { "hrv_rmssd_milli": 49.7 }
+      },
+      {
+        "cycle_id": 1806,
+        "created_at": "2026-04-11T05:11:00Z",
+        "score": { "hrv_rmssd_milli": 44.2 }
+      },
+      {
+        "cycle_id": 1807,
+        "created_at": "2026-04-12T05:07:00Z",
+        "score": { "hrv_rmssd_milli": 50.8 }
+      }
+    ],
+    "commitment_week": [
+      {
+        "cycle_id": 1808,
+        "created_at": "2026-04-13T05:10:00Z",
+        "score": { "hrv_rmssd_milli": 62.1 }
+      },
+      {
+        "cycle_id": 1809,
+        "created_at": "2026-04-14T05:08:00Z",
+        "score": { "hrv_rmssd_milli": 58.4 }
+      },
+      {
+        "cycle_id": 1810,
+        "created_at": "2026-04-15T05:12:00Z",
+        "score": { "hrv_rmssd_milli": 47.9 }
+      },
+      {
+        "cycle_id": 1811,
+        "created_at": "2026-04-16T05:09:00Z",
+        "score": { "hrv_rmssd_milli": 65.3 }
+      },
+      {
+        "cycle_id": 1812,
+        "created_at": "2026-04-17T05:14:00Z",
+        "score": { "hrv_rmssd_milli": 53.2 }
+      },
+      {
+        "cycle_id": 1813,
+        "created_at": "2026-04-18T05:11:00Z",
+        "score": { "hrv_rmssd_milli": 59.8 }
+      },
+      {
+        "cycle_id": 1814,
+        "created_at": "2026-04-19T05:07:00Z",
+        "score": { "hrv_rmssd_milli": 61.5 }
+      }
+    ]
+  },
+  "expected": {
+    "verdict": "hit",
+    "rationale": "Baseline avg: (48.2+52.5+41.3+55.8+49.7+44.2+50.8)/7 = 342.5/7 = 48.93 ms. Commitment week avg: (62.1+58.4+47.9+65.3+53.2+59.8+61.5)/7 = 408.2/7 = 58.31 ms. Delta = 58.31 - 48.93 = 9.38 ms. 9.38 >= 5 => hit.",
+    "required_mentions": ["48.9", "58.3", "9.4", "delta"],
+    "trap": "Model must compute both averages correctly and take the right delta direction."
+  }
+}

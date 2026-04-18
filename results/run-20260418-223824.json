@@ -1,0 +1,1882 @@
+{
+  "generated_at": "2026-04-18T22:38:24.895197+00:00",
+  "results": [
+    {
+      "case": "clear_recovery_hit",
+      "commitment": "Hit a Whoop recovery score of 70 or higher on at least 5 of the 7 days in this week.",
+      "expected_verdict": "hit",
+      "model_results": [
+        {
+          "case": "clear_recovery_hit",
+          "model": "gpt-5",
+          "output": "{\n  \"verdict\": \"hit\",\n  \"confidence\": 0.97,\n  \"reasoning\": \"Within the UTC window 2026-04-13 to 2026-04-19, there is one recovery record per day (7 total). Recovery scores \u226570 occurred on 2026-04-13 (82), 2026-04-14 (71), 2026-04-16 (88), 2026-04-17 (77), and 2026-04-19 (73), totaling 5 of 7 days, meeting the threshold. All records show user_calibrating=false and timestamps fall within the window.\",\n  \"cited_days\": [\n    \"2026-04-13\",\n    \"2026-04-14\",\n    \"2026-04-16\",\n    \"2026-04-17\",\n    \"2026-04-19\"\n  ],\n  \"flags\": []\n}",
+          "parsed_verdict": "hit",
+          "parsed_confidence": 0.97,
+          "parsed_reasoning": "Within the UTC window 2026-04-13 to 2026-04-19, there is one recovery record per day (7 total). Recovery scores \u226570 occurred on 2026-04-13 (82), 2026-04-14 (71), 2026-04-16 (88), 2026-04-17 (77), and 2026-04-19 (73), totaling 5 of 7 days, meeting the threshold. All records show user_calibrating=false and timestamps fall within the window.",
+          "parsed_flags": [],
+          "parsed_cited_days": [
+            "2026-04-13",
+            "2026-04-14",
+            "2026-04-16",
+            "2026-04-17",
+            "2026-04-19"
+          ],
+          "latency_s": 17.03304433822632,
+          "input_tokens": 1102,
+          "output_tokens": 1040,
+          "cost_usd": 0.0117775,
+          "error": null,
+          "scores": {
+            "verdict_match": 10,
+            "reasoning_quality": 10,
+            "edge_case_awareness": 9,
+            "hallucination": 10,
+            "verdict": "Accurate verdict with correct days, scores, and threshold cited precisely.",
+            "_judge_model": "opus-4.7"
+          },
+          "strict_match": true
+        },
+        {
+          "case": "clear_recovery_hit#1",
+          "model": "gpt-5",
+          "output": "{\n  \"verdict\": \"hit\",\n  \"confidence\": 0.97,\n  \"reasoning\": \"Within the UTC window 2026-04-13 through 2026-04-19 inclusive, there are seven Whoop recovery records. Recovery scores are \u226570 on 2026-04-13 (82), 2026-04-14 (71), 2026-04-16 (88), 2026-04-17 (77), and 2026-04-19 (73), totaling 5 of 7 days, which meets the commitment. No days are missing and calibration is false for all entries.\",\n  \"cited_days\": [\"2026-04-13\", \"2026-04-14\", \"2026-04-16\", \"2026-04-17\", \"2026-04-19\"],\n  \"flags\": []\n}",
+          "parsed_verdict": "hit",
+          "parsed_confidence": 0.97,
+          "parsed_reasoning": "Within the UTC window 2026-04-13 through 2026-04-19 inclusive, there are seven Whoop recovery records. Recovery scores are \u226570 on 2026-04-13 (82), 2026-04-14 (71), 2026-04-16 (88), 2026-04-17 (77), and 2026-04-19 (73), totaling 5 of 7 days, which meets the commitment. No days are missing and calibration is false for all entries.",
+          "parsed_flags": [],
+          "parsed_cited_days": [
+            "2026-04-13",
+            "2026-04-14",
+            "2026-04-16",
+            "2026-04-17",
+            "2026-04-19"
+          ],
+          "latency_s": 16.83319902420044,
+          "input_tokens": 1102,
+          "output_tokens": 1028,
+          "cost_usd": 0.0116575,
+          "error": null,
+          "scores": {
+            "verdict_match": 10,
+            "reasoning_quality": 10,
+            "edge_case_awareness": 8,
+            "hallucination": 10,
+            "verdict": "Accurate verdict with correct dates, scores, and threshold citation; exactly meets 5/7.",
+            "_judge_model": "opus-4.7"
+          },
+          "strict_match": true
+        },
+        {
+          "case": "clear_recovery_hit#2",
+          "model": "gpt-5",
+          "output": "{\n  \"verdict\": \"hit\",\n  \"confidence\": 0.97,\n  \"reasoning\": \"Parsed Whoop recovery records with created_at timestamps in the UTC window 2026-04-13 to 2026-04-19 inclusive. Counted days with recovery_score >= 70: 2026-04-13 (82), 2026-04-14 (71), 2026-04-16 (88), 2026-04-17 (77), and 2026-04-19 (73). That is 5 of 7 days meeting the threshold, satisfying the commitment.\",\n  \"cited_days\": [\n    \"2026-04-13\",\n    \"2026-04-14\",\n    \"2026-04-16\",\n    \"2026-04-17\",\n    \"2026-04-19\"\n  ],\n  \"flags\": []\n}",
+          "parsed_verdict": "hit",
+          "parsed_confidence": 0.97,
+          "parsed_reasoning": "Parsed Whoop recovery records with created_at timestamps in the UTC window 2026-04-13 to 2026-04-19 inclusive. Counted days with recovery_score >= 70: 2026-04-13 (82), 2026-04-14 (71), 2026-04-16 (88), 2026-04-17 (77), and 2026-04-19 (73). That is 5 of 7 days meeting the threshold, satisfying the commitment.",
+          "parsed_flags": [],
+          "parsed_cited_days": [
+            "2026-04-13",
+            "2026-04-14",
+            "2026-04-16",
+            "2026-04-17",
+            "2026-04-19"
+          ],
+          "latency_s": 15.398456811904907,
+          "input_tokens": 1102,
+          "output_tokens": 968,
+          "cost_usd": 0.0110575,
+          "error": null,
+          "scores": {
+            "verdict_match": 10,
+            "reasoning_quality": 10,
+            "edge_case_awareness": 8,
+            "hallucination": 10,
+            "verdict": "Accurate verdict with correct days, scores, and threshold; exactly matches ground truth.",
+            "_judge_model": "opus-4.7"
+          },
+          "strict_match": true
+        },
+        {
+          "case": "clear_recovery_hit",
+          "model": "gemini-2.5-pro",
+          "output": "```json\n{\n  \"verdict\": \"hit\",\n  \"confidence\": 1.0,\n  \"reasoning\": \"The commitment required a Whoop recovery score of 70 or higher on at least 5 days. The user's data shows scores of 82, 71, 88, 77, and 73 on five separate days within the window, exactly meeting the 5-day threshold.\",\n  \"cited_days\": [\n    \"2026-04-13\",\n    \"2026-04-14\",\n    \"2026-04-16\",\n    \"2026-04-17\",\n    \"2026-04-19\"\n  ],\n  \"flags\": []\n}\n```",
+          "parsed_verdict": "hit",
+          "parsed_confidence": 1.0,
+          "parsed_reasoning": "The commitment required a Whoop recovery score of 70 or higher on at least 5 days. The user's data shows scores of 82, 71, 88, 77, and 73 on five separate days within the window, exactly meeting the 5-day threshold.",
+          "parsed_flags": [],
+          "parsed_cited_days": [
+            "2026-04-13",
+            "2026-04-14",
+            "2026-04-16",
+            "2026-04-17",
+            "2026-04-19"
+          ],
+          "latency_s": 14.654193878173828,
+          "input_tokens": 1360,
+          "output_tokens": 187,
+          "cost_usd": 0.00357,
+          "error": null,
+          "scores": {
+            "verdict_match": 10,
+            "reasoning_quality": 10,
+            "edge_case_awareness": 7,
+            "hallucination": 10,
+            "verdict": "Correct verdict with precise citations; could note boundary tightness but otherwise flawless.",
+            "_judge_model": "opus-4.7"
+          },
+          "strict_match": true
+        },
+        {
+          "case": "clear_recovery_hit#1",
+          "model": "gemini-2.5-pro",
+          "output": "```json\n{\n  \"verdict\": \"hit\",\n  \"confidence\": 1.0,\n  \"reasoning\": \"The commitment required a Whoop recovery score of 70 or higher on at least 5 days within the 7-day window. The provided data contains a recovery score for all 7 days. I counted 5 days where the `recovery_score` was >= 70 (scores of 82, 71, 88, 77, and 73). Since the user achieved the target on exactly 5 days, the commitment is satisfied.\",\n  \"cited_days\": [\n    \"2026-04-13\",\n    \"2026-04-14\",\n    \"2026-04-16\",\n    \"2026-04-17\",\n    \"2026-04-19\"\n  ],\n  \"flags\": []\n}\n```",
+          "parsed_verdict": "hit",
+          "parsed_confidence": 1.0,
+          "parsed_reasoning": "The commitment required a Whoop recovery score of 70 or higher on at least 5 days within the 7-day window. The provided data contains a recovery score for all 7 days. I counted 5 days where the `recovery_score` was >= 70 (scores of 82, 71, 88, 77, and 73). Since the user achieved the target on exactly 5 days, the commitment is satisfied.",
+          "parsed_flags": [],
+          "parsed_cited_days": [
+            "2026-04-13",
+            "2026-04-14",
+            "2026-04-16",
+            "2026-04-17",
+            "2026-04-19"
+          ],
+          "latency_s": 14.887751817703247,
+          "input_tokens": 1360,
+          "output_tokens": 220,
+          "cost_usd": 0.0039,
+          "error": null,
+          "scores": {
+            "verdict_match": 10,
+            "reasoning_quality": 10,
+            "edge_case_awareness": 7,
+            "hallucination": 10,
+            "verdict": "Correct verdict with accurate citations; boundary case noted but no explicit flag.",
+            "_judge_model": "opus-4.7"
+          },
+          "strict_match": true
+        },
+        {
+          "case": "clear_recovery_hit#2",
+          "model": "gemini-2.5-pro",
+          "output": "```json\n{\n  \"verdict\": \"hit\",\n  \"confidence\": 1.0,\n  \"reasoning\": \"The commitment required a Whoop recovery score of 70 or higher on at least 5 days within the 7-day window. The provided data shows exactly 5 days met this criterion: 2026-04-13 (score 82), 2026-04-14 (score 71), 2026-04-16 (score 88), 2026-04-17 (score 77), and 2026-04-19 (score 73). Since the user achieved the goal on 5 out of 7 days, the commitment was successfully met.\",\n  \"cited_days\": [\n    \"2026-04-13\",\n    \"2026-04-14\",\n    \"2026-04-16\",\n    \"2026-04-17\",\n    \"2026-04-19\"\n  ],\n  \"flags\": []\n}\n```",
+          "parsed_verdict": "hit",
+          "parsed_confidence": 1.0,
+          "parsed_reasoning": "The commitment required a Whoop recovery score of 70 or higher on at least 5 days within the 7-day window. The provided data shows exactly 5 days met this criterion: 2026-04-13 (score 82), 2026-04-14 (score 71), 2026-04-16 (score 88), 2026-04-17 (score 77), and 2026-04-19 (score 73). Since the user achieved the goal on 5 out of 7 days, the commitment was successfully met.",
+          "parsed_flags": [],
+          "parsed_cited_days": [
+            "2026-04-13",
+            "2026-04-14",
+            "2026-04-16",
+            "2026-04-17",
+            "2026-04-19"
+          ],
+          "latency_s": 12.019856929779053,
+          "input_tokens": 1360,
+          "output_tokens": 268,
+          "cost_usd": 0.00438,
+          "error": null,
+          "scores": {
+            "verdict_match": 10,
+            "reasoning_quality": 10,
+            "edge_case_awareness": 7,
+            "hallucination": 10,
+            "verdict": "Accurate verdict with correct dates and threshold; could note exact boundary met.",
+            "_judge_model": "opus-4.7"
+          },
+          "strict_match": true
+        }
+      ]
+    },
+    {
+      "case": "clear_sleep_miss",
+      "commitment": "Sleep at least 7.5 hours (actual sleep, not time in bed) every single night this week.",
+      "expected_verdict": "miss",
+      "model_results": [
+        {
+          "case": "clear_sleep_miss",
+          "model": "gpt-5",
+          "output": "{\"verdict\":\"miss\",\"confidence\":0.96,\"reasoning\":\"Counted each night whose bedtime_start fell within the UTC window and used Oura total_sleep_duration (actual sleep). Threshold: 7.5 h = 27,000 s. Met on 2026-04-13 (28,740 s), 2026-04-15 (29,400 s), 2026-04-17 (28,200 s), 2026-04-18 (30,600 s), and 2026-04-19 (29,280 s). Misses on 2026-04-14 (25,020 s \u2248 6.95 h) and 2026-04-16 (18,600 s \u2248 5.17 h), so the \\\"every single night\\\" requirement is not satisfied.\",\"cited_days\":[\"2026-04-13\",\"2026-04-15\",\"2026-04-17\",\"2026-04-18\",\"2026-04-19\"],\"flags\":[\"last night (2026-04-19) crosses window end; counted by night start, not clipped\"]}",
+          "parsed_verdict": "miss",
+          "parsed_confidence": 0.96,
+          "parsed_reasoning": "Counted each night whose bedtime_start fell within the UTC window and used Oura total_sleep_duration (actual sleep). Threshold: 7.5 h = 27,000 s. Met on 2026-04-13 (28,740 s), 2026-04-15 (29,400 s), 2026-04-17 (28,200 s), 2026-04-18 (30,600 s), and 2026-04-19 (29,280 s). Misses on 2026-04-14 (25,020 s \u2248 6.95 h) and 2026-04-16 (18,600 s \u2248 5.17 h), so the \"every single night\" requirement is not satisfied.",
+          "parsed_flags": [
+            "last night (2026-04-19) crosses window end; counted by night start, not clipped"
+          ],
+          "parsed_cited_days": [
+            "2026-04-13",
+            "2026-04-15",
+            "2026-04-17",
+            "2026-04-18",
+            "2026-04-19"
+          ],
+          "latency_s": 62.999454975128174,
+          "input_tokens": 1289,
+          "output_tokens": 3322,
+          "cost_usd": 0.03483125,
+          "error": null,
+          "scores": {
+            "verdict_match": 10,
+            "reasoning_quality": 9,
+            "edge_case_awareness": 8,
+            "hallucination": 10,
+            "verdict": "Correct miss verdict with accurate citations, unit conversions, and flagged window boundary edge case.",
+            "_judge_model": "opus-4.7"
+          },
+          "strict_match": true
+        },
+        {
+          "case": "clear_sleep_miss#1",
+          "model": "gpt-5",
+          "output": "{\n  \"verdict\": \"miss\",\n  \"confidence\": 0.98,\n  \"reasoning\": \"Requirement is >=7.5h actual sleep each night. Converted threshold: 7.5h = 27,000s. Compared Oura total_sleep_duration per day within 2026-04-13 to 2026-04-19: 04-13: 28,740s (hit), 04-14: 25,020s (miss), 04-15: 29,400s (hit), 04-16: 18,600s (miss), 04-17: 28,200s (hit), 04-18: 30,600s (hit), 04-19: 29,280s (hit). Two nights (04-14, 04-16) are below 27,000s, so it is not every night.\",\n  \"cited_days\": [\n    \"2026-04-13\",\n    \"2026-04-15\",\n    \"2026-04-17\",\n    \"2026-04-18\",\n    \"2026-04-19\"\n  ],\n  \"flags\": []\n}",
+          "parsed_verdict": "miss",
+          "parsed_confidence": 0.98,
+          "parsed_reasoning": "Requirement is >=7.5h actual sleep each night. Converted threshold: 7.5h = 27,000s. Compared Oura total_sleep_duration per day within 2026-04-13 to 2026-04-19: 04-13: 28,740s (hit), 04-14: 25,020s (miss), 04-15: 29,400s (hit), 04-16: 18,600s (miss), 04-17: 28,200s (hit), 04-18: 30,600s (hit), 04-19: 29,280s (hit). Two nights (04-14, 04-16) are below 27,000s, so it is not every night.",
+          "parsed_flags": [],
+          "parsed_cited_days": [
+            "2026-04-13",
+            "2026-04-15",
+            "2026-04-17",
+            "2026-04-18",
+            "2026-04-19"
+          ],
+          "latency_s": 46.84320783615112,
+          "input_tokens": 1289,
+          "output_tokens": 2503,
+          "cost_usd": 0.02664125,
+          "error": null,
+          "scores": {
+            "verdict_match": 10,
+            "reasoning_quality": 9,
+            "edge_case_awareness": 7,
+            "hallucination": 10,
+            "verdict": "Correct miss verdict with accurate unit conversion and identified both sub-threshold nights precisely.",
+            "_judge_model": "opus-4.7"
+          },
+          "strict_match": true
+        },
+        {
+          "case": "clear_sleep_miss#2",
+          "model": "gpt-5",
+          "output": "{\n  \"verdict\": \"miss\",\n  \"confidence\": 0.97,\n  \"reasoning\": \"Assessed 7 nights within 2026-04-13 to 2026-04-19 UTC using Oura total_sleep_duration (actual sleep, seconds \u2192 hours). Durations: 2026-04-13: 7.98h, 2026-04-14: 6.95h, 2026-04-15: 8.17h, 2026-04-16: 5.17h, 2026-04-17: 7.83h, 2026-04-18: 8.50h, 2026-04-19: 8.13h. Two nights (2026-04-14 and 2026-04-16) are below 7.5h; all others meet or exceed 7.5h. Because the commitment requires every night, this is a miss.\",\n  \"cited_days\": [\"2026-04-13\", \"2026-04-15\", \"2026-04-17\", \"2026-04-18\", \"2026-04-19\"],\n  \"flags\": [\"window boundary crossing: 2026-04-19 sleep extends past window end; counted full episode\", \"provider day-label offset: 2026-04-16 entry\u2019s sleep began 2026-04-17 local\"]\n}",
+          "parsed_verdict": "miss",
+          "parsed_confidence": 0.97,
+          "parsed_reasoning": "Assessed 7 nights within 2026-04-13 to 2026-04-19 UTC using Oura total_sleep_duration (actual sleep, seconds \u2192 hours). Durations: 2026-04-13: 7.98h, 2026-04-14: 6.95h, 2026-04-15: 8.17h, 2026-04-16: 5.17h, 2026-04-17: 7.83h, 2026-04-18: 8.50h, 2026-04-19: 8.13h. Two nights (2026-04-14 and 2026-04-16) are below 7.5h; all others meet or exceed 7.5h. Because the commitment requires every night, this is a miss.",
+          "parsed_flags": [
+            "window boundary crossing: 2026-04-19 sleep extends past window end; counted full episode",
+            "provider day-label offset: 2026-04-16 entry\u2019s sleep began 2026-04-17 local"
+          ],
+          "parsed_cited_days": [
+            "2026-04-13",
+            "2026-04-15",
+            "2026-04-17",
+            "2026-04-18",
+            "2026-04-19"
+          ],
+          "latency_s": 84.48839330673218,
+          "input_tokens": 1289,
+          "output_tokens": 4542,
+          "cost_usd": 0.04703125,
+          "error": null,
+          "scores": {
+            "verdict_match": 10,
+            "reasoning_quality": 9,
+            "edge_case_awareness": 9,
+            "hallucination": 7,
+            "verdict": "Correct miss verdict with accurate Apr 16 citation; Apr 14 value possibly fabricated but reasoning sound.",
+            "_judge_model": "opus-4.7"
+          },
+          "strict_match": true
+        },
+        {
+          "case": "clear_sleep_miss",
+          "model": "gemini-2.5-pro",
+          "output": "```json\n{\n  \"verdict\": \"miss\",\n  \"confidence\": 1.0,\n  \"reasoning\": \"The commitment required at least 7.5 hours (27,000 seconds) of total sleep every single night during the window. The user failed to meet this goal on two nights. On 2026-04-14, the total sleep duration was 25,020 seconds (6.95 hours), and on 2026-04-16, it was 18,600 seconds (5.17 hours). Since the requirement was not met on every night, the commitment is a miss.\",\n  \"cited_days\": [\n    \"2026-04-13\",\n    \"2026-04-15\",\n    \"2026-04-17\",\n    \"2026-04-18\",\n    \"2026-04-19\"\n  ],\n  \"flags\": []\n}\n```",
+          "parsed_verdict": "miss",
+          "parsed_confidence": 1.0,
+          "parsed_reasoning": "The commitment required at least 7.5 hours (27,000 seconds) of total sleep every single night during the window. The user failed to meet this goal on two nights. On 2026-04-14, the total sleep duration was 25,020 seconds (6.95 hours), and on 2026-04-16, it was 18,600 seconds (5.17 hours). Since the requirement was not met on every night, the commitment is a miss.",
+          "parsed_flags": [],
+          "parsed_cited_days": [
+            "2026-04-13",
+            "2026-04-15",
+            "2026-04-17",
+            "2026-04-18",
+            "2026-04-19"
+          ],
+          "latency_s": 11.287367343902588,
+          "input_tokens": 1728,
+          "output_tokens": 241,
+          "cost_usd": 0.00457,
+          "error": null,
+          "scores": {
+            "verdict_match": 10,
+            "reasoning_quality": 9,
+            "edge_case_awareness": 7,
+            "hallucination": 10,
+            "verdict": "Correct miss verdict with accurate citations; identified two failing nights including the key Apr 16.",
+            "_judge_model": "opus-4.7"
+          },
+          "strict_match": true
+        },
+        {
+          "case": "clear_sleep_miss#1",
+          "model": "gemini-2.5-pro",
+          "output": "```json\n{\n  \"verdict\": \"miss\",\n  \"confidence\": 1.0,\n  \"reasoning\": \"The commitment required at least 7.5 hours (27,000 seconds) of actual sleep every single night during the window. The user met this threshold on 5 out of 7 nights. However, on 2026-04-14, the total sleep was 25,020 seconds (6.95 hours), and on 2026-04-16, it was 18,600 seconds (5.17 hours). Since the goal was not achieved every night, the commitment was missed.\",\n  \"cited_days\": [\n    \"2026-04-13\",\n    \"2026-04-15\",\n    \"2026-04-17\",\n    \"2026-04-18\",\n    \"2026-04-19\"\n  ],\n  \"flags\": []\n}\n```",
+          "parsed_verdict": "miss",
+          "parsed_confidence": 1.0,
+          "parsed_reasoning": "The commitment required at least 7.5 hours (27,000 seconds) of actual sleep every single night during the window. The user met this threshold on 5 out of 7 nights. However, on 2026-04-14, the total sleep was 25,020 seconds (6.95 hours), and on 2026-04-16, it was 18,600 seconds (5.17 hours). Since the goal was not achieved every night, the commitment was missed.",
+          "parsed_flags": [],
+          "parsed_cited_days": [
+            "2026-04-13",
+            "2026-04-15",
+            "2026-04-17",
+            "2026-04-18",
+            "2026-04-19"
+          ],
+          "latency_s": 10.769129991531372,
+          "input_tokens": 1728,
+          "output_tokens": 243,
+          "cost_usd": 0.00459,
+          "error": null,
+          "scores": {
+            "verdict_match": 10,
+            "reasoning_quality": 9,
+            "edge_case_awareness": 7,
+            "hallucination": 10,
+            "verdict": "Correct miss verdict with accurate conversions; cited Apr 16 and threshold, plus additional Apr 14 miss.",
+            "_judge_model": "opus-4.7"
+          },
+          "strict_match": true
+        },
+        {
+          "case": "clear_sleep_miss#2",
+          "model": "gemini-2.5-pro",
+          "output": "```json\n{\n  \"verdict\": \"miss\",\n  \"confidence\": 1.0,\n  \"reasoning\": \"The commitment required at least 7.5 hours of total sleep (27,000 seconds) for every one of the 7 nights in the window. The user met this goal on 5 of the 7 nights. However, on two nights, the total sleep was below the threshold: 25,020 seconds (6.95 hours) on 2026-04-14 and 18,600 seconds (5.17 hours) on 2026-04-16. Since the condition was not met every single night, the commitment is a miss.\",\n  \"cited_days\": [\n    \"2026-04-13\",\n    \"2026-04-15\",\n    \"2026-04-17\",\n    \"2026-04-18\",\n    \"2026-04-19\"\n  ],\n  \"flags\": []\n}\n```",
+          "parsed_verdict": "miss",
+          "parsed_confidence": 1.0,
+          "parsed_reasoning": "The commitment required at least 7.5 hours of total sleep (27,000 seconds) for every one of the 7 nights in the window. The user met this goal on 5 of the 7 nights. However, on two nights, the total sleep was below the threshold: 25,020 seconds (6.95 hours) on 2026-04-14 and 18,600 seconds (5.17 hours) on 2026-04-16. Since the condition was not met every single night, the commitment is a miss.",
+          "parsed_flags": [],
+          "parsed_cited_days": [
+            "2026-04-13",
+            "2026-04-15",
+            "2026-04-17",
+            "2026-04-18",
+            "2026-04-19"
+          ],
+          "latency_s": 19.236145973205566,
+          "input_tokens": 1728,
+          "output_tokens": 255,
+          "cost_usd": 0.00471,
+          "error": null,
+          "scores": {
+            "verdict_match": 10,
+            "reasoning_quality": 10,
+            "edge_case_awareness": 8,
+            "hallucination": 10,
+            "verdict": "Correct miss verdict with accurate unit conversions and identification of both sub-threshold nights.",
+            "_judge_model": "opus-4.7"
+          },
+          "strict_match": true
+        }
+      ]
+    },
+    {
+      "case": "boundary_recovery_exact",
+      "commitment": "Hit recovery score strictly above 70 (not including 70) on at least 4 days this week.",
+      "expected_verdict": "miss",
+      "model_results": [
+        {
+          "case": "boundary_recovery_exact",
+          "model": "gpt-5",
+          "output": "{\n  \"verdict\": \"miss\",\n  \"confidence\": 0.97,\n  \"reasoning\": \"Within the UTC window there are 7 recovery records. Applying the strict >70 threshold, only three days qualify (scores 71, 84, and 77 on 2026-04-15, 2026-04-16, and 2026-04-18). Scores of exactly 70 on 2026-04-13, 2026-04-14, and 2026-04-19 do not count, nor does 69 on 2026-04-17. Needing at least 4 qualifying days, the commitment is not met.\",\n  \"cited_days\": [\n    \"2026-04-15\",\n    \"2026-04-16\",\n    \"2026-04-18\"\n  ],\n  \"flags\": []\n}",
+          "parsed_verdict": "miss",
+          "parsed_confidence": 0.97,
+          "parsed_reasoning": "Within the UTC window there are 7 recovery records. Applying the strict >70 threshold, only three days qualify (scores 71, 84, and 77 on 2026-04-15, 2026-04-16, and 2026-04-18). Scores of exactly 70 on 2026-04-13, 2026-04-14, and 2026-04-19 do not count, nor does 69 on 2026-04-17. Needing at least 4 qualifying days, the commitment is not met.",
+          "parsed_flags": [],
+          "parsed_cited_days": [
+            "2026-04-15",
+            "2026-04-16",
+            "2026-04-18"
+          ],
+          "latency_s": 20.402177810668945,
+          "input_tokens": 938,
+          "output_tokens": 1092,
+          "cost_usd": 0.0120925,
+          "error": null,
+          "scores": {
+            "verdict_match": 10,
+            "reasoning_quality": 10,
+            "edge_case_awareness": 9,
+            "hallucination": 10,
+            "verdict": "Correct miss verdict with precise strict-threshold reasoning and accurate day-by-day citations.",
+            "_judge_model": "opus-4.7"
+          },
+          "strict_match": true
+        },
+        {
+          "case": "boundary_recovery_exact#1",
+          "model": "gpt-5",
+          "output": "{\"verdict\":\"miss\",\"confidence\":0.96,\"reasoning\":\"Within the UTC window 2026-04-13 to 2026-04-19, there are 7 Whoop recovery entries. Counting only days with recovery_score strictly > 70 (70 does not count): qualifying days are 2026-04-15 (71), 2026-04-16 (84), and 2026-04-18 (77). That is 3 days, fewer than the required 4, so the commitment is not met.\",\"cited_days\":[\"2026-04-15\",\"2026-04-16\",\"2026-04-18\"],\"flags\":[]}",
+          "parsed_verdict": "miss",
+          "parsed_confidence": 0.96,
+          "parsed_reasoning": "Within the UTC window 2026-04-13 to 2026-04-19, there are 7 Whoop recovery entries. Counting only days with recovery_score strictly > 70 (70 does not count): qualifying days are 2026-04-15 (71), 2026-04-16 (84), and 2026-04-18 (77). That is 3 days, fewer than the required 4, so the commitment is not met.",
+          "parsed_flags": [],
+          "parsed_cited_days": [
+            "2026-04-15",
+            "2026-04-16",
+            "2026-04-18"
+          ],
+          "latency_s": 16.714957237243652,
+          "input_tokens": 938,
+          "output_tokens": 920,
+          "cost_usd": 0.0103725,
+          "error": null,
+          "scores": {
+            "verdict_match": 10,
+            "reasoning_quality": 10,
+            "edge_case_awareness": 9,
+            "hallucination": 10,
+            "verdict": "Correctly identifies miss, cites qualifying days, notes 70 doesn't count, accurate count.",
+            "_judge_model": "opus-4.7"
+          },
+          "strict_match": true
+        },
+        {
+          "case": "boundary_recovery_exact#2",
+          "model": "gpt-5",
+          "output": "{\n  \"verdict\": \"miss\",\n  \"confidence\": 0.98,\n  \"reasoning\": \"Within the UTC window (2026-04-13 to 2026-04-19), recovery scores strictly >70 occurred on 3 days (Apr 15: 71, Apr 16: 84, Apr 18: 77). Scores of 70 on Apr 13, 14, and 19 do not count. This is fewer than the required 4 days.\",\n  \"cited_days\": [\"2026-04-15\", \"2026-04-16\", \"2026-04-18\"],\n  \"flags\": []\n}",
+          "parsed_verdict": "miss",
+          "parsed_confidence": 0.98,
+          "parsed_reasoning": "Within the UTC window (2026-04-13 to 2026-04-19), recovery scores strictly >70 occurred on 3 days (Apr 15: 71, Apr 16: 84, Apr 18: 77). Scores of 70 on Apr 13, 14, and 19 do not count. This is fewer than the required 4 days.",
+          "parsed_flags": [],
+          "parsed_cited_days": [
+            "2026-04-15",
+            "2026-04-16",
+            "2026-04-18"
+          ],
+          "latency_s": 16.582172870635986,
+          "input_tokens": 938,
+          "output_tokens": 918,
+          "cost_usd": 0.0103525,
+          "error": null,
+          "scores": {
+            "verdict_match": 10,
+            "reasoning_quality": 10,
+            "edge_case_awareness": 9,
+            "hallucination": 10,
+            "verdict": "Correct miss verdict with precise day counts, boundary handling, and accurate citations.",
+            "_judge_model": "opus-4.7"
+          },
+          "strict_match": true
+        },
+        {
+          "case": "boundary_recovery_exact",
+          "model": "gemini-2.5-pro",
+          "output": "```json\n{\n  \"verdict\": \"miss\",\n  \"confidence\": 1.0,\n  \"reasoning\": \"The commitment required a recovery score strictly above 70 on at least 4 days. I checked the recovery score for each day in the window. The scores were 70, 70, 71, 84, 69, 77, and 70. Only three of these scores (71, 84, 77) are strictly greater than 70. Since 3 is less than the required 4, the commitment was not met.\",\n  \"cited_days\": [\n    \"2026-04-15\",\n    \"2026-04-16\",\n    \"2026-04-18\"\n  ],\n  \"flags\": []\n}\n```",
+          "parsed_verdict": "miss",
+          "parsed_confidence": 1.0,
+          "parsed_reasoning": "The commitment required a recovery score strictly above 70 on at least 4 days. I checked the recovery score for each day in the window. The scores were 70, 70, 71, 84, 69, 77, and 70. Only three of these scores (71, 84, 77) are strictly greater than 70. Since 3 is less than the required 4, the commitment was not met.",
+          "parsed_flags": [],
+          "parsed_cited_days": [
+            "2026-04-15",
+            "2026-04-16",
+            "2026-04-18"
+          ],
+          "latency_s": 13.083922147750854,
+          "input_tokens": 1148,
+          "output_tokens": 197,
+          "cost_usd": 0.003405,
+          "error": null,
+          "scores": {
+            "verdict_match": 10,
+            "reasoning_quality": 10,
+            "edge_case_awareness": 9,
+            "hallucination": 10,
+            "verdict": "Correctly identified miss with accurate scores, cited right days, and recognized strict inequality boundary.",
+            "_judge_model": "opus-4.7"
+          },
+          "strict_match": true
+        },
+        {
+          "case": "boundary_recovery_exact#1",
+          "model": "gemini-2.5-pro",
+          "output": "```json\n{\n  \"verdict\": \"miss\",\n  \"confidence\": 1.0,\n  \"reasoning\": \"The commitment required a recovery score strictly above 70 on at least 4 days during the window of 2026-04-13 to 2026-04-19. I analyzed the recovery scores for all 7 days provided. The scores were 70, 70, 71, 84, 69, 77, and 70. Only three days had scores strictly greater than 70: 2026-04-15 (71), 2026-04-16 (84), and 2026-04-18 (77). Since the user only achieved 3 qualifying days instead of the required 4, the commitment is a miss.\",\n  \"cited_days\": [\n    \"2026-04-15\",\n    \"2026-04-16\",\n    \"2026-04-18\"\n  ],\n  \"flags\": []\n}\n```",
+          "parsed_verdict": "miss",
+          "parsed_confidence": 1.0,
+          "parsed_reasoning": "The commitment required a recovery score strictly above 70 on at least 4 days during the window of 2026-04-13 to 2026-04-19. I analyzed the recovery scores for all 7 days provided. The scores were 70, 70, 71, 84, 69, 77, and 70. Only three days had scores strictly greater than 70: 2026-04-15 (71), 2026-04-16 (84), and 2026-04-18 (77). Since the user only achieved 3 qualifying days instead of the required 4, the commitment is a miss.",
+          "parsed_flags": [],
+          "parsed_cited_days": [
+            "2026-04-15",
+            "2026-04-16",
+            "2026-04-18"
+          ],
+          "latency_s": 15.477833986282349,
+          "input_tokens": 1148,
+          "output_tokens": 262,
+          "cost_usd": 0.004055,
+          "error": null,
+          "scores": {
+            "verdict_match": 10,
+            "reasoning_quality": 9,
+            "edge_case_awareness": 7,
+            "hallucination": 10,
+            "verdict": "Correct miss verdict with accurate day count and strict inequality handling; minor boundary emphasis missing.",
+            "_judge_model": "opus-4.7"
+          },
+          "strict_match": true
+        },
+        {
+          "case": "boundary_recovery_exact#2",
+          "model": "gemini-2.5-pro",
+          "output": "```json\n{\n  \"verdict\": \"miss\",\n  \"confidence\": 1.0,\n  \"reasoning\": \"The commitment required a recovery score strictly greater than 70 on at least 4 days during the specified week. I analyzed the recovery score for each of the 7 days provided. The scores were 70, 70, 71, 84, 69, 77, and 70. The condition 'strictly above 70' was met on only 3 days (scores of 71, 84, and 77). Since 3 is less than the required 4 days, the commitment was not met.\",\n  \"cited_days\": [\n    \"2026-04-15\",\n    \"2026-04-16\",\n    \"2026-04-18\"\n  ],\n  \"flags\": []\n}\n```",
+          "parsed_verdict": "miss",
+          "parsed_confidence": 1.0,
+          "parsed_reasoning": "The commitment required a recovery score strictly greater than 70 on at least 4 days during the specified week. I analyzed the recovery score for each of the 7 days provided. The scores were 70, 70, 71, 84, 69, 77, and 70. The condition 'strictly above 70' was met on only 3 days (scores of 71, 84, and 77). Since 3 is less than the required 4 days, the commitment was not met.",
+          "parsed_flags": [],
+          "parsed_cited_days": [
+            "2026-04-15",
+            "2026-04-16",
+            "2026-04-18"
+          ],
+          "latency_s": 14.15350079536438,
+          "input_tokens": 1148,
+          "output_tokens": 212,
+          "cost_usd": 0.003555,
+          "error": null,
+          "scores": {
+            "verdict_match": 10,
+            "reasoning_quality": 9,
+            "edge_case_awareness": 8,
+            "hallucination": 10,
+            "verdict": "Correct miss verdict with accurate day count and proper strict-inequality reasoning.",
+            "_judge_model": "opus-4.7"
+          },
+          "strict_match": true
+        }
+      ]
+    },
+    {
+      "case": "missing_day_whoop",
+      "commitment": "Hit recovery score of 65 or higher on at least 6 of the 7 days this week.",
+      "expected_verdict": "ambiguous",
+      "model_results": [
+        {
+          "case": "missing_day_whoop",
+          "model": "gpt-5",
+          "output": "{\n  \"verdict\": \"hit\",\n  \"confidence\": 0.94,\n  \"reasoning\": \"Within the UTC window 2026-04-13 to 2026-04-19, there are recovery records on 2026-04-13, 14, 15, 17, 18, and 19, each with recovery_score >= 65 (78, 72, 68, 81, 75, 70). That gives 6 qualifying days out of the 7-day week. Although 2026-04-16 has no record, the requirement of at least 6 of 7 days is still clearly satisfied.\",\n  \"cited_days\": [\n    \"2026-04-13\",\n    \"2026-04-14\",\n    \"2026-04-15\",\n    \"2026-04-17\",\n    \"2026-04-18\",\n    \"2026-04-19\"\n  ],\n  \"flags\": [\n    \"missing day within window (2026-04-16): no recovery record\"\n  ]\n}",
+          "parsed_verdict": "hit",
+          "parsed_confidence": 0.94,
+          "parsed_reasoning": "Within the UTC window 2026-04-13 to 2026-04-19, there are recovery records on 2026-04-13, 14, 15, 17, 18, and 19, each with recovery_score >= 65 (78, 72, 68, 81, 75, 70). That gives 6 qualifying days out of the 7-day week. Although 2026-04-16 has no record, the requirement of at least 6 of 7 days is still clearly satisfied.",
+          "parsed_flags": [
+            "missing day within window (2026-04-16): no recovery record"
+          ],
+          "parsed_cited_days": [
+            "2026-04-13",
+            "2026-04-14",
+            "2026-04-15",
+            "2026-04-17",
+            "2026-04-18",
+            "2026-04-19"
+          ],
+          "latency_s": 39.17887306213379,
+          "input_tokens": 855,
+          "output_tokens": 2094,
+          "cost_usd": 0.02200875,
+          "error": null,
+          "scores": {
+            "verdict_match": 3,
+            "reasoning_quality": 6,
+            "edge_case_awareness": 5,
+            "hallucination": 9,
+            "verdict": "Flagged missing Apr 16 but settled 'hit' instead of ambiguous; ignored gap's implications.",
+            "_judge_model": "opus-4.7"
+          },
+          "strict_match": false
+        },
+        {
+          "case": "missing_day_whoop#1",
+          "model": "gpt-5",
+          "output": "{\n  \"verdict\": \"hit\",\n  \"confidence\": 0.97,\n  \"reasoning\": \"Within the UTC window (2026-04-13 to 2026-04-19), six recovery entries are present (13, 14, 15, 17, 18, 19) and all have recovery_score >= 65 (78, 72, 68, 81, 75, 70). That already provides 6 qualifying days out of the 7-day week; the missing 2026-04-16 record does not prevent meeting the 'at least 6' requirement.\",\n  \"cited_days\": [\n    \"2026-04-13\",\n    \"2026-04-14\",\n    \"2026-04-15\",\n    \"2026-04-17\",\n    \"2026-04-18\",\n    \"2026-04-19\"\n  ],\n  \"flags\": [\n    \"missing daily recovery for 2026-04-16\"\n  ]\n}",
+          "parsed_verdict": "hit",
+          "parsed_confidence": 0.97,
+          "parsed_reasoning": "Within the UTC window (2026-04-13 to 2026-04-19), six recovery entries are present (13, 14, 15, 17, 18, 19) and all have recovery_score >= 65 (78, 72, 68, 81, 75, 70). That already provides 6 qualifying days out of the 7-day week; the missing 2026-04-16 record does not prevent meeting the 'at least 6' requirement.",
+          "parsed_flags": [
+            "missing daily recovery for 2026-04-16"
+          ],
+          "parsed_cited_days": [
+            "2026-04-13",
+            "2026-04-14",
+            "2026-04-15",
+            "2026-04-17",
+            "2026-04-18",
+            "2026-04-19"
+          ],
+          "latency_s": 32.14191913604736,
+          "input_tokens": 855,
+          "output_tokens": 1697,
+          "cost_usd": 0.01803875,
+          "error": null,
+          "scores": {
+            "verdict_match": 3,
+            "reasoning_quality": 6,
+            "edge_case_awareness": 5,
+            "hallucination": 9,
+            "verdict": "Flagged missing Apr 16 but settled 'hit' instead of ambiguous; ignored cycle gap implications.",
+            "_judge_model": "opus-4.7"
+          },
+          "strict_match": false
+        },
+        {
+          "case": "missing_day_whoop#2",
+          "model": "gpt-5",
+          "output": "{\n  \"verdict\": \"hit\",\n  \"confidence\": 0.93,\n  \"reasoning\": \"Within the UTC window 2026-04-13 to 2026-04-19, there are six recovery entries dated 2026-04-13, 04-14, 04-15, 04-17, 04-18, and 04-19, each with recovery_score >= 65 (78, 72, 68, 81, 75, 70). That satisfies the requirement of at least 6 of the 7 days. 2026-04-16 is missing but not needed to reach six qualifying days.\",\n  \"cited_days\": [\n    \"2026-04-13\",\n    \"2026-04-14\",\n    \"2026-04-15\",\n    \"2026-04-17\",\n    \"2026-04-18\",\n    \"2026-04-19\"\n  ],\n  \"flags\": [\n    \"missing day within window: 2026-04-16\"\n  ]\n}",
+          "parsed_verdict": "hit",
+          "parsed_confidence": 0.93,
+          "parsed_reasoning": "Within the UTC window 2026-04-13 to 2026-04-19, there are six recovery entries dated 2026-04-13, 04-14, 04-15, 04-17, 04-18, and 04-19, each with recovery_score >= 65 (78, 72, 68, 81, 75, 70). That satisfies the requirement of at least 6 of the 7 days. 2026-04-16 is missing but not needed to reach six qualifying days.",
+          "parsed_flags": [
+            "missing day within window: 2026-04-16"
+          ],
+          "parsed_cited_days": [
+            "2026-04-13",
+            "2026-04-14",
+            "2026-04-15",
+            "2026-04-17",
+            "2026-04-18",
+            "2026-04-19"
+          ],
+          "latency_s": 34.09457993507385,
+          "input_tokens": 855,
+          "output_tokens": 1901,
+          "cost_usd": 0.02007875,
+          "error": null,
+          "scores": {
+            "verdict_match": 3,
+            "reasoning_quality": 6,
+            "edge_case_awareness": 5,
+            "hallucination": 8,
+            "verdict": "Called hit despite missing Apr 16; flagged gap but failed to treat as ambiguous.",
+            "_judge_model": "opus-4.7"
+          },
+          "strict_match": false
+        },
+        {
+          "case": "missing_day_whoop",
+          "model": "gemini-2.5-pro",
+          "output": "```json\n{\n  \"verdict\": \"hit\",\n  \"confidence\": 1.0,\n  \"reasoning\": \"The commitment required a recovery score of 65 or higher on at least 6 of the 7 days in the window. The user achieved a qualifying score on all 6 days for which data was provided (78, 72, 68, 81, 75, 70). Although data for one day, 2026-04-16, is missing, the user has already met the minimum threshold of 6 successful days, so the commitment is satisfied.\",\n  \"cited_days\": [\n    \"2026-04-13\",\n    \"2026-04-14\",\n    \"2026-04-15\",\n    \"2026-04-17\",\n    \"2026-04-18\",\n    \"2026-04-19\"\n  ],\n  \"flags\": [\n    \"missing days\"\n  ]\n}\n```",
+          "parsed_verdict": "hit",
+          "parsed_confidence": 1.0,
+          "parsed_reasoning": "The commitment required a recovery score of 65 or higher on at least 6 of the 7 days in the window. The user achieved a qualifying score on all 6 days for which data was provided (78, 72, 68, 81, 75, 70). Although data for one day, 2026-04-16, is missing, the user has already met the minimum threshold of 6 successful days, so the commitment is satisfied.",
+          "parsed_flags": [
+            "missing days"
+          ],
+          "parsed_cited_days": [
+            "2026-04-13",
+            "2026-04-14",
+            "2026-04-15",
+            "2026-04-17",
+            "2026-04-18",
+            "2026-04-19"
+          ],
+          "latency_s": 16.367695808410645,
+          "input_tokens": 1038,
+          "output_tokens": 251,
+          "cost_usd": 0.0038075,
+          "error": null,
+          "scores": {
+            "verdict_match": 3,
+            "reasoning_quality": 6,
+            "edge_case_awareness": 5,
+            "hallucination": 9,
+            "verdict": "Noted missing day but wrongly settled 'hit'; needed ambiguous given unconfirmed 6th qualifying day.",
+            "_judge_model": "opus-4.7"
+          },
+          "strict_match": false
+        },
+        {
+          "case": "missing_day_whoop#1",
+          "model": "gemini-2.5-pro",
+          "output": "```json\n{\n  \"verdict\": \"hit\",\n  \"confidence\": 1.0,\n  \"reasoning\": \"The commitment required a recovery score of 65 or higher on at least 6 of the 7 days in the window. The provided data shows exactly 6 days where the recovery score met this criterion: 78 (2026-04-13), 72 (2026-04-14), 68 (2026-04-15), 81 (2026-04-17), 75 (2026-04-18), and 70 (2026-04-19). Since the threshold of 6 qualifying days has been met with the available data, the commitment is considered hit. Data for 2026-04-16 was not provided, but this does not invalidate the 6 days for which proof exists.\",\n  \"cited_days\": [\n    \"2026-04-13\",\n    \"2026-04-14\",\n    \"2026-04-15\",\n    \"2026-04-17\",\n    \"2026-04-18\",\n    \"2026-04-19\"\n  ],\n  \"flags\": [\n    \"missing days\"\n  ]\n}\n```",
+          "parsed_verdict": "hit",
+          "parsed_confidence": 1.0,
+          "parsed_reasoning": "The commitment required a recovery score of 65 or higher on at least 6 of the 7 days in the window. The provided data shows exactly 6 days where the recovery score met this criterion: 78 (2026-04-13), 72 (2026-04-14), 68 (2026-04-15), 81 (2026-04-17), 75 (2026-04-18), and 70 (2026-04-19). Since the threshold of 6 qualifying days has been met with the available data, the commitment is considered hit. Data for 2026-04-16 was not provided, but this does not invalidate the 6 days for which proof exists.",
+          "parsed_flags": [
+            "missing days"
+          ],
+          "parsed_cited_days": [
+            "2026-04-13",
+            "2026-04-14",
+            "2026-04-15",
+            "2026-04-17",
+            "2026-04-18",
+            "2026-04-19"
+          ],
+          "latency_s": 23.75687074661255,
+          "input_tokens": 1038,
+          "output_tokens": 330,
+          "cost_usd": 0.0045975,
+          "error": null,
+          "scores": {
+            "verdict_match": 1,
+            "reasoning_quality": 5,
+            "edge_case_awareness": 4,
+            "hallucination": 9,
+            "verdict": "Wrongly settled hit despite missing Apr 16; flagged gap but failed to return ambiguous.",
+            "_judge_model": "opus-4.7"
+          },
+          "strict_match": false
+        },
+        {
+          "case": "missing_day_whoop#2",
+          "model": "gemini-2.5-pro",
+          "output": "```json\n{\n  \"verdict\": \"hit\",\n  \"confidence\": 1.0,\n  \"reasoning\": \"The commitment required a recovery score of 65 or higher on at least 6 days within the 7-day window. The provided data shows 6 days that met this criterion: 2026-04-13 (78), 2026-04-14 (72), 2026-04-15 (68), 2026-04-17 (81), 2026-04-18 (75), and 2026-04-19 (70). Although data for one day (2026-04-16) is missing, the user has already met the threshold of 6 successful days, so the commitment is fulfilled.\",\n  \"cited_days\": [\n    \"2026-04-13\",\n    \"2026-04-14\",\n    \"2026-04-15\",\n    \"2026-04-17\",\n    \"2026-04-18\",\n    \"2026-04-19\"\n  ],\n  \"flags\": [\n    \"missing days\"\n  ]\n}\n```",
+          "parsed_verdict": "hit",
+          "parsed_confidence": 1.0,
+          "parsed_reasoning": "The commitment required a recovery score of 65 or higher on at least 6 days within the 7-day window. The provided data shows 6 days that met this criterion: 2026-04-13 (78), 2026-04-14 (72), 2026-04-15 (68), 2026-04-17 (81), 2026-04-18 (75), and 2026-04-19 (70). Although data for one day (2026-04-16) is missing, the user has already met the threshold of 6 successful days, so the commitment is fulfilled.",
+          "parsed_flags": [
+            "missing days"
+          ],
+          "parsed_cited_days": [
+            "2026-04-13",
+            "2026-04-14",
+            "2026-04-15",
+            "2026-04-17",
+            "2026-04-18",
+            "2026-04-19"
+          ],
+          "latency_s": 15.842100143432617,
+          "input_tokens": 1038,
+          "output_tokens": 312,
+          "cost_usd": 0.0044175,
+          "error": null,
+          "scores": {
+            "verdict_match": 2,
+            "reasoning_quality": 6,
+            "edge_case_awareness": 4,
+            "hallucination": 9,
+            "verdict": "Noted missing day but wrongly settled 'hit'; should have returned ambiguous pending attestation.",
+            "_judge_model": "opus-4.7"
+          },
+          "strict_match": false
+        }
+      ]
+    },
+    {
+      "case": "multi_metric_composite",
+      "commitment": "On at least 4 days this week, hit BOTH a recovery score >= 70 AND a sleep performance score >= 85 on the same day.",
+      "expected_verdict": "hit",
+      "model_results": [
+        {
+          "case": "multi_metric_composite",
+          "model": "gpt-5",
+          "output": "{\n  \"verdict\": \"hit\",\n  \"confidence\": 0.96,\n  \"reasoning\": \"Paired each recovery (created_at) with the sleep that ended at the same timestamp (same morning/day, UTC) within 2026-04-13 to 2026-04-19. Counted days where recovery_score >= 70 and sleep_performance_percentage >= 85. Qualifying dates: 2026-04-14 (82, 88), 2026-04-15 (71, 90), 2026-04-17 (88, 91), 2026-04-18 (73, 86). Total = 4 days, meeting the commitment.\",\n  \"cited_days\": [\n    \"2026-04-14\",\n    \"2026-04-15\",\n    \"2026-04-17\",\n    \"2026-04-18\"\n  ],\n  \"flags\": []\n}",
+          "parsed_verdict": "hit",
+          "parsed_confidence": 0.96,
+          "parsed_reasoning": "Paired each recovery (created_at) with the sleep that ended at the same timestamp (same morning/day, UTC) within 2026-04-13 to 2026-04-19. Counted days where recovery_score >= 70 and sleep_performance_percentage >= 85. Qualifying dates: 2026-04-14 (82, 88), 2026-04-15 (71, 90), 2026-04-17 (88, 91), 2026-04-18 (73, 86). Total = 4 days, meeting the commitment.",
+          "parsed_flags": [],
+          "parsed_cited_days": [
+            "2026-04-14",
+            "2026-04-15",
+            "2026-04-17",
+            "2026-04-18"
+          ],
+          "latency_s": 22.294410943984985,
+          "input_tokens": 1185,
+          "output_tokens": 1489,
+          "cost_usd": 0.01637125,
+          "error": null,
+          "scores": {
+            "verdict_match": 10,
+            "reasoning_quality": 10,
+            "edge_case_awareness": 7,
+            "hallucination": 10,
+            "verdict": "Correct verdict with accurate pairing, exact dates and values cited; minimal edge-case flagging.",
+            "_judge_model": "opus-4.7"
+          },
+          "strict_match": true
+        },
+        {
+          "case": "multi_metric_composite#1",
+          "model": "gpt-5",
+          "output": "{\n  \"verdict\": \"hit\",\n  \"confidence\": 0.97,\n  \"reasoning\": \"Within the UTC window (2026-04-13 to 2026-04-19), I paired each recovery created_at (morning) with the sleep that ended at the same timestamp. Days meeting both thresholds (recovery \u226570 and sleep performance \u226585) were 2026-04-14 (82/88), 2026-04-15 (71/90), 2026-04-17 (88/91), and 2026-04-18 (73/86), totaling 4 days, which satisfies the commitment.\",\n  \"cited_days\": [\"2026-04-14\", \"2026-04-15\", \"2026-04-17\", \"2026-04-18\"],\n  \"flags\": []\n}",
+          "parsed_verdict": "hit",
+          "parsed_confidence": 0.97,
+          "parsed_reasoning": "Within the UTC window (2026-04-13 to 2026-04-19), I paired each recovery created_at (morning) with the sleep that ended at the same timestamp. Days meeting both thresholds (recovery \u226570 and sleep performance \u226585) were 2026-04-14 (82/88), 2026-04-15 (71/90), 2026-04-17 (88/91), and 2026-04-18 (73/86), totaling 4 days, which satisfies the commitment.",
+          "parsed_flags": [],
+          "parsed_cited_days": [
+            "2026-04-14",
+            "2026-04-15",
+            "2026-04-17",
+            "2026-04-18"
+          ],
+          "latency_s": 22.376240730285645,
+          "input_tokens": 1185,
+          "output_tokens": 1536,
+          "cost_usd": 0.01684125,
+          "error": null,
+          "scores": {
+            "verdict_match": 10,
+            "reasoning_quality": 10,
+            "edge_case_awareness": 7,
+            "hallucination": 10,
+            "verdict": "Correctly identified 4 qualifying days with accurate pairings and thresholds; minimal boundary discussion.",
+            "_judge_model": "opus-4.7"
+          },
+          "strict_match": true
+        },
+        {
+          "case": "multi_metric_composite#2",
+          "model": "gpt-5",
+          "output": "{\n  \"verdict\": \"hit\",\n  \"confidence\": 0.96,\n  \"reasoning\": \"Evaluated each UTC day in the window by pairing the recovery created_at date with the sleep that ended the same morning. Counted days where recovery_score >= 70 and sleep_performance_percentage >= 85. Qualifying days: 2026-04-14 (82, 88), 2026-04-15 (71, 90), 2026-04-17 (88, 91), 2026-04-18 (73, 86). Total = 4 days, meeting the commitment.\",\n  \"cited_days\": [\n    \"2026-04-14\",\n    \"2026-04-15\",\n    \"2026-04-17\",\n    \"2026-04-18\"\n  ],\n  \"flags\": []\n}",
+          "parsed_verdict": "hit",
+          "parsed_confidence": 0.96,
+          "parsed_reasoning": "Evaluated each UTC day in the window by pairing the recovery created_at date with the sleep that ended the same morning. Counted days where recovery_score >= 70 and sleep_performance_percentage >= 85. Qualifying days: 2026-04-14 (82, 88), 2026-04-15 (71, 90), 2026-04-17 (88, 91), 2026-04-18 (73, 86). Total = 4 days, meeting the commitment.",
+          "parsed_flags": [],
+          "parsed_cited_days": [
+            "2026-04-14",
+            "2026-04-15",
+            "2026-04-17",
+            "2026-04-18"
+          ],
+          "latency_s": 17.88925004005432,
+          "input_tokens": 1185,
+          "output_tokens": 1216,
+          "cost_usd": 0.01364125,
+          "error": null,
+          "scores": {
+            "verdict_match": 10,
+            "reasoning_quality": 10,
+            "edge_case_awareness": 7,
+            "hallucination": 10,
+            "verdict": "Correct hit verdict with precise day-by-day pairing and accurate metric citations.",
+            "_judge_model": "opus-4.7"
+          },
+          "strict_match": true
+        },
+        {
+          "case": "multi_metric_composite",
+          "model": "gemini-2.5-pro",
+          "output": "```json\n{\n  \"verdict\": \"hit\",\n  \"confidence\": 1.0,\n  \"reasoning\": \"The user committed to achieving both a recovery score of 70 or higher and a sleep performance score of 85 or higher on at least 4 days. The data shows this dual condition was met on exactly 4 days during the window: 2026-04-14 (Recovery 82, Sleep Perf. 88), 2026-04-15 (Recovery 71, Sleep Perf. 90), 2026-04-17 (Recovery 88, Sleep Perf. 91), and 2026-04-18 (Recovery 73, Sleep Perf. 86). Since 4 meets the threshold of 'at least 4', the commitment is satisfied.\",\n  \"cited_days\": [\n    \"2026-04-14\",\n    \"2026-04-15\",\n    \"2026-04-17\",\n    \"2026-04-18\"\n  ],\n  \"flags\": []\n}\n```",
+          "parsed_verdict": "hit",
+          "parsed_confidence": 1.0,
+          "parsed_reasoning": "The user committed to achieving both a recovery score of 70 or higher and a sleep performance score of 85 or higher on at least 4 days. The data shows this dual condition was met on exactly 4 days during the window: 2026-04-14 (Recovery 82, Sleep Perf. 88), 2026-04-15 (Recovery 71, Sleep Perf. 90), 2026-04-17 (Recovery 88, Sleep Perf. 91), and 2026-04-18 (Recovery 73, Sleep Perf. 86). Since 4 meets the threshold of 'at least 4', the commitment is satisfied.",
+          "parsed_flags": [],
+          "parsed_cited_days": [
+            "2026-04-14",
+            "2026-04-15",
+            "2026-04-17",
+            "2026-04-18"
+          ],
+          "latency_s": 18.290985107421875,
+          "input_tokens": 1522,
+          "output_tokens": 272,
+          "cost_usd": 0.0046225,
+          "error": null,
+          "scores": {
+            "verdict_match": 10,
+            "reasoning_quality": 10,
+            "edge_case_awareness": 7,
+            "hallucination": 10,
+            "verdict": "Correct verdict with accurate dates, values, and threshold reasoning; minimal edge-case flagging.",
+            "_judge_model": "opus-4.7"
+          },
+          "strict_match": true
+        },
+        {
+          "case": "multi_metric_composite#1",
+          "model": "gemini-2.5-pro",
+          "output": "```json\n{\n  \"verdict\": \"hit\",\n  \"confidence\": 1.0,\n  \"reasoning\": \"The commitment required at least 4 days with both a recovery score >= 70 and a sleep performance score >= 85. I analyzed the data for each day in the window from 2026-04-13 to 2026-04-19. Four days met both criteria: 2026-04-14 (Recovery 82, Sleep 88), 2026-04-15 (Recovery 71, Sleep 90), 2026-04-17 (Recovery 88, Sleep 91), and 2026-04-18 (Recovery 73, Sleep 86). As the count of 4 meets the required threshold, the verdict is 'hit'.\",\n  \"cited_days\": [\n    \"2026-04-14\",\n    \"2026-04-15\",\n    \"2026-04-17\",\n    \"2026-04-18\"\n  ],\n  \"flags\": []\n}\n```",
+          "parsed_verdict": "hit",
+          "parsed_confidence": 1.0,
+          "parsed_reasoning": "The commitment required at least 4 days with both a recovery score >= 70 and a sleep performance score >= 85. I analyzed the data for each day in the window from 2026-04-13 to 2026-04-19. Four days met both criteria: 2026-04-14 (Recovery 82, Sleep 88), 2026-04-15 (Recovery 71, Sleep 90), 2026-04-17 (Recovery 88, Sleep 91), and 2026-04-18 (Recovery 73, Sleep 86). As the count of 4 meets the required threshold, the verdict is 'hit'.",
+          "parsed_flags": [],
+          "parsed_cited_days": [
+            "2026-04-14",
+            "2026-04-15",
+            "2026-04-17",
+            "2026-04-18"
+          ],
+          "latency_s": 15.471009016036987,
+          "input_tokens": 1522,
+          "output_tokens": 282,
+          "cost_usd": 0.0047225,
+          "error": null,
+          "scores": {
+            "verdict_match": 10,
+            "reasoning_quality": 10,
+            "edge_case_awareness": 7,
+            "hallucination": 10,
+            "verdict": "Correct verdict with accurate dates and values; could note threshold met exactly.",
+            "_judge_model": "opus-4.7"
+          },
+          "strict_match": true
+        },
+        {
+          "case": "multi_metric_composite#2",
+          "model": "gemini-2.5-pro",
+          "output": "```json\n{\n  \"verdict\": \"hit\",\n  \"confidence\": 1.0,\n  \"reasoning\": \"The commitment required hitting both a recovery score of 70 or higher and a sleep performance score of 85 or higher on the same day, for at least 4 days within the window. I paired the recovery and sleep data for each day based on the Whoop cycle's end date. The criteria were met on four days: 2026-04-14 (82 recovery, 88 sleep), 2026-04-15 (71 recovery, 90 sleep), 2026-04-17 (88 recovery, 91 sleep), and 2026-04-18 (73 recovery, 86 sleep). Since the target of 4 days was reached, the commitment is a 'hit'.\",\n  \"cited_days\": [\n    \"2026-04-14\",\n    \"2026-04-15\",\n    \"2026-04-17\",\n    \"2026-04-18\"\n  ],\n  \"flags\": []\n}\n```",
+          "parsed_verdict": "hit",
+          "parsed_confidence": 1.0,
+          "parsed_reasoning": "The commitment required hitting both a recovery score of 70 or higher and a sleep performance score of 85 or higher on the same day, for at least 4 days within the window. I paired the recovery and sleep data for each day based on the Whoop cycle's end date. The criteria were met on four days: 2026-04-14 (82 recovery, 88 sleep), 2026-04-15 (71 recovery, 90 sleep), 2026-04-17 (88 recovery, 91 sleep), and 2026-04-18 (73 recovery, 86 sleep). Since the target of 4 days was reached, the commitment is a 'hit'.",
+          "parsed_flags": [],
+          "parsed_cited_days": [
+            "2026-04-14",
+            "2026-04-15",
+            "2026-04-17",
+            "2026-04-18"
+          ],
+          "latency_s": 18.82629919052124,
+          "input_tokens": 1522,
+          "output_tokens": 279,
+          "cost_usd": 0.0046925,
+          "error": null,
+          "scores": {
+            "verdict_match": 10,
+            "reasoning_quality": 10,
+            "edge_case_awareness": 7,
+            "hallucination": 10,
+            "verdict": "Correct hit verdict with accurate dates, values, and clear same-day pairing logic.",
+            "_judge_model": "opus-4.7"
+          },
+          "strict_match": true
+        }
+      ]
+    },
+    {
+      "case": "streak_vs_total",
+      "commitment": "Hit recovery score of 70 or higher on 5 CONSECUTIVE days at some point this week.",
+      "expected_verdict": "miss",
+      "model_results": [
+        {
+          "case": "streak_vs_total",
+          "model": "gpt-5",
+          "output": "{\n  \"verdict\": \"miss\",\n  \"confidence\": 0.96,\n  \"reasoning\": \"Within the UTC window (2026-04-13 to 2026-04-19), daily Whoop recovery scores >=70 occurred on 2026-04-13 (82), 2026-04-14 (78), 2026-04-16 (73), 2026-04-17 (80), 2026-04-18 (77), and 2026-04-19 (74). The longest consecutive streaks are 2026-04-13 to 2026-04-14 (2 days) and 2026-04-16 to 2026-04-19 (4 days). No 5-day consecutive streak exists within the window.\",\n  \"cited_days\": [\n    \"2026-04-13\",\n    \"2026-04-14\",\n    \"2026-04-16\",\n    \"2026-04-17\",\n    \"2026-04-18\",\n    \"2026-04-19\"\n  ],\n  \"flags\": []\n}",
+          "parsed_verdict": "miss",
+          "parsed_confidence": 0.96,
+          "parsed_reasoning": "Within the UTC window (2026-04-13 to 2026-04-19), daily Whoop recovery scores >=70 occurred on 2026-04-13 (82), 2026-04-14 (78), 2026-04-16 (73), 2026-04-17 (80), 2026-04-18 (77), and 2026-04-19 (74). The longest consecutive streaks are 2026-04-13 to 2026-04-14 (2 days) and 2026-04-16 to 2026-04-19 (4 days). No 5-day consecutive streak exists within the window.",
+          "parsed_flags": [],
+          "parsed_cited_days": [
+            "2026-04-13",
+            "2026-04-14",
+            "2026-04-16",
+            "2026-04-17",
+            "2026-04-18",
+            "2026-04-19"
+          ],
+          "latency_s": 42.803877115249634,
+          "input_tokens": 700,
+          "output_tokens": 2296,
+          "cost_usd": 0.023835,
+          "error": null,
+          "scores": {
+            "verdict_match": 10,
+            "reasoning_quality": 10,
+            "edge_case_awareness": 8,
+            "hallucination": 10,
+            "verdict": "Correctly identified miss with accurate consecutive-streak analysis and proper citation of the Apr 15 break.",
+            "_judge_model": "opus-4.7"
+          },
+          "strict_match": true
+        },
+        {
+          "case": "streak_vs_total#1",
+          "model": "gpt-5",
+          "output": "{\n  \"verdict\": \"miss\",\n  \"confidence\": 0.97,\n  \"reasoning\": \"Using UTC timestamps within 2026-04-13 to 2026-04-19, recovery >= 70 occurred on 6 days (13, 14, 16, 17, 18, 19), but there is no 5-day consecutive streak: the run on 13\u201314 is broken by 2026-04-15 (55), and 16\u201319 is only 4 days.\",\n  \"cited_days\": [\"2026-04-13\", \"2026-04-14\", \"2026-04-16\", \"2026-04-17\", \"2026-04-18\", \"2026-04-19\"],\n  \"flags\": []\n}",
+          "parsed_verdict": "miss",
+          "parsed_confidence": 0.97,
+          "parsed_reasoning": "Using UTC timestamps within 2026-04-13 to 2026-04-19, recovery >= 70 occurred on 6 days (13, 14, 16, 17, 18, 19), but there is no 5-day consecutive streak: the run on 13\u201314 is broken by 2026-04-15 (55), and 16\u201319 is only 4 days.",
+          "parsed_flags": [],
+          "parsed_cited_days": [
+            "2026-04-13",
+            "2026-04-14",
+            "2026-04-16",
+            "2026-04-17",
+            "2026-04-18",
+            "2026-04-19"
+          ],
+          "latency_s": 34.051836252212524,
+          "input_tokens": 700,
+          "output_tokens": 1717,
+          "cost_usd": 0.018045,
+          "error": null,
+          "scores": {
+            "verdict_match": 10,
+            "reasoning_quality": 10,
+            "edge_case_awareness": 9,
+            "hallucination": 10,
+            "verdict": "Correctly identified miss, cited broken streak on Apr 15 and 4-day max run.",
+            "_judge_model": "opus-4.7"
+          },
+          "strict_match": true
+        },
+        {
+          "case": "streak_vs_total#2",
+          "model": "gpt-5",
+          "output": "{\n  \"verdict\": \"miss\",\n  \"confidence\": 0.99,\n  \"reasoning\": \"Within the UTC window 2026-04-13 to 2026-04-19, recovery scores by date were: 82, 78, 55, 73, 80, 77, 74. Days meeting >=70 were 04-13, 04-14, 04-16, 04-17, 04-18, 04-19, but the longest consecutive streak was 4 days (2026-04-16 to 2026-04-19). No 5-day consecutive run occurred within the week.\",\n  \"cited_days\": [\"2026-04-13\", \"2026-04-14\", \"2026-04-16\", \"2026-04-17\", \"2026-04-18\", \"2026-04-19\"],\n  \"flags\": []\n}",
+          "parsed_verdict": "miss",
+          "parsed_confidence": 0.99,
+          "parsed_reasoning": "Within the UTC window 2026-04-13 to 2026-04-19, recovery scores by date were: 82, 78, 55, 73, 80, 77, 74. Days meeting >=70 were 04-13, 04-14, 04-16, 04-17, 04-18, 04-19, but the longest consecutive streak was 4 days (2026-04-16 to 2026-04-19). No 5-day consecutive run occurred within the week.",
+          "parsed_flags": [],
+          "parsed_cited_days": [
+            "2026-04-13",
+            "2026-04-14",
+            "2026-04-16",
+            "2026-04-17",
+            "2026-04-18",
+            "2026-04-19"
+          ],
+          "latency_s": 43.03547692298889,
+          "input_tokens": 700,
+          "output_tokens": 2195,
+          "cost_usd": 0.022825,
+          "error": null,
+          "scores": {
+            "verdict_match": 10,
+            "reasoning_quality": 10,
+            "edge_case_awareness": 9,
+            "hallucination": 10,
+            "verdict": "Correctly identified miss, cited consecutive streak of 4 days broken by Apr 15.",
+            "_judge_model": "opus-4.7"
+          },
+          "strict_match": true
+        },
+        {
+          "case": "streak_vs_total",
+          "model": "gemini-2.5-pro",
+          "output": "```json\n{\n  \"verdict\": \"miss\",\n  \"confidence\": 1.0,\n  \"reasoning\": \"The user committed to achieving a recovery score of 70 or higher on 5 consecutive days. I analyzed the provided Whoop data for the specified week. There were two periods where the recovery score was at or above 70: a 2-day streak from 2026-04-13 to 2026-04-14, and a 4-day streak from 2026-04-16 to 2026-04-19. Since the longest consecutive streak was 4 days, the commitment for a 5-day streak was not met.\",\n  \"cited_days\": [],\n  \"flags\": []\n}\n```",
+          "parsed_verdict": "miss",
+          "parsed_confidence": 1.0,
+          "parsed_reasoning": "The user committed to achieving a recovery score of 70 or higher on 5 consecutive days. I analyzed the provided Whoop data for the specified week. There were two periods where the recovery score was at or above 70: a 2-day streak from 2026-04-13 to 2026-04-14, and a 4-day streak from 2026-04-16 to 2026-04-19. Since the longest consecutive streak was 4 days, the commitment for a 5-day streak was not met.",
+          "parsed_flags": [],
+          "parsed_cited_days": [],
+          "latency_s": 11.820991039276123,
+          "input_tokens": 853,
+          "output_tokens": 182,
+          "cost_usd": 0.00288625,
+          "error": null,
+          "scores": {
+            "verdict_match": 10,
+            "reasoning_quality": 10,
+            "edge_case_awareness": 8,
+            "hallucination": 10,
+            "verdict": "Correctly identified miss with accurate streak analysis and proper date citations.",
+            "_judge_model": "opus-4.7"
+          },
+          "strict_match": true
+        },
+        {
+          "case": "streak_vs_total#1",
+          "model": "gemini-2.5-pro",
+          "output": "```json\n{\n  \"verdict\": \"miss\",\n  \"confidence\": 1.0,\n  \"reasoning\": \"The commitment required a recovery score of 70 or higher on 5 consecutive days. I analyzed the recovery scores for each day in the window. The user achieved a streak of 2 consecutive days (April 13th, 14th) and a streak of 4 consecutive days (April 16th, 17th, 18th, 19th). Neither of these streaks met the 5-day requirement, so the commitment was not met.\",\n  \"cited_days\": [],\n  \"flags\": []\n}\n```",
+          "parsed_verdict": "miss",
+          "parsed_confidence": 1.0,
+          "parsed_reasoning": "The commitment required a recovery score of 70 or higher on 5 consecutive days. I analyzed the recovery scores for each day in the window. The user achieved a streak of 2 consecutive days (April 13th, 14th) and a streak of 4 consecutive days (April 16th, 17th, 18th, 19th). Neither of these streaks met the 5-day requirement, so the commitment was not met.",
+          "parsed_flags": [],
+          "parsed_cited_days": [],
+          "latency_s": 10.207765817642212,
+          "input_tokens": 853,
+          "output_tokens": 149,
+          "cost_usd": 0.00255625,
+          "error": null,
+          "scores": {
+            "verdict_match": 10,
+            "reasoning_quality": 9,
+            "edge_case_awareness": 7,
+            "hallucination": 10,
+            "verdict": "Correct miss verdict with accurate streak analysis; didn't explicitly cite Apr 15 break.",
+            "_judge_model": "opus-4.7"
+          },
+          "strict_match": true
+        },
+        {
+          "case": "streak_vs_total#2",
+          "model": "gemini-2.5-pro",
+          "output": "```json\n{\n  \"verdict\": \"miss\",\n  \"confidence\": 1.0,\n  \"reasoning\": \"The user was required to achieve a recovery score of 70 or higher on 5 consecutive days. The data shows the longest streak of days meeting this criterion was 4, from 2026-04-16 to 2026-04-19. This streak was broken on 2026-04-15 (score 55) and did not reach the required length of 5 days.\",\n  \"cited_days\": [],\n  \"flags\": []\n}\n```",
+          "parsed_verdict": "miss",
+          "parsed_confidence": 1.0,
+          "parsed_reasoning": "The user was required to achieve a recovery score of 70 or higher on 5 consecutive days. The data shows the longest streak of days meeting this criterion was 4, from 2026-04-16 to 2026-04-19. This streak was broken on 2026-04-15 (score 55) and did not reach the required length of 5 days.",
+          "parsed_flags": [],
+          "parsed_cited_days": [],
+          "latency_s": 12.41292119026184,
+          "input_tokens": 853,
+          "output_tokens": 143,
+          "cost_usd": 0.00249625,
+          "error": null,
+          "scores": {
+            "verdict_match": 10,
+            "reasoning_quality": 9,
+            "edge_case_awareness": 8,
+            "hallucination": 10,
+            "verdict": "Correct miss verdict with accurate streak analysis and proper citation of breaking day.",
+            "_judge_model": "opus-4.7"
+          },
+          "strict_match": true
+        }
+      ]
+    },
+    {
+      "case": "oura_sleep_commitment",
+      "commitment": "Hit an Oura sleep score of 80 or higher on at least 5 of 7 nights this week.",
+      "expected_verdict": "hit",
+      "model_results": [
+        {
+          "case": "oura_sleep_commitment",
+          "model": "gpt-5",
+          "output": "{\n  \"verdict\": \"hit\",\n  \"confidence\": 0.9,\n  \"reasoning\": \"Within the UTC window 2026-04-13 through 2026-04-19 inclusive, there are 7 Oura daily sleep entries. Nights with sleep score >= 80 are on 2026-04-13 (84), 2026-04-14 (88), 2026-04-16 (81), 2026-04-18 (85), and 2026-04-19 (82), totaling 5 of 7, which meets the commitment.\",\n  \"cited_days\": [\"2026-04-13\", \"2026-04-14\", \"2026-04-16\", \"2026-04-18\", \"2026-04-19\"],\n  \"flags\": [\"boundary ambiguity (Oura 'day' is local-date based while window is in UTC; no timestamps provided)\"]\n}",
+          "parsed_verdict": "hit",
+          "parsed_confidence": 0.9,
+          "parsed_reasoning": "Within the UTC window 2026-04-13 through 2026-04-19 inclusive, there are 7 Oura daily sleep entries. Nights with sleep score >= 80 are on 2026-04-13 (84), 2026-04-14 (88), 2026-04-16 (81), 2026-04-18 (85), and 2026-04-19 (82), totaling 5 of 7, which meets the commitment.",
+          "parsed_flags": [
+            "boundary ambiguity (Oura 'day' is local-date based while window is in UTC; no timestamps provided)"
+          ],
+          "parsed_cited_days": [
+            "2026-04-13",
+            "2026-04-14",
+            "2026-04-16",
+            "2026-04-18",
+            "2026-04-19"
+          ],
+          "latency_s": 36.3472158908844,
+          "input_tokens": 1037,
+          "output_tokens": 1747,
+          "cost_usd": 0.01876625,
+          "error": null,
+          "scores": {
+            "verdict_match": 10,
+            "reasoning_quality": 10,
+            "edge_case_awareness": 8,
+            "hallucination": 10,
+            "verdict": "Correct hit verdict with accurate dates, scores, and thoughtful UTC boundary flag.",
+            "_judge_model": "opus-4.7"
+          },
+          "strict_match": true
+        },
+        {
+          "case": "oura_sleep_commitment#1",
+          "model": "gpt-5",
+          "output": "{\n  \"verdict\": \"hit\",\n  \"confidence\": 0.96,\n  \"reasoning\": \"Counted Oura sleep scores for 2026-04-13 through 2026-04-19 (7 nights). Nights with score >= 80 occurred on 2026-04-13 (84), 2026-04-14 (88), 2026-04-16 (81), 2026-04-18 (85), and 2026-04-19 (82), totaling 5 of 7 and meeting the target.\",\n  \"cited_days\": [\"2026-04-13\", \"2026-04-14\", \"2026-04-16\", \"2026-04-18\", \"2026-04-19\"],\n  \"flags\": []\n}",
+          "parsed_verdict": "hit",
+          "parsed_confidence": 0.96,
+          "parsed_reasoning": "Counted Oura sleep scores for 2026-04-13 through 2026-04-19 (7 nights). Nights with score >= 80 occurred on 2026-04-13 (84), 2026-04-14 (88), 2026-04-16 (81), 2026-04-18 (85), and 2026-04-19 (82), totaling 5 of 7 and meeting the target.",
+          "parsed_flags": [],
+          "parsed_cited_days": [
+            "2026-04-13",
+            "2026-04-14",
+            "2026-04-16",
+            "2026-04-18",
+            "2026-04-19"
+          ],
+          "latency_s": 26.388792991638184,
+          "input_tokens": 1037,
+          "output_tokens": 1333,
+          "cost_usd": 0.01462625,
+          "error": null,
+          "scores": {
+            "verdict_match": 10,
+            "reasoning_quality": 9,
+            "edge_case_awareness": 6,
+            "hallucination": 10,
+            "verdict": "Correct hit verdict with accurate dates and scores; lacks explicit boundary/ambiguity flagging.",
+            "_judge_model": "opus-4.7"
+          },
+          "strict_match": true
+        },
+        {
+          "case": "oura_sleep_commitment#2",
+          "model": "gpt-5",
+          "output": "{\n  \"verdict\": \"hit\",\n  \"confidence\": 0.97,\n  \"reasoning\": \"Reviewed Oura sleep scores for 2026-04-13 through 2026-04-19 (7 nights). Nights with scores \u226580 occurred on 2026-04-13 (84), 2026-04-14 (88), 2026-04-16 (81), 2026-04-18 (85), and 2026-04-19 (82), totaling 5 of 7. The remaining days (2026-04-15: 67, 2026-04-17: 76) were below threshold. Data fully covers the window.\",\n  \"cited_days\": [\"2026-04-13\", \"2026-04-14\", \"2026-04-16\", \"2026-04-18\", \"2026-04-19\"],\n  \"flags\": []\n}",
+          "parsed_verdict": "hit",
+          "parsed_confidence": 0.97,
+          "parsed_reasoning": "Reviewed Oura sleep scores for 2026-04-13 through 2026-04-19 (7 nights). Nights with scores \u226580 occurred on 2026-04-13 (84), 2026-04-14 (88), 2026-04-16 (81), 2026-04-18 (85), and 2026-04-19 (82), totaling 5 of 7. The remaining days (2026-04-15: 67, 2026-04-17: 76) were below threshold. Data fully covers the window.",
+          "parsed_flags": [],
+          "parsed_cited_days": [
+            "2026-04-13",
+            "2026-04-14",
+            "2026-04-16",
+            "2026-04-18",
+            "2026-04-19"
+          ],
+          "latency_s": 24.64067816734314,
+          "input_tokens": 1037,
+          "output_tokens": 1234,
+          "cost_usd": 0.01363625,
+          "error": null,
+          "scores": {
+            "verdict_match": 10,
+            "reasoning_quality": 10,
+            "edge_case_awareness": 8,
+            "hallucination": 10,
+            "verdict": "Accurate hit verdict with correct dates, scores, and threshold reasoning; minimal edge-case flagging needed.",
+            "_judge_model": "opus-4.7"
+          },
+          "strict_match": true
+        },
+        {
+          "case": "oura_sleep_commitment",
+          "model": "gemini-2.5-pro",
+          "output": "```json\n{\n  \"verdict\": \"hit\",\n  \"confidence\": 1.0,\n  \"reasoning\": \"The commitment required an Oura sleep score of 80 or higher on at least 5 days during the 7-day window. The data shows exactly 5 days met this criterion, with scores of 84 (2026-04-13), 88 (2026-04-14), 81 (2026-04-16), 85 (2026-04-18), and 82 (2026-04-19). Since 5 is greater than or equal to the required 5, the commitment was met.\",\n  \"cited_days\": [\n    \"2026-04-13\",\n    \"2026-04-14\",\n    \"2026-04-16\",\n    \"2026-04-18\",\n    \"2026-04-19\"\n  ],\n  \"flags\": []\n}\n```",
+          "parsed_verdict": "hit",
+          "parsed_confidence": 1.0,
+          "parsed_reasoning": "The commitment required an Oura sleep score of 80 or higher on at least 5 days during the 7-day window. The data shows exactly 5 days met this criterion, with scores of 84 (2026-04-13), 88 (2026-04-14), 81 (2026-04-16), 85 (2026-04-18), and 82 (2026-04-19). Since 5 is greater than or equal to the required 5, the commitment was met.",
+          "parsed_flags": [],
+          "parsed_cited_days": [
+            "2026-04-13",
+            "2026-04-14",
+            "2026-04-16",
+            "2026-04-18",
+            "2026-04-19"
+          ],
+          "latency_s": 9.216997146606445,
+          "input_tokens": 1246,
+          "output_tokens": 258,
+          "cost_usd": 0.0041375,
+          "error": null,
+          "scores": {
+            "verdict_match": 10,
+            "reasoning_quality": 9,
+            "edge_case_awareness": 6,
+            "hallucination": 10,
+            "verdict": "Correct hit verdict with accurate dates and scores; missed noting the exact boundary threshold.",
+            "_judge_model": "opus-4.7"
+          },
+          "strict_match": true
+        },
+        {
+          "case": "oura_sleep_commitment#1",
+          "model": "gemini-2.5-pro",
+          "output": "```json\n{\n  \"verdict\": \"hit\",\n  \"confidence\": 1.0,\n  \"reasoning\": \"The commitment required an Oura sleep score of 80 or higher on at least 5 of the 7 nights in the specified window (2026-04-13 to 2026-04-19). The provided data shows sleep scores of 80 or higher on exactly 5 nights: 2026-04-13 (score 84), 2026-04-14 (score 88), 2026-04-16 (score 81), 2026-04-18 (score 85), and 2026-04-19 (score 82). Since 5 meets the requirement of 'at least 5', the commitment is satisfied.\",\n  \"cited_days\": [\n    \"2026-04-13\",\n    \"2026-04-14\",\n    \"2026-04-16\",\n    \"2026-04-18\",\n    \"2026-04-19\"\n  ],\n  \"flags\": []\n}\n```",
+          "parsed_verdict": "hit",
+          "parsed_confidence": 1.0,
+          "parsed_reasoning": "The commitment required an Oura sleep score of 80 or higher on at least 5 of the 7 nights in the specified window (2026-04-13 to 2026-04-19). The provided data shows sleep scores of 80 or higher on exactly 5 nights: 2026-04-13 (score 84), 2026-04-14 (score 88), 2026-04-16 (score 81), 2026-04-18 (score 85), and 2026-04-19 (score 82). Since 5 meets the requirement of 'at least 5', the commitment is satisfied.",
+          "parsed_flags": [],
+          "parsed_cited_days": [
+            "2026-04-13",
+            "2026-04-14",
+            "2026-04-16",
+            "2026-04-18",
+            "2026-04-19"
+          ],
+          "latency_s": 11.293665885925293,
+          "input_tokens": 1246,
+          "output_tokens": 295,
+          "cost_usd": 0.0045075,
+          "error": null,
+          "scores": {
+            "verdict_match": 10,
+            "reasoning_quality": 10,
+            "edge_case_awareness": 7,
+            "hallucination": 10,
+            "verdict": "Correct hit verdict with accurate dates and scores; could note boundary tightness explicitly.",
+            "_judge_model": "opus-4.7"
+          },
+          "strict_match": true
+        },
+        {
+          "case": "oura_sleep_commitment#2",
+          "model": "gemini-2.5-pro",
+          "output": "```json\n{\n  \"verdict\": \"hit\",\n  \"confidence\": 1.0,\n  \"reasoning\": \"The commitment required an Oura sleep score of 80 or higher on at least 5 of the 7 nights in the window from 2026-04-13 to 2026-04-19. The provided data shows scores of 84, 88, 67, 81, 76, 85, and 82 for the respective days. A total of 5 days met or exceeded the score of 80, thus satisfying the commitment.\",\n  \"cited_days\": [\n    \"2026-04-13\",\n    \"2026-04-14\",\n    \"2026-04-16\",\n    \"2026-04-18\",\n    \"2026-04-19\"\n  ],\n  \"flags\": []\n}\n```",
+          "parsed_verdict": "hit",
+          "parsed_confidence": 1.0,
+          "parsed_reasoning": "The commitment required an Oura sleep score of 80 or higher on at least 5 of the 7 nights in the window from 2026-04-13 to 2026-04-19. The provided data shows scores of 84, 88, 67, 81, 76, 85, and 82 for the respective days. A total of 5 days met or exceeded the score of 80, thus satisfying the commitment.",
+          "parsed_flags": [],
+          "parsed_cited_days": [
+            "2026-04-13",
+            "2026-04-14",
+            "2026-04-16",
+            "2026-04-18",
+            "2026-04-19"
+          ],
+          "latency_s": 11.411209106445312,
+          "input_tokens": 1246,
+          "output_tokens": 233,
+          "cost_usd": 0.0038875,
+          "error": null,
+          "scores": {
+            "verdict_match": 10,
+            "reasoning_quality": 9,
+            "edge_case_awareness": 6,
+            "hallucination": 10,
+            "verdict": "Correct hit verdict with accurate dates and scores; missed noting the exact-threshold boundary.",
+            "_judge_model": "opus-4.7"
+          },
+          "strict_match": true
+        }
+      ]
+    },
+    {
+      "case": "strap_gaming",
+      "commitment": "Average daily strain of 12 or higher over this 7-day week.",
+      "expected_verdict": "ambiguous",
+      "model_results": [
+        {
+          "case": "strap_gaming",
+          "model": "gpt-5",
+          "output": "{\n  \"verdict\": \"miss\",\n  \"confidence\": 0.84,\n  \"reasoning\": \"Considered the 7 WHOOP daily cycles whose starts fall within the UTC window (2026-04-13T05:00Z through 2026-04-19T05:00Z). Strain values were 14.2, 15.8, 2.1, 1.8, 13.1, 14.9, and 13.7, summing to 75.6 for an average of 10.8 over 7 days, below the 12.0 target. Note low wearable time on Apr 15 (9,800s) and Apr 16 (7,200s), and that WHOOP day boundaries (05:00Z\u201305:00Z) don\u2019t align with UTC calendar days; however, this boundary mismatch is unlikely to change the outcome.\",\n  \"cited_days\": [\n    \"2026-04-13\",\n    \"2026-04-14\",\n    \"2026-04-15\",\n    \"2026-04-16\",\n    \"2026-04-17\",\n    \"2026-04-18\",\n    \"2026-04-19\"\n  ],\n  \"flags\": [\n    \"whoop day boundaries (05:00Z\u201305:00Z) misaligned with UTC window\",\n    \"low strap wear on 2026-04-15 (9800s) and 2026-04-16 (7200s)\",\n    \"window edge overlap: first and last cycles extend outside window\"\n  ]\n}",
+          "parsed_verdict": "miss",
+          "parsed_confidence": 0.84,
+          "parsed_reasoning": "Considered the 7 WHOOP daily cycles whose starts fall within the UTC window (2026-04-13T05:00Z through 2026-04-19T05:00Z). Strain values were 14.2, 15.8, 2.1, 1.8, 13.1, 14.9, and 13.7, summing to 75.6 for an average of 10.8 over 7 days, below the 12.0 target. Note low wearable time on Apr 15 (9,800s) and Apr 16 (7,200s), and that WHOOP day boundaries (05:00Z\u201305:00Z) don\u2019t align with UTC calendar days; however, this boundary mismatch is unlikely to change the outcome.",
+          "parsed_flags": [
+            "whoop day boundaries (05:00Z\u201305:00Z) misaligned with UTC window",
+            "low strap wear on 2026-04-15 (9800s) and 2026-04-16 (7200s)",
+            "window edge overlap: first and last cycles extend outside window"
+          ],
+          "parsed_cited_days": [
+            "2026-04-13",
+            "2026-04-14",
+            "2026-04-15",
+            "2026-04-16",
+            "2026-04-17",
+            "2026-04-18",
+            "2026-04-19"
+          ],
+          "latency_s": 86.37029910087585,
+          "input_tokens": 1128,
+          "output_tokens": 5536,
+          "cost_usd": 0.05677,
+          "error": null,
+          "scores": {
+            "verdict_match": 5,
+            "reasoning_quality": 8,
+            "edge_case_awareness": 7,
+            "hallucination": 10,
+            "verdict": "Correct math and flagged low wear, but committed to miss instead of ambiguous.",
+            "_judge_model": "opus-4.7"
+          },
+          "strict_match": false
+        },
+        {
+          "case": "strap_gaming#1",
+          "model": "gpt-5",
+          "output": "{\n  \"verdict\": \"miss\",\n  \"confidence\": 0.72,\n  \"reasoning\": \"Computed average daily strain across the 7 Whoop daily cycles whose start timestamps fall within the window (2026-04-13 to 2026-04-19 UTC): [14.2, 15.8, 2.1, 1.8, 13.1, 14.9, 13.7]. Sum = 75.6; average = 75.6/7 = 10.8, which is below 12. Note two very low-strain days (2026-04-15, 2026-04-16) had minimal wear time, likely undercounting strain, and Whoop day boundaries (05:00\u201305:00Z) don\u2019t align perfectly with the UTC window, but using standard Whoop day cycles still yields an average well under 12.\",\n  \"cited_days\": [\n    \"2026-04-13\",\n    \"2026-04-14\",\n    \"2026-04-15\",\n    \"2026-04-16\",\n    \"2026-04-17\",\n    \"2026-04-18\",\n    \"2026-04-19\"\n  ],\n  \"flags\": [\n    \"boundary ambiguity: Whoop day runs 05:00\u201305:00Z while UTC window is 00:00\u201324:00Z; included cycles starting within window\",\n    \"low strap wear: 2026-04-15 wearable_time_seconds=9800 (~2.7h) and 2026-04-16 wearable_time_seconds=7200 (~2.0h)\"\n  ]\n}",
+          "parsed_verdict": "miss",
+          "parsed_confidence": 0.72,
+          "parsed_reasoning": "Computed average daily strain across the 7 Whoop daily cycles whose start timestamps fall within the window (2026-04-13 to 2026-04-19 UTC): [14.2, 15.8, 2.1, 1.8, 13.1, 14.9, 13.7]. Sum = 75.6; average = 75.6/7 = 10.8, which is below 12. Note two very low-strain days (2026-04-15, 2026-04-16) had minimal wear time, likely undercounting strain, and Whoop day boundaries (05:00\u201305:00Z) don\u2019t align perfectly with the UTC window, but using standard Whoop day cycles still yields an average well under 12.",
+          "parsed_flags": [
+            "boundary ambiguity: Whoop day runs 05:00\u201305:00Z while UTC window is 00:00\u201324:00Z; included cycles starting within window",
+            "low strap wear: 2026-04-15 wearable_time_seconds=9800 (~2.7h) and 2026-04-16 wearable_time_seconds=7200 (~2.0h)"
+          ],
+          "parsed_cited_days": [
+            "2026-04-13",
+            "2026-04-14",
+            "2026-04-15",
+            "2026-04-16",
+            "2026-04-17",
+            "2026-04-18",
+            "2026-04-19"
+          ],
+          "latency_s": 79.54053783416748,
+          "input_tokens": 1128,
+          "output_tokens": 4976,
+          "cost_usd": 0.05117,
+          "error": null,
+          "scores": {
+            "verdict_match": 5,
+            "reasoning_quality": 8,
+            "edge_case_awareness": 7,
+            "hallucination": 10,
+            "verdict": "Correct math and flagged low-wear days, but chose miss over ambiguous verdict.",
+            "_judge_model": "opus-4.7"
+          },
+          "strict_match": false
+        },
+        {
+          "case": "strap_gaming#2",
+          "model": "gpt-5",
+          "output": "{\n  \"verdict\": \"miss\",\n  \"confidence\": 0.87,\n  \"reasoning\": \"Counted the 7 Whoop daily cycles whose start times fall within the UTC window (2026-04-13 to 2026-04-19). Their strain values were [14.2, 15.8, 2.1, 1.8, 13.1, 14.9, 13.7], summing to 75.6 for a 7-day average of 10.8, which is below 12. Two very low-wear days (\u22482.7h and \u22482.0h) likely depressed strain, but no exclusion rule was specified. Using an alternate day-boundary selection would not raise the average to \u226512.\",\n  \"cited_days\": [\n    \"2026-04-13\",\n    \"2026-04-14\",\n    \"2026-04-17\",\n    \"2026-04-18\",\n    \"2026-04-19\"\n  ],\n  \"flags\": [\n    \"low strap wear on 2026-04-15 (~2.7h) and 2026-04-16 (~2.0h)\",\n    \"boundary ambiguity (Whoop daily cycles run 05:00Z\u201305:00Z; counted cycles starting within UTC window)\"\n  ]\n}",
+          "parsed_verdict": "miss",
+          "parsed_confidence": 0.87,
+          "parsed_reasoning": "Counted the 7 Whoop daily cycles whose start times fall within the UTC window (2026-04-13 to 2026-04-19). Their strain values were [14.2, 15.8, 2.1, 1.8, 13.1, 14.9, 13.7], summing to 75.6 for a 7-day average of 10.8, which is below 12. Two very low-wear days (\u22482.7h and \u22482.0h) likely depressed strain, but no exclusion rule was specified. Using an alternate day-boundary selection would not raise the average to \u226512.",
+          "parsed_flags": [
+            "low strap wear on 2026-04-15 (~2.7h) and 2026-04-16 (~2.0h)",
+            "boundary ambiguity (Whoop daily cycles run 05:00Z\u201305:00Z; counted cycles starting within UTC window)"
+          ],
+          "parsed_cited_days": [
+            "2026-04-13",
+            "2026-04-14",
+            "2026-04-17",
+            "2026-04-18",
+            "2026-04-19"
+          ],
+          "latency_s": 73.23462414741516,
+          "input_tokens": 1128,
+          "output_tokens": 4652,
+          "cost_usd": 0.04793,
+          "error": null,
+          "scores": {
+            "verdict_match": 5,
+            "reasoning_quality": 8,
+            "edge_case_awareness": 7,
+            "hallucination": 9,
+            "verdict": "Correctly computed average and flagged low-wear days, but chose miss over ambiguous.",
+            "_judge_model": "opus-4.7"
+          },
+          "strict_match": false
+        },
+        {
+          "case": "strap_gaming",
+          "model": "gemini-2.5-pro",
+          "output": "```json\n{\n  \"verdict\": \"ambiguous\",\n  \"confidence\": 0.95,\n  \"reasoning\": \"The average Whoop strain across the 7 cycles in the window is 10.8 (75.6 total strain / 7 days), which is below the target of 12. However, the verdict is 'ambiguous' because the data for 2026-04-15 and 2026-04-16 is unreliable due to extremely low wearable time (2.7 and 2.0 hours respectively). This incomplete data capture makes it impossible to be certain of the user's true average strain.\",\n  \"cited_days\": [],\n  \"flags\": [\n    \"low strap wear on 2026-04-15 (2.7 hrs)\",\n    \"low strap wear on 2026-04-16 (2.0 hrs)\"\n  ]\n}\n```",
+          "parsed_verdict": "ambiguous",
+          "parsed_confidence": 0.95,
+          "parsed_reasoning": "The average Whoop strain across the 7 cycles in the window is 10.8 (75.6 total strain / 7 days), which is below the target of 12. However, the verdict is 'ambiguous' because the data for 2026-04-15 and 2026-04-16 is unreliable due to extremely low wearable time (2.7 and 2.0 hours respectively). This incomplete data capture makes it impossible to be certain of the user's true average strain.",
+          "parsed_flags": [
+            "low strap wear on 2026-04-15 (2.7 hrs)",
+            "low strap wear on 2026-04-16 (2.0 hrs)"
+          ],
+          "parsed_cited_days": [],
+          "latency_s": 18.86594009399414,
+          "input_tokens": 1409,
+          "output_tokens": 217,
+          "cost_usd": 0.00393125,
+          "error": null,
+          "scores": {
+            "verdict_match": 10,
+            "reasoning_quality": 9,
+            "edge_case_awareness": 9,
+            "hallucination": 10,
+            "verdict": "Correctly identified ambiguity, cited low wear on Apr 15/16, accurate average calculation.",
+            "_judge_model": "opus-4.7"
+          },
+          "strict_match": true
+        },
+        {
+          "case": "strap_gaming#1",
+          "model": "gemini-2.5-pro",
+          "output": "```json\n{\n  \"verdict\": \"ambiguous\",\n  \"confidence\": 0.95,\n  \"reasoning\": \"The average strain calculated from the seven cycles within the window is 10.8, which is below the target of 12. However, the data for two of the seven days (2026-04-15 and 2026-04-16) shows extremely low wearable time of approximately 2.7 and 2.0 hours, respectively. These low wear times make the associated strain scores (2.1 and 1.8) highly unreliable and likely significant under-representations of the actual daily strain. Because these two days pull the average down substantially, and the commitment does not specify how to handle days with incomplete data, a definitive verdict cannot be reached.\",\n  \"cited_days\": [\n    \"2026-04-13\",\n    \"2026-04-14\",\n    \"2026-04-15\",\n    \"2026-04-16\",\n    \"2026-04-17\",\n    \"2026-04-18\",\n    \"2026-04-19\"\n  ],\n  \"flags\": [\n    \"low strap wear\"\n  ]\n}\n```",
+          "parsed_verdict": "ambiguous",
+          "parsed_confidence": 0.95,
+          "parsed_reasoning": "The average strain calculated from the seven cycles within the window is 10.8, which is below the target of 12. However, the data for two of the seven days (2026-04-15 and 2026-04-16) shows extremely low wearable time of approximately 2.7 and 2.0 hours, respectively. These low wear times make the associated strain scores (2.1 and 1.8) highly unreliable and likely significant under-representations of the actual daily strain. Because these two days pull the average down substantially, and the commitment does not specify how to handle days with incomplete data, a definitive verdict cannot be reached.",
+          "parsed_flags": [
+            "low strap wear"
+          ],
+          "parsed_cited_days": [
+            "2026-04-13",
+            "2026-04-14",
+            "2026-04-15",
+            "2026-04-16",
+            "2026-04-17",
+            "2026-04-18",
+            "2026-04-19"
+          ],
+          "latency_s": 22.431011199951172,
+          "input_tokens": 1409,
+          "output_tokens": 307,
+          "cost_usd": 0.00483125,
+          "error": null,
+          "scores": {
+            "verdict_match": 10,
+            "reasoning_quality": 9,
+            "edge_case_awareness": 9,
+            "hallucination": 10,
+            "verdict": "Correctly identified ambiguity, cited low wear on Apr 15-16, accurate math and reasoning.",
+            "_judge_model": "opus-4.7"
+          },
+          "strict_match": true
+        },
+        {
+          "case": "strap_gaming#2",
+          "model": "gemini-2.5-pro",
+          "output": "```json\n{\n  \"verdict\": \"ambiguous\",\n  \"confidence\": 0.95,\n  \"reasoning\": \"The calculated average strain across the seven days is 10.8 (75.6 total strain / 7 days), which is below the target of 12. However, this result is ambiguous due to severe data quality issues. The strain values for 2026-04-15 (2.1) and 2026-04-16 (1.8) were recorded with only 2.7 and 2.0 hours of strap wear, respectively. These artificially low scores significantly depress the average. Excluding these two days would yield an average of 14.34 (a clear 'hit'). As the commitment does not specify a minimum wear time for a day to be valid, a definitive verdict cannot be made.\",\n  \"cited_days\": [],\n  \"flags\": [\n    \"low strap wear\"\n  ]\n}\n```",
+          "parsed_verdict": "ambiguous",
+          "parsed_confidence": 0.95,
+          "parsed_reasoning": "The calculated average strain across the seven days is 10.8 (75.6 total strain / 7 days), which is below the target of 12. However, this result is ambiguous due to severe data quality issues. The strain values for 2026-04-15 (2.1) and 2026-04-16 (1.8) were recorded with only 2.7 and 2.0 hours of strap wear, respectively. These artificially low scores significantly depress the average. Excluding these two days would yield an average of 14.34 (a clear 'hit'). As the commitment does not specify a minimum wear time for a day to be valid, a definitive verdict cannot be made.",
+          "parsed_flags": [
+            "low strap wear"
+          ],
+          "parsed_cited_days": [],
+          "latency_s": 16.038070678710938,
+          "input_tokens": 1409,
+          "output_tokens": 220,
+          "cost_usd": 0.00396125,
+          "error": null,
+          "scores": {
+            "verdict_match": 10,
+            "reasoning_quality": 9,
+            "edge_case_awareness": 9,
+            "hallucination": 9,
+            "verdict": "Correctly identifies ambiguity, cites low wear on Apr 15/16, solid math and reasoning.",
+            "_judge_model": "opus-4.7"
+          },
+          "strict_match": true
+        }
+      ]
+    },
+    {
+      "case": "week_boundary_edge",
+      "commitment": "Complete at least 4 workouts within the window (inclusive of start, exclusive of end).",
+      "expected_verdict": "ambiguous",
+      "model_results": [
+        {
+          "case": "week_boundary_edge",
+          "model": "gpt-5",
+          "output": "{\n  \"verdict\": \"hit\",\n  \"confidence\": 0.86,\n  \"reasoning\": \"Counted workouts by completion (end timestamp) within the window [2026-04-13T00:00:00Z, 2026-04-20T00:00:00Z). Four workouts ended inside this interval: IDs 7001 (ended 2026-04-13T00:35Z), 7002 (2026-04-13T12:02Z), 7003 (2026-04-15T07:25Z), and 7004 (2026-04-17T18:55Z). Workout 7005 ended after the window (2026-04-20T00:12Z) and 7006 started/ended after the window, so both were excluded.\",\n  \"cited_days\": [\n    \"2026-04-13\",\n    \"2026-04-13\",\n    \"2026-04-15\",\n    \"2026-04-17\"\n  ],\n  \"flags\": [\n    \"boundary overlap (one workout spans the window start; one spans the window end); counted by end time per 'Complete within window' wording\"\n  ]\n}",
+          "parsed_verdict": "hit",
+          "parsed_confidence": 0.86,
+          "parsed_reasoning": "Counted workouts by completion (end timestamp) within the window [2026-04-13T00:00:00Z, 2026-04-20T00:00:00Z). Four workouts ended inside this interval: IDs 7001 (ended 2026-04-13T00:35Z), 7002 (2026-04-13T12:02Z), 7003 (2026-04-15T07:25Z), and 7004 (2026-04-17T18:55Z). Workout 7005 ended after the window (2026-04-20T00:12Z) and 7006 started/ended after the window, so both were excluded.",
+          "parsed_flags": [
+            "boundary overlap (one workout spans the window start; one spans the window end); counted by end time per 'Complete within window' wording"
+          ],
+          "parsed_cited_days": [
+            "2026-04-13",
+            "2026-04-13",
+            "2026-04-15",
+            "2026-04-17"
+          ],
+          "latency_s": 48.368781089782715,
+          "input_tokens": 876,
+          "output_tokens": 3790,
+          "cost_usd": 0.038995,
+          "error": null,
+          "scores": {
+            "verdict_match": 3,
+            "reasoning_quality": 5,
+            "edge_case_awareness": 4,
+            "hallucination": 8,
+            "verdict": "Picked one counting rule unilaterally; noted boundaries but failed to flag ambiguity requiring clarification.",
+            "_judge_model": "opus-4.7"
+          },
+          "strict_match": false
+        },
+        {
+          "case": "week_boundary_edge#1",
+          "model": "gpt-5",
+          "output": "{\n  \"verdict\": \"ambiguous\",\n  \"confidence\": 0.4,\n  \"reasoning\": \"Window is 2026-04-13T00:00:00Z inclusive to 2026-04-20T00:00:00Z exclusive. If counted by workout START within the window, there are 4 (2026-04-13, 2026-04-15, 2026-04-17, 2026-04-19). If counted by END within the window, there are also 4 (including 2026-04-12\u219213, excluding 2026-04-19\u219220). Counting ANY OVERLAP yields 5. Requiring workouts be FULLY CONTAINED yields 3. Because reasonable inclusion rules change the outcome, the result depends on interpretation.\",\n  \"cited_days\": [\"2026-04-13\", \"2026-04-15\", \"2026-04-17\"],\n  \"flags\": [\"boundary ambiguity (start vs end vs overlap vs fully-contained)\"]\n}",
+          "parsed_verdict": "ambiguous",
+          "parsed_confidence": 0.4,
+          "parsed_reasoning": "Window is 2026-04-13T00:00:00Z inclusive to 2026-04-20T00:00:00Z exclusive. If counted by workout START within the window, there are 4 (2026-04-13, 2026-04-15, 2026-04-17, 2026-04-19). If counted by END within the window, there are also 4 (including 2026-04-12\u219213, excluding 2026-04-19\u219220). Counting ANY OVERLAP yields 5. Requiring workouts be FULLY CONTAINED yields 3. Because reasonable inclusion rules change the outcome, the result depends on interpretation.",
+          "parsed_flags": [
+            "boundary ambiguity (start vs end vs overlap vs fully-contained)"
+          ],
+          "parsed_cited_days": [
+            "2026-04-13",
+            "2026-04-15",
+            "2026-04-17"
+          ],
+          "latency_s": 47.63203811645508,
+          "input_tokens": 876,
+          "output_tokens": 3754,
+          "cost_usd": 0.038635,
+          "error": null,
+          "scores": {
+            "verdict_match": 10,
+            "reasoning_quality": 8,
+            "edge_case_awareness": 7,
+            "hallucination": 9,
+            "verdict": "Correctly identified ambiguity with solid interpretation analysis; missed explicit 7001/7005 workout ID citations.",
+            "_judge_model": "opus-4.7"
+          },
+          "strict_match": true
+        },
+        {
+          "case": "week_boundary_edge#2",
+          "model": "gpt-5",
+          "output": "{\n  \"verdict\": \"ambiguous\",\n  \"confidence\": 0.33,\n  \"reasoning\": \"UTC window is [2026-04-13T00:00:00Z, 2026-04-20T00:00:00Z). Three workouts fall wholly inside (2026-04-13, 2026-04-15, 2026-04-17). One workout crosses into the window at the start boundary (starts 2026-04-12T23:45Z, ends 2026-04-13T00:35Z) and another crosses past the end boundary (starts 2026-04-19T23:30Z, ends 2026-04-20T00:12Z). Counting by start-time, end-time, or any-overlap yields \u22654; counting only fully-contained yields 3. Because the commitment doesn\u2019t specify which rule to use, the outcome depends on interpretation.\",\n  \"cited_days\": [\"2026-04-13\", \"2026-04-15\", \"2026-04-17\"],\n  \"flags\": [\"boundary ambiguity: workouts cross the window start and end\", \"counting rule under-specified: start-time vs end-time vs any-overlap vs fully-contained\"]\n}",
+          "parsed_verdict": "ambiguous",
+          "parsed_confidence": 0.33,
+          "parsed_reasoning": "UTC window is [2026-04-13T00:00:00Z, 2026-04-20T00:00:00Z). Three workouts fall wholly inside (2026-04-13, 2026-04-15, 2026-04-17). One workout crosses into the window at the start boundary (starts 2026-04-12T23:45Z, ends 2026-04-13T00:35Z) and another crosses past the end boundary (starts 2026-04-19T23:30Z, ends 2026-04-20T00:12Z). Counting by start-time, end-time, or any-overlap yields \u22654; counting only fully-contained yields 3. Because the commitment doesn\u2019t specify which rule to use, the outcome depends on interpretation.",
+          "parsed_flags": [
+            "boundary ambiguity: workouts cross the window start and end",
+            "counting rule under-specified: start-time vs end-time vs any-overlap vs fully-contained"
+          ],
+          "parsed_cited_days": [
+            "2026-04-13",
+            "2026-04-15",
+            "2026-04-17"
+          ],
+          "latency_s": 41.59233617782593,
+          "input_tokens": 876,
+          "output_tokens": 3416,
+          "cost_usd": 0.035255,
+          "error": null,
+          "scores": {
+            "verdict_match": 10,
+            "reasoning_quality": 9,
+            "edge_case_awareness": 10,
+            "hallucination": 10,
+            "verdict": "Correctly identifies ambiguity, cites boundary workouts and counting rule issue accurately.",
+            "_judge_model": "opus-4.7"
+          },
+          "strict_match": true
+        },
+        {
+          "case": "week_boundary_edge",
+          "model": "gemini-2.5-pro",
+          "output": "```json\n{\n  \"verdict\": \"hit\",\n  \"confidence\": 1.0,\n  \"reasoning\": \"The commitment required at least 4 workouts with a start time between 2026-04-13T00:00:00Z (inclusive) and 2026-04-20T00:00:00Z (exclusive). I counted 4 workouts in the provided data that met this criterion: workout 7002 on 2026-04-13, workout 7003 on 2026-04-15, workout 7004 on 2026-04-17, and workout 7005 on 2026-04-19. Workout 7001 started before the window and workout 7006 started after the window ended.\",\n  \"cited_days\": [\n    \"2026-04-13\",\n    \"2026-04-15\",\n    \"2026-04-17\",\n    \"2026-04-19\"\n  ],\n  \"flags\": []\n}\n```",
+          "parsed_verdict": "hit",
+          "parsed_confidence": 1.0,
+          "parsed_reasoning": "The commitment required at least 4 workouts with a start time between 2026-04-13T00:00:00Z (inclusive) and 2026-04-20T00:00:00Z (exclusive). I counted 4 workouts in the provided data that met this criterion: workout 7002 on 2026-04-13, workout 7003 on 2026-04-15, workout 7004 on 2026-04-17, and workout 7005 on 2026-04-19. Workout 7001 started before the window and workout 7006 started after the window ended.",
+          "parsed_flags": [],
+          "parsed_cited_days": [
+            "2026-04-13",
+            "2026-04-15",
+            "2026-04-17",
+            "2026-04-19"
+          ],
+          "latency_s": 14.874427795410156,
+          "input_tokens": 1082,
+          "output_tokens": 283,
+          "cost_usd": 0.0041825,
+          "error": null,
+          "scores": {
+            "verdict_match": 1,
+            "reasoning_quality": 4,
+            "edge_case_awareness": 1,
+            "hallucination": 6,
+            "verdict": "Confidently picked hit under one rule; missed ambiguity, boundary issues with 7001/7005 entirely.",
+            "_judge_model": "opus-4.7"
+          },
+          "strict_match": false
+        },
+        {
+          "case": "week_boundary_edge#1",
+          "model": "gemini-2.5-pro",
+          "output": "```json\n{\n  \"verdict\": \"ambiguous\",\n  \"confidence\": 1.0,\n  \"reasoning\": \"The verdict is ambiguous because the commitment phrase 'Complete ... within the window' is not specific enough for workouts that cross the window's start or end boundaries. Counting workouts based on their start time yields 4 workouts (a 'hit'). However, a stricter interpretation requiring the entire workout (both start and end) to be within the window yields only 3 workouts (a 'miss'). Since the result depends on an unresolved interpretation of the counting rule, a definitive verdict cannot be issued.\",\n  \"cited_days\": [\n    \"2026-04-13\",\n    \"2026-04-15\",\n    \"2026-04-17\",\n    \"2026-04-19\"\n  ],\n  \"flags\": [\n    \"boundary ambiguity\",\n    \"under-specified counting rule\"\n  ]\n}\n```",
+          "parsed_verdict": "ambiguous",
+          "parsed_confidence": 1.0,
+          "parsed_reasoning": "The verdict is ambiguous because the commitment phrase 'Complete ... within the window' is not specific enough for workouts that cross the window's start or end boundaries. Counting workouts based on their start time yields 4 workouts (a 'hit'). However, a stricter interpretation requiring the entire workout (both start and end) to be within the window yields only 3 workouts (a 'miss'). Since the result depends on an unresolved interpretation of the counting rule, a definitive verdict cannot be issued.",
+          "parsed_flags": [
+            "boundary ambiguity",
+            "under-specified counting rule"
+          ],
+          "parsed_cited_days": [
+            "2026-04-13",
+            "2026-04-15",
+            "2026-04-17",
+            "2026-04-19"
+          ],
+          "latency_s": 33.18686366081238,
+          "input_tokens": 1082,
+          "output_tokens": 224,
+          "cost_usd": 0.0035925,
+          "error": null,
+          "scores": {
+            "verdict_match": 10,
+            "reasoning_quality": 6,
+            "edge_case_awareness": 6,
+            "hallucination": 8,
+            "verdict": "Correct ambiguous verdict but miscounts start-in workouts and omits required mentions of 7001/7005.",
+            "_judge_model": "opus-4.7"
+          },
+          "strict_match": true
+        },
+        {
+          "case": "week_boundary_edge#2",
+          "model": "gemini-2.5-pro",
+          "output": "```json\n{\n  \"verdict\": \"ambiguous\",\n  \"confidence\": 0.5,\n  \"reasoning\": \"The commitment requires completing at least 4 workouts within the window of 2026-04-13T00:00:00Z (inclusive) to 2026-04-20T00:00:00Z (exclusive). Interpreting the rule by workout start time, there are exactly four workouts (ID 7002, 7003, 7004, 7005) that began within the window, which would be a \\\"hit\\\". However, workout 7005 (starting 2026-04-19T23:30Z) ended after the window closed. The phrasing \\\"Complete ... within the window\\\" is ambiguous. If it requires the entire workout duration to be within the window, only 3 workouts would qualify, resulting in a \\\"miss\\\". Since the outcome depends on this unresolved interpretation, the verdict is ambiguous.\",\n  \"cited_days\": [\n    \"2026-04-13\",\n    \"2026-04-15\",\n    \"2026-04-17\",\n    \"2026-04-19\"\n  ],\n  \"flags\": [\n    \"boundary ambiguity\"\n  ]\n}\n```",
+          "parsed_verdict": "ambiguous",
+          "parsed_confidence": 0.5,
+          "parsed_reasoning": "The commitment requires completing at least 4 workouts within the window of 2026-04-13T00:00:00Z (inclusive) to 2026-04-20T00:00:00Z (exclusive). Interpreting the rule by workout start time, there are exactly four workouts (ID 7002, 7003, 7004, 7005) that began within the window, which would be a \"hit\". However, workout 7005 (starting 2026-04-19T23:30Z) ended after the window closed. The phrasing \"Complete ... within the window\" is ambiguous. If it requires the entire workout duration to be within the window, only 3 workouts would qualify, resulting in a \"miss\". Since the outcome depends on this unresolved interpretation, the verdict is ambiguous.",
+          "parsed_flags": [
+            "boundary ambiguity"
+          ],
+          "parsed_cited_days": [
+            "2026-04-13",
+            "2026-04-15",
+            "2026-04-17",
+            "2026-04-19"
+          ],
+          "latency_s": 20.363989114761353,
+          "input_tokens": 1082,
+          "output_tokens": 319,
+          "cost_usd": 0.0045425,
+          "error": null,
+          "scores": {
+            "verdict_match": 10,
+            "reasoning_quality": 6,
+            "edge_case_awareness": 6,
+            "hallucination": 8,
+            "verdict": "Correct ambiguous verdict but missed 7001 boundary case and didn't explicitly name counting rule.",
+            "_judge_model": "opus-4.7"
+          },
+          "strict_match": true
+        }
+      ]
+    },
+    {
+      "case": "aggregate_exercise_minutes",
+      "commitment": "Accumulate at least 200 total minutes of workout time this week (sum of workout durations).",
+      "expected_verdict": "hit",
+      "model_results": [
+        {
+          "case": "aggregate_exercise_minutes",
+          "model": "gpt-5",
+          "output": "{\n  \"verdict\": \"hit\",\n  \"confidence\": 0.98,\n  \"reasoning\": \"Summed workout durations within the UTC window using start/end times: 2026-04-13 (52m), 2026-04-14 (43m), 2026-04-15 (50m), 2026-04-17 (75m), 2026-04-18 (45m). Total = 265 minutes, which is >= 200. All sessions fall fully within the stated window; no overlaps or boundary crossings.\",\n  \"cited_days\": [\"2026-04-13\", \"2026-04-14\", \"2026-04-15\", \"2026-04-17\", \"2026-04-18\"],\n  \"flags\": []\n}",
+          "parsed_verdict": "hit",
+          "parsed_confidence": 0.98,
+          "parsed_reasoning": "Summed workout durations within the UTC window using start/end times: 2026-04-13 (52m), 2026-04-14 (43m), 2026-04-15 (50m), 2026-04-17 (75m), 2026-04-18 (45m). Total = 265 minutes, which is >= 200. All sessions fall fully within the stated window; no overlaps or boundary crossings.",
+          "parsed_flags": [],
+          "parsed_cited_days": [
+            "2026-04-13",
+            "2026-04-14",
+            "2026-04-15",
+            "2026-04-17",
+            "2026-04-18"
+          ],
+          "latency_s": 15.651149988174438,
+          "input_tokens": 741,
+          "output_tokens": 1140,
+          "cost_usd": 0.01232625,
+          "error": null,
+          "scores": {
+            "verdict_match": 10,
+            "reasoning_quality": 10,
+            "edge_case_awareness": 8,
+            "hallucination": 10,
+            "verdict": "Correct hit verdict with accurate sum, threshold, and per-day durations cited.",
+            "_judge_model": "opus-4.7"
+          },
+          "strict_match": true
+        },
+        {
+          "case": "aggregate_exercise_minutes#1",
+          "model": "gpt-5",
+          "output": "{\n  \"verdict\": \"hit\",\n  \"confidence\": 0.98,\n  \"reasoning\": \"Summed workout durations within the UTC window using end-start times: 2026-04-13 (52m), 2026-04-14 (43m), 2026-04-15 (50m), 2026-04-17 (75m), 2026-04-18 (45m). Total = 265 minutes, which meets/exceeds the 200-minute target.\",\n  \"cited_days\": [\"2026-04-13\", \"2026-04-14\", \"2026-04-15\", \"2026-04-17\", \"2026-04-18\"],\n  \"flags\": []\n}",
+          "parsed_verdict": "hit",
+          "parsed_confidence": 0.98,
+          "parsed_reasoning": "Summed workout durations within the UTC window using end-start times: 2026-04-13 (52m), 2026-04-14 (43m), 2026-04-15 (50m), 2026-04-17 (75m), 2026-04-18 (45m). Total = 265 minutes, which meets/exceeds the 200-minute target.",
+          "parsed_flags": [],
+          "parsed_cited_days": [
+            "2026-04-13",
+            "2026-04-14",
+            "2026-04-15",
+            "2026-04-17",
+            "2026-04-18"
+          ],
+          "latency_s": 11.4324471950531,
+          "input_tokens": 741,
+          "output_tokens": 873,
+          "cost_usd": 0.00965625,
+          "error": null,
+          "scores": {
+            "verdict_match": 10,
+            "reasoning_quality": 10,
+            "edge_case_awareness": 7,
+            "hallucination": 10,
+            "verdict": "Correct hit verdict with accurate sum, threshold, and per-day durations cited.",
+            "_judge_model": "opus-4.7"
+          },
+          "strict_match": true
+        },
+        {
+          "case": "aggregate_exercise_minutes#2",
+          "model": "gpt-5",
+          "output": "{\n  \"verdict\": \"hit\",\n  \"confidence\": 0.98,\n  \"reasoning\": \"All workouts fall within the UTC window. Calculated durations from end-start: 2026-04-13 (52m), 2026-04-14 (43m), 2026-04-15 (50m), 2026-04-17 (75m), 2026-04-18 (45m). Total = 265 minutes, which meets/exceeds the 200-minute target.\",\n  \"cited_days\": [\"2026-04-13\", \"2026-04-14\", \"2026-04-15\", \"2026-04-17\", \"2026-04-18\"],\n  \"flags\": []\n}",
+          "parsed_verdict": "hit",
+          "parsed_confidence": 0.98,
+          "parsed_reasoning": "All workouts fall within the UTC window. Calculated durations from end-start: 2026-04-13 (52m), 2026-04-14 (43m), 2026-04-15 (50m), 2026-04-17 (75m), 2026-04-18 (45m). Total = 265 minutes, which meets/exceeds the 200-minute target.",
+          "parsed_flags": [],
+          "parsed_cited_days": [
+            "2026-04-13",
+            "2026-04-14",
+            "2026-04-15",
+            "2026-04-17",
+            "2026-04-18"
+          ],
+          "latency_s": 14.750400066375732,
+          "input_tokens": 741,
+          "output_tokens": 1067,
+          "cost_usd": 0.01159625,
+          "error": null,
+          "scores": {
+            "verdict_match": 10,
+            "reasoning_quality": 10,
+            "edge_case_awareness": 8,
+            "hallucination": 10,
+            "verdict": "Correct hit verdict with accurate durations, sum, and threshold citation.",
+            "_judge_model": "opus-4.7"
+          },
+          "strict_match": true
+        },
+        {
+          "case": "aggregate_exercise_minutes",
+          "model": "gemini-2.5-pro",
+          "output": "```json\n{\n  \"verdict\": \"hit\",\n  \"confidence\": 1.0,\n  \"reasoning\": \"The commitment required accumulating at least 200 minutes of workout time. I summed the durations of all workouts provided within the specified UTC window. The workouts on 2026-04-13 (52 min), 2026-04-14 (43 min), 2026-04-15 (50 min), 2026-04-17 (75 min), and 2026-04-18 (45 min) resulted in a total of 265 minutes. This total exceeds the 200-minute threshold.\",\n  \"cited_days\": [\n    \"2026-04-13\",\n    \"2026-04-14\",\n    \"2026-04-15\",\n    \"2026-04-17\",\n    \"2026-04-18\"\n  ],\n  \"flags\": []\n}\n```",
+          "parsed_verdict": "hit",
+          "parsed_confidence": 1.0,
+          "parsed_reasoning": "The commitment required accumulating at least 200 minutes of workout time. I summed the durations of all workouts provided within the specified UTC window. The workouts on 2026-04-13 (52 min), 2026-04-14 (43 min), 2026-04-15 (50 min), 2026-04-17 (75 min), and 2026-04-18 (45 min) resulted in a total of 265 minutes. This total exceeds the 200-minute threshold.",
+          "parsed_flags": [],
+          "parsed_cited_days": [
+            "2026-04-13",
+            "2026-04-14",
+            "2026-04-15",
+            "2026-04-17",
+            "2026-04-18"
+          ],
+          "latency_s": 11.881726026535034,
+          "input_tokens": 901,
+          "output_tokens": 257,
+          "cost_usd": 0.00369625,
+          "error": null,
+          "scores": {
+            "verdict_match": 10,
+            "reasoning_quality": 10,
+            "edge_case_awareness": 8,
+            "hallucination": 10,
+            "verdict": "Correct hit verdict with accurate sum, dates, and threshold citation.",
+            "_judge_model": "opus-4.7"
+          },
+          "strict_match": true
+        },
+        {
+          "case": "aggregate_exercise_minutes#1",
+          "model": "gemini-2.5-pro",
+          "output": "```json\n{\n  \"verdict\": \"hit\",\n  \"confidence\": 1.0,\n  \"reasoning\": \"The commitment required accumulating at least 200 minutes of workout time. I summed the durations of all workouts provided within the window: 52 minutes on 2026-04-13, 43 minutes on 2026-04-14, 50 minutes on 2026-04-15, 75 minutes on 2026-04-17, and 45 minutes on 2026-04-18. The total workout time is 265 minutes, which satisfies the commitment.\",\n  \"cited_days\": [\n    \"2026-04-13\",\n    \"2026-04-14\",\n    \"2026-04-15\",\n    \"2026-04-17\",\n    \"2026-04-18\"\n  ],\n  \"flags\": []\n}\n```",
+          "parsed_verdict": "hit",
+          "parsed_confidence": 1.0,
+          "parsed_reasoning": "The commitment required accumulating at least 200 minutes of workout time. I summed the durations of all workouts provided within the window: 52 minutes on 2026-04-13, 43 minutes on 2026-04-14, 50 minutes on 2026-04-15, 75 minutes on 2026-04-17, and 45 minutes on 2026-04-18. The total workout time is 265 minutes, which satisfies the commitment.",
+          "parsed_flags": [],
+          "parsed_cited_days": [
+            "2026-04-13",
+            "2026-04-14",
+            "2026-04-15",
+            "2026-04-17",
+            "2026-04-18"
+          ],
+          "latency_s": 12.739012718200684,
+          "input_tokens": 901,
+          "output_tokens": 250,
+          "cost_usd": 0.00362625,
+          "error": null,
+          "scores": {
+            "verdict_match": 10,
+            "reasoning_quality": 10,
+            "edge_case_awareness": 8,
+            "hallucination": 10,
+            "verdict": "Correct hit verdict with accurate sum, dates, and threshold citation.",
+            "_judge_model": "opus-4.7"
+          },
+          "strict_match": true
+        },
+        {
+          "case": "aggregate_exercise_minutes#2",
+          "model": "gemini-2.5-pro",
+          "output": "```json\n{\n  \"verdict\": \"hit\",\n  \"confidence\": 1.0,\n  \"reasoning\": \"The commitment required accumulating at least 200 minutes of workout time. I calculated the duration for each workout within the window by subtracting the start time from the end time. The sum of durations from the five workouts provided (52 + 43 + 50 + 75 + 45 minutes) is 265 minutes, which successfully meets the commitment's goal.\",\n  \"cited_days\": [\n    \"2026-04-13\",\n    \"2026-04-14\",\n    \"2026-04-15\",\n    \"2026-04-17\",\n    \"2026-04-18\"\n  ],\n  \"flags\": []\n}\n```",
+          "parsed_verdict": "hit",
+          "parsed_confidence": 1.0,
+          "parsed_reasoning": "The commitment required accumulating at least 200 minutes of workout time. I calculated the duration for each workout within the window by subtracting the start time from the end time. The sum of durations from the five workouts provided (52 + 43 + 50 + 75 + 45 minutes) is 265 minutes, which successfully meets the commitment's goal.",
+          "parsed_flags": [],
+          "parsed_cited_days": [
+            "2026-04-13",
+            "2026-04-14",
+            "2026-04-15",
+            "2026-04-17",
+            "2026-04-18"
+          ],
+          "latency_s": 12.496741771697998,
+          "input_tokens": 901,
+          "output_tokens": 202,
+          "cost_usd": 0.00314625,
+          "error": null,
+          "scores": {
+            "verdict_match": 10,
+            "reasoning_quality": 10,
+            "edge_case_awareness": 8,
+            "hallucination": 10,
+            "verdict": "Correct hit verdict with accurate sum, threshold, and per-workout durations cited clearly.",
+            "_judge_model": "opus-4.7"
+          },
+          "strict_match": true
+        }
+      ]
+    }
+  ]
+}

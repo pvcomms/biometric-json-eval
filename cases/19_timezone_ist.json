@@ -1,0 +1,75 @@
+{
+  "name": "timezone_ist",
+  "commitment": "Sleep at least 7 hours every night this week, using the user's local timezone (Asia/Kolkata, UTC+5:30). A 'night' is defined by local calendar date.",
+  "window": {
+    "start": "2026-04-13T00:00:00+05:30",
+    "end": "2026-04-19T23:59:59+05:30"
+  },
+  "provider": "oura",
+  "data": {
+    "data": [
+      {
+        "id": "tz-01",
+        "day": "2026-04-13",
+        "bedtime_start": "2026-04-12T22:45:00+05:30",
+        "bedtime_end": "2026-04-13T06:30:00+05:30",
+        "total_sleep_duration": 26400,
+        "time_in_bed": 27900
+      },
+      {
+        "id": "tz-02",
+        "day": "2026-04-14",
+        "bedtime_start": "2026-04-13T23:20:00+05:30",
+        "bedtime_end": "2026-04-14T06:55:00+05:30",
+        "total_sleep_duration": 26100,
+        "time_in_bed": 27300
+      },
+      {
+        "id": "tz-03",
+        "day": "2026-04-15",
+        "bedtime_start": "2026-04-14T23:05:00+05:30",
+        "bedtime_end": "2026-04-15T07:12:00+05:30",
+        "total_sleep_duration": 27600,
+        "time_in_bed": 29220
+      },
+      {
+        "id": "tz-04",
+        "day": "2026-04-16",
+        "bedtime_start": "2026-04-15T22:48:00+05:30",
+        "bedtime_end": "2026-04-16T07:20:00+05:30",
+        "total_sleep_duration": 28200,
+        "time_in_bed": 30720
+      },
+      {
+        "id": "tz-05",
+        "day": "2026-04-17",
+        "bedtime_start": "2026-04-17T00:15:00+05:30",
+        "bedtime_end": "2026-04-17T07:40:00+05:30",
+        "total_sleep_duration": 25800,
+        "time_in_bed": 26700
+      },
+      {
+        "id": "tz-06",
+        "day": "2026-04-18",
+        "bedtime_start": "2026-04-17T23:25:00+05:30",
+        "bedtime_end": "2026-04-18T07:05:00+05:30",
+        "total_sleep_duration": 26700,
+        "time_in_bed": 27600
+      },
+      {
+        "id": "tz-07",
+        "day": "2026-04-19",
+        "bedtime_start": "2026-04-18T23:10:00+05:30",
+        "bedtime_end": "2026-04-19T06:50:00+05:30",
+        "total_sleep_duration": 26880,
+        "time_in_bed": 27600
+      }
+    ]
+  },
+  "expected": {
+    "verdict": "hit",
+    "rationale": "7 hours = 25200 seconds. All 7 nights >= 25200: 26400, 26100, 27600, 28200, 25800, 26700, 26880. Min is 25800 on 2026-04-17, still above threshold. Hit. Model must correctly use total_sleep_duration (not time_in_bed) and handle IST offset without assuming UTC.",
+    "required_mentions": ["7 hours", "25200", "local timezone"],
+    "trap": "Don't confuse bedtime_start (some nights are before window start in UTC but inside in IST) with the day assignment."
+  }
+}

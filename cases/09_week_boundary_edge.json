@@ -1,0 +1,58 @@
+{
+  "name": "week_boundary_edge",
+  "commitment": "Complete at least 4 workouts within the window (inclusive of start, exclusive of end).",
+  "window": { "start": "2026-04-13T00:00:00Z", "end": "2026-04-20T00:00:00Z" },
+  "provider": "whoop",
+  "data": {
+    "records": [
+      {
+        "workout_id": 7001,
+        "start": "2026-04-12T23:45:00Z",
+        "end": "2026-04-13T00:35:00Z",
+        "sport_id": 0,
+        "score": { "strain": 9.2, "average_heart_rate": 142 }
+      },
+      {
+        "workout_id": 7002,
+        "start": "2026-04-13T11:15:00Z",
+        "end": "2026-04-13T12:02:00Z",
+        "sport_id": 1,
+        "score": { "strain": 11.8, "average_heart_rate": 154 }
+      },
+      {
+        "workout_id": 7003,
+        "start": "2026-04-15T06:30:00Z",
+        "end": "2026-04-15T07:25:00Z",
+        "sport_id": 0,
+        "score": { "strain": 13.4, "average_heart_rate": 161 }
+      },
+      {
+        "workout_id": 7004,
+        "start": "2026-04-17T17:40:00Z",
+        "end": "2026-04-17T18:55:00Z",
+        "sport_id": 45,
+        "score": { "strain": 14.9, "average_heart_rate": 168 }
+      },
+      {
+        "workout_id": 7005,
+        "start": "2026-04-19T23:30:00Z",
+        "end": "2026-04-20T00:12:00Z",
+        "sport_id": 1,
+        "score": { "strain": 10.5, "average_heart_rate": 148 }
+      },
+      {
+        "workout_id": 7006,
+        "start": "2026-04-20T00:05:00Z",
+        "end": "2026-04-20T01:00:00Z",
+        "sport_id": 0,
+        "score": { "strain": 11.2, "average_heart_rate": 151 }
+      }
+    ]
+  },
+  "expected": {
+    "verdict": "ambiguous",
+    "rationale": "Window is [2026-04-13T00:00:00Z, 2026-04-20T00:00:00Z). Workouts that clearly START inside: 7002 (Apr 13 11:15), 7003 (Apr 15), 7004 (Apr 17) = 3. Workout 7001 starts Apr 12 23:45 but ends Apr 13 00:35 — partly in. Workout 7005 starts Apr 19 23:30 but ends Apr 20 00:12 — partly in. Workout 7006 starts Apr 20 00:05 — just outside end (exclusive). Under strict 'start-in' rule: only 3 count = miss. Under 'any overlap' rule: 7001, 7002, 7003, 7004, 7005 = 5 count = hit. The settlement rule is not specified. Oracle should flag that the counting method is ambiguous and request clarification.",
+    "required_mentions": ["boundary", "7001", "7005", "counting rule"],
+    "trap": "Most models will just pick one interpretation silently and return a confident verdict. The correct behavior is to surface the ambiguity."
+  }
+}

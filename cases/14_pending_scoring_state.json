@@ -1,0 +1,63 @@
+{
+  "name": "pending_scoring_state",
+  "commitment": "Hit recovery score 70+ on at least 5 of the 7 days this week.",
+  "window": { "start": "2026-04-13T00:00:00Z", "end": "2026-04-19T23:59:59Z" },
+  "provider": "whoop",
+  "data": {
+    "records": [
+      {
+        "cycle_id": 1401,
+        "created_at": "2026-04-13T05:10:00Z",
+        "scoring_state": "SCORED",
+        "score": { "recovery_score": 82 }
+      },
+      {
+        "cycle_id": 1402,
+        "created_at": "2026-04-14T05:08:00Z",
+        "scoring_state": "SCORED",
+        "score": { "recovery_score": 71 }
+      },
+      {
+        "cycle_id": 1403,
+        "created_at": "2026-04-15T05:12:00Z",
+        "scoring_state": "SCORED",
+        "score": { "recovery_score": 45 }
+      },
+      {
+        "cycle_id": 1404,
+        "created_at": "2026-04-16T05:09:00Z",
+        "scoring_state": "PENDING_SCORING",
+        "score": { "recovery_score": null }
+      },
+      {
+        "cycle_id": 1405,
+        "created_at": "2026-04-17T05:14:00Z",
+        "scoring_state": "SCORED",
+        "score": { "recovery_score": 77 }
+      },
+      {
+        "cycle_id": 1406,
+        "created_at": "2026-04-18T05:11:00Z",
+        "scoring_state": "UNSCORABLE",
+        "score": { "recovery_score": null }
+      },
+      {
+        "cycle_id": 1407,
+        "created_at": "2026-04-19T05:07:00Z",
+        "scoring_state": "SCORED",
+        "score": { "recovery_score": 73 }
+      }
+    ]
+  },
+  "expected": {
+    "verdict": "ambiguous",
+    "rationale": "Two cycles have non-SCORED state: Apr 16 (PENDING_SCORING) and Apr 18 (UNSCORABLE). Currently 4 clear hits (Apr 13, 14, 17, 19). Need 5. Outcome depends on Apr 16 / Apr 18 once scored. Oracle must delay settlement or flag ambiguous until all cycles are SCORED. A weak model may ignore null scores and call it miss, or count null as >=70 (hallucination), or silently assume non-SCORED = didn't hit.",
+    "required_mentions": [
+      "PENDING_SCORING",
+      "UNSCORABLE",
+      "scoring_state",
+      "delay"
+    ],
+    "trap": "Must treat scoring_state != SCORED as 'not yet settle-able'."
+  }
+}

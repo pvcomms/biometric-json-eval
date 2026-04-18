@@ -1,0 +1,166 @@
+{
+  "name": "long_window_month",
+  "commitment": "Maintain an average recovery score of 65 or higher across the full 30-day window.",
+  "window": { "start": "2026-03-21T00:00:00Z", "end": "2026-04-19T23:59:59Z" },
+  "provider": "whoop",
+  "data": {
+    "records": [
+      {
+        "cycle_id": 1601,
+        "created_at": "2026-03-21T05:10:00Z",
+        "score": { "recovery_score": 72 }
+      },
+      {
+        "cycle_id": 1602,
+        "created_at": "2026-03-22T05:11:00Z",
+        "score": { "recovery_score": 68 }
+      },
+      {
+        "cycle_id": 1603,
+        "created_at": "2026-03-23T05:09:00Z",
+        "score": { "recovery_score": 55 }
+      },
+      {
+        "cycle_id": 1604,
+        "created_at": "2026-03-24T05:12:00Z",
+        "score": { "recovery_score": 81 }
+      },
+      {
+        "cycle_id": 1605,
+        "created_at": "2026-03-25T05:08:00Z",
+        "score": { "recovery_score": 77 }
+      },
+      {
+        "cycle_id": 1606,
+        "created_at": "2026-03-26T05:14:00Z",
+        "score": { "recovery_score": 48 }
+      },
+      {
+        "cycle_id": 1607,
+        "created_at": "2026-03-27T05:11:00Z",
+        "score": { "recovery_score": 65 }
+      },
+      {
+        "cycle_id": 1608,
+        "created_at": "2026-03-28T05:10:00Z",
+        "score": { "recovery_score": 82 }
+      },
+      {
+        "cycle_id": 1609,
+        "created_at": "2026-03-29T05:09:00Z",
+        "score": { "recovery_score": 73 }
+      },
+      {
+        "cycle_id": 1610,
+        "created_at": "2026-03-30T05:12:00Z",
+        "score": { "recovery_score": 58 }
+      },
+      {
+        "cycle_id": 1611,
+        "created_at": "2026-03-31T05:08:00Z",
+        "score": { "recovery_score": 69 }
+      },
+      {
+        "cycle_id": 1612,
+        "created_at": "2026-04-01T05:11:00Z",
+        "score": { "recovery_score": 84 }
+      },
+      {
+        "cycle_id": 1613,
+        "created_at": "2026-04-02T05:10:00Z",
+        "score": { "recovery_score": 76 }
+      },
+      {
+        "cycle_id": 1614,
+        "created_at": "2026-04-03T05:09:00Z",
+        "score": { "recovery_score": 52 }
+      },
+      {
+        "cycle_id": 1615,
+        "created_at": "2026-04-04T05:12:00Z",
+        "score": { "recovery_score": 71 }
+      },
+      {
+        "cycle_id": 1616,
+        "created_at": "2026-04-05T05:08:00Z",
+        "score": { "recovery_score": 88 }
+      },
+      {
+        "cycle_id": 1617,
+        "created_at": "2026-04-06T05:14:00Z",
+        "score": { "recovery_score": 64 }
+      },
+      {
+        "cycle_id": 1618,
+        "created_at": "2026-04-07T05:11:00Z",
+        "score": { "recovery_score": 59 }
+      },
+      {
+        "cycle_id": 1619,
+        "created_at": "2026-04-08T05:10:00Z",
+        "score": { "recovery_score": 80 }
+      },
+      {
+        "cycle_id": 1620,
+        "created_at": "2026-04-09T05:09:00Z",
+        "score": { "recovery_score": 75 }
+      },
+      {
+        "cycle_id": 1621,
+        "created_at": "2026-04-10T05:12:00Z",
+        "score": { "recovery_score": 62 }
+      },
+      {
+        "cycle_id": 1622,
+        "created_at": "2026-04-11T05:08:00Z",
+        "score": { "recovery_score": 47 }
+      },
+      {
+        "cycle_id": 1623,
+        "created_at": "2026-04-12T05:11:00Z",
+        "score": { "recovery_score": 78 }
+      },
+      {
+        "cycle_id": 1624,
+        "created_at": "2026-04-13T05:10:00Z",
+        "score": { "recovery_score": 82 }
+      },
+      {
+        "cycle_id": 1625,
+        "created_at": "2026-04-14T05:09:00Z",
+        "score": { "recovery_score": 71 }
+      },
+      {
+        "cycle_id": 1626,
+        "created_at": "2026-04-15T05:12:00Z",
+        "score": { "recovery_score": 45 }
+      },
+      {
+        "cycle_id": 1627,
+        "created_at": "2026-04-16T05:08:00Z",
+        "score": { "recovery_score": 88 }
+      },
+      {
+        "cycle_id": 1628,
+        "created_at": "2026-04-17T05:14:00Z",
+        "score": { "recovery_score": 77 }
+      },
+      {
+        "cycle_id": 1629,
+        "created_at": "2026-04-18T05:11:00Z",
+        "score": { "recovery_score": 38 }
+      },
+      {
+        "cycle_id": 1630,
+        "created_at": "2026-04-19T05:07:00Z",
+        "score": { "recovery_score": 73 }
+      }
+    ]
+  },
+  "expected": {
+    "verdict": "hit",
+    "rationale": "Sum of 30 recovery scores: 72+68+55+81+77+48+65+82+73+58+69+84+76+52+71+88+64+59+80+75+62+47+78+82+71+45+88+77+38+73 = 2086. Avg = 2086/30 = 69.53. 69.53 >= 65 => hit.",
+    "required_mentions": ["average", "69.5", "30 days"],
+    "trap": "Must sum all 30 values correctly, then divide by 30. Volume-stress test: more data = more room for counting/arithmetic errors."
+  }
+}

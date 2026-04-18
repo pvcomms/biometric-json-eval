@@ -1,0 +1,72 @@
+{
+  "generated_at": "2026-04-18T22:30:47.025101+00:00",
+  "results": [
+    {
+      "case": "clear_recovery_hit",
+      "commitment": "Hit a Whoop recovery score of 70 or higher on at least 5 of the 7 days in this week.",
+      "expected_verdict": "hit",
+      "model_results": [
+        {
+          "case": "clear_recovery_hit",
+          "model": "gpt-5",
+          "output": "{\n  \"verdict\": \"hit\",\n  \"confidence\": 0.97,\n  \"reasoning\": \"Within the UTC window (2026-04-13 to 2026-04-19), there are 7 recovery records. Recovery scores \u226570 occurred on 5 days: 82 (Apr 13), 71 (Apr 14), 88 (Apr 16), 77 (Apr 17), and 73 (Apr 19). The remaining days (Apr 15: 45; Apr 18: 38) were below 70. This meets the requirement of at least 5 of 7 days \u226570.\",\n  \"cited_days\": [\"2026-04-13\", \"2026-04-14\", \"2026-04-16\", \"2026-04-17\", \"2026-04-19\"],\n  \"flags\": []\n}",
+          "parsed_verdict": "hit",
+          "parsed_confidence": 0.97,
+          "parsed_reasoning": "Within the UTC window (2026-04-13 to 2026-04-19), there are 7 recovery records. Recovery scores \u226570 occurred on 5 days: 82 (Apr 13), 71 (Apr 14), 88 (Apr 16), 77 (Apr 17), and 73 (Apr 19). The remaining days (Apr 15: 45; Apr 18: 38) were below 70. This meets the requirement of at least 5 of 7 days \u226570.",
+          "parsed_flags": [],
+          "parsed_cited_days": [
+            "2026-04-13",
+            "2026-04-14",
+            "2026-04-16",
+            "2026-04-17",
+            "2026-04-19"
+          ],
+          "latency_s": 16.64857292175293,
+          "input_tokens": 1102,
+          "output_tokens": 901,
+          "cost_usd": 0.0103875,
+          "error": null,
+          "scores": {
+            "verdict_match": 10,
+            "reasoning_quality": 10,
+            "edge_case_awareness": 9,
+            "hallucination": 10,
+            "verdict": "Accurate verdict with correct days, values, and threshold cited; meets requirement exactly.",
+            "_judge_model": "opus-4.7"
+          },
+          "strict_match": true
+        },
+        {
+          "case": "clear_recovery_hit",
+          "model": "gemini-2.5-pro",
+          "output": "```json\n{\n  \"verdict\": \"hit\",\n  \"confidence\": 1.0,\n  \"reasoning\": \"The commitment required a Whoop recovery score of 70 or higher on at least 5 days within the specified 7-day window. The provided data contains records for all 7 days. I counted the days where the 'recovery_score' met or exceeded 70: 2026-04-13 (82), 2026-04-14 (71), 2026-04-16 (88), 2026-04-17 (77), and 2026-04-19 (73). This totals 5 days, which satisfies the commitment.\",\n  \"cited_days\": [\n    \"2026-04-13\",\n    \"2026-04-14\",\n    \"2026-04-16\",\n    \"2026-04-17\",\n    \"2026-04-19\"\n  ],\n  \"flags\": []\n}\n```",
+          "parsed_verdict": "hit",
+          "parsed_confidence": 1.0,
+          "parsed_reasoning": "The commitment required a Whoop recovery score of 70 or higher on at least 5 days within the specified 7-day window. The provided data contains records for all 7 days. I counted the days where the 'recovery_score' met or exceeded 70: 2026-04-13 (82), 2026-04-14 (71), 2026-04-16 (88), 2026-04-17 (77), and 2026-04-19 (73). This totals 5 days, which satisfies the commitment.",
+          "parsed_flags": [],
+          "parsed_cited_days": [
+            "2026-04-13",
+            "2026-04-14",
+            "2026-04-16",
+            "2026-04-17",
+            "2026-04-19"
+          ],
+          "latency_s": 12.074043989181519,
+          "input_tokens": 1360,
+          "output_tokens": 266,
+          "cost_usd": 0.00436,
+          "error": null,
+          "scores": {
+            "verdict_match": 10,
+            "reasoning_quality": 10,
+            "edge_case_awareness": 8,
+            "hallucination": 10,
+            "verdict": "Accurate verdict with correct days cited and threshold met exactly at 5.",
+            "_judge_model": "opus-4.7"
+          },
+          "strict_match": true
+        }
+      ]
+    }
+  ]
+}

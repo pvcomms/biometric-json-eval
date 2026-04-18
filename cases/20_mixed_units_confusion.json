@@ -1,0 +1,121 @@
+{
+  "name": "mixed_units_confusion",
+  "commitment": "Reach at least 500 minutes of total sleep (not time-in-bed) on at least 4 nights this week.",
+  "window": { "start": "2026-04-13T00:00:00Z", "end": "2026-04-19T23:59:59Z" },
+  "provider": "whoop",
+  "data": {
+    "records": [
+      {
+        "sleep_id": 2001,
+        "start": "2026-04-12T22:30:00Z",
+        "end": "2026-04-13T06:15:00Z",
+        "score": {
+          "sleep_performance_percentage": 88,
+          "stage_summary": {
+            "total_in_bed_time_milli": 28000000,
+            "total_awake_time_milli": 1200000,
+            "total_light_sleep_time_milli": 16000000,
+            "total_slow_wave_sleep_time_milli": 5400000,
+            "total_rem_sleep_time_milli": 5400000
+          }
+        }
+      },
+      {
+        "sleep_id": 2002,
+        "start": "2026-04-13T22:45:00Z",
+        "end": "2026-04-14T06:30:00Z",
+        "score": {
+          "sleep_performance_percentage": 85,
+          "stage_summary": {
+            "total_in_bed_time_milli": 27900000,
+            "total_awake_time_milli": 1500000,
+            "total_light_sleep_time_milli": 15800000,
+            "total_slow_wave_sleep_time_milli": 5100000,
+            "total_rem_sleep_time_milli": 5500000
+          }
+        }
+      },
+      {
+        "sleep_id": 2003,
+        "start": "2026-04-14T23:10:00Z",
+        "end": "2026-04-15T05:25:00Z",
+        "score": {
+          "sleep_performance_percentage": 72,
+          "stage_summary": {
+            "total_in_bed_time_milli": 22500000,
+            "total_awake_time_milli": 900000,
+            "total_light_sleep_time_milli": 13000000,
+            "total_slow_wave_sleep_time_milli": 4200000,
+            "total_rem_sleep_time_milli": 4400000
+          }
+        }
+      },
+      {
+        "sleep_id": 2004,
+        "start": "2026-04-15T22:30:00Z",
+        "end": "2026-04-16T07:00:00Z",
+        "score": {
+          "sleep_performance_percentage": 92,
+          "stage_summary": {
+            "total_in_bed_time_milli": 30600000,
+            "total_awake_time_milli": 1100000,
+            "total_light_sleep_time_milli": 17800000,
+            "total_slow_wave_sleep_time_milli": 5500000,
+            "total_rem_sleep_time_milli": 6200000
+          }
+        }
+      },
+      {
+        "sleep_id": 2005,
+        "start": "2026-04-16T22:50:00Z",
+        "end": "2026-04-17T06:40:00Z",
+        "score": {
+          "sleep_performance_percentage": 90,
+          "stage_summary": {
+            "total_in_bed_time_milli": 28200000,
+            "total_awake_time_milli": 1400000,
+            "total_light_sleep_time_milli": 16200000,
+            "total_slow_wave_sleep_time_milli": 5400000,
+            "total_rem_sleep_time_milli": 5200000
+          }
+        }
+      },
+      {
+        "sleep_id": 2006,
+        "start": "2026-04-17T23:00:00Z",
+        "end": "2026-04-18T06:55:00Z",
+        "score": {
+          "sleep_performance_percentage": 87,
+          "stage_summary": {
+            "total_in_bed_time_milli": 28500000,
+            "total_awake_time_milli": 1700000,
+            "total_light_sleep_time_milli": 16400000,
+            "total_slow_wave_sleep_time_milli": 5000000,
+            "total_rem_sleep_time_milli": 5400000
+          }
+        }
+      },
+      {
+        "sleep_id": 2007,
+        "start": "2026-04-18T22:45:00Z",
+        "end": "2026-04-19T06:15:00Z",
+        "score": {
+          "sleep_performance_percentage": 80,
+          "stage_summary": {
+            "total_in_bed_time_milli": 27000000,
+            "total_awake_time_milli": 1900000,
+            "total_light_sleep_time_milli": 15300000,
+            "total_slow_wave_sleep_time_milli": 4600000,
+            "total_rem_sleep_time_milli": 5200000
+          }
+        }
+      }
+    ]
+  },
+  "expected": {
+    "verdict": "miss",
+    "rationale": "total_sleep = total_in_bed - total_awake (milliseconds). Convert ms -> minutes: divide by 60000. Per-night sleep minutes: 446.67, 440.00, 360.00, 491.67, 446.67, 446.67, 418.33. Zero nights hit >= 500 minutes. Threshold not met on any night, so fewer than 4-night requirement is impossible. Verdict: miss.",
+    "required_mentions": ["in_bed minus awake", "milliseconds", "0 nights"],
+    "trap": "Weak models may (a) use total_in_bed as 'sleep', (b) confuse ms with seconds, (c) miss the subtraction step. All three failure modes give inflated sleep numbers that hit 500."
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "name": "aggregate_exercise_minutes",
+  "commitment": "Accumulate at least 200 total minutes of workout time this week (sum of workout durations).",
+  "window": { "start": "2026-04-13T00:00:00Z", "end": "2026-04-19T23:59:59Z" },
+  "provider": "whoop",
+  "data": {
+    "records": [
+      {
+        "workout_id": 8001,
+        "start": "2026-04-13T06:30:00Z",
+        "end": "2026-04-13T07:22:00Z",
+        "sport_id": 0,
+        "score": { "strain": 11.2 }
+      },
+      {
+        "workout_id": 8002,
+        "start": "2026-04-14T18:05:00Z",
+        "end": "2026-04-14T18:48:00Z",
+        "sport_id": 45,
+        "score": { "strain": 14.1 }
+      },
+      {
+        "workout_id": 8003,
+        "start": "2026-04-15T06:15:00Z",
+        "end": "2026-04-15T07:05:00Z",
+        "sport_id": 0,
+        "score": { "strain": 12.3 }
+      },
+      {
+        "workout_id": 8004,
+        "start": "2026-04-17T06:20:00Z",
+        "end": "2026-04-17T07:35:00Z",
+        "sport_id": 1,
+        "score": { "strain": 15.2 }
+      },
+      {
+        "workout_id": 8005,
+        "start": "2026-04-18T17:30:00Z",
+        "end": "2026-04-18T18:15:00Z",
+        "sport_id": 45,
+        "score": { "strain": 13.7 }
+      }
+    ]
+  },
+  "expected": {
+    "verdict": "hit",
+    "rationale": "Durations: 8001=52 min, 8002=43 min, 8003=50 min, 8004=75 min, 8005=45 min. Sum = 265 minutes. 265 >= 200 => hit.",
+    "required_mentions": ["265 minutes", "sum", "200 threshold"],
+    "trap": "Must correctly compute durations from start/end timestamps. Weak models may confuse strain with minutes, or miscount."
+  }
+}
