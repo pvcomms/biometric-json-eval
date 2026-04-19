@@ -1,49 +1,42 @@
 # biometric-json-eval
 
-Can frontier models reason correctly over Whoop/Oura JSON to settle Keep markets?
+Benchmark: can a frontier model read Whoop/Oura JSON correctly enough to settle a commitment market?
 
-## Why
+## Headline result
 
-Keep (cyborg-market pivot, Apr 17 2026) settles commitment markets like "hit recovery 70+ on 5 of the next 7 days" using biometric APIs. The oracle is the bottleneck: if the LLM reading the JSON can be fooled, markets pay out wrong. This eval stress-tests that assumption.
+**On 29 hand-adversarialised cases with the strict-schema prompt, Opus 4.7 scores 76% accuracy, 97% self-consistency across trials, and 1 dangerous error in 87 calls (~1.1%). A cross-provider quorum (Opus primary + Gemini 2.5 Pro confirmation) drops the dangerous-error rate to effectively zero at a marginal cost of ~$0.05 per settlement.** Telling the oracle to be "less cautious" breaks it: a surgical-looking `strict-v2` prompt lifted over-caution from 7 → 1 but pushed dangerous errors from 0 → 5 on both GPT-5 and Gemini. Safe behaviour and over-cautious behaviour are coupled at the prompt level.
 
-## How
-
-10 cases. Each has:
-
-- natural-language commitment
-- a window (start/end UTC)
-- real-shape Whoop or Oura JSON payload
-- ground-truth verdict: `hit` / `miss` / `ambiguous`
-
-Runs against Opus 4.7, Sonnet 4.6, Haiku 4.5, GPT-5, Gemini 2.5 Pro in parallel. Each model returns `{verdict, confidence, reasoning}`. Scored two ways:
-
-1. **Strict verdict match** — binary pass/fail against ground truth
-2. **Opus-as-judge** — scores reasoning for cited metrics, edge-case awareness, and hallucinated dates
-
-## Run
+## How to run
 
 ```bash
-source ~/.config/inbox-triage.env
-./eval.py
-# or single case:
-./eval.py --only-case 04_missing_day_whoop
-# or subset models:
-./eval.py --only opus,sonnet
+source ~/.config/inbox-triage.env   # ANTHROPIC_API_KEY, OPENAI_API_KEY, GEMINI_API_KEY
+./eval.py --trials 3 --prompt strict          # recommended prod config: 5 models, 3 trials, Opus judge
+./eval.py --only-case 11_adversarial --skip-judge   # debug a single case
+./analyze.py results/run-<timestamp>-strict.json
 ```
 
-Results land in `results/run-{timestamp}.json` and `results/run-{timestamp}.md`.
+## Method
 
-## Cases
+- 29 JSON cases built from Whoop/Oura payload shapes plus 3 real Param pulls. Each case has a natural-language commitment, a UTC window, and a ground-truth verdict (`hit` / `miss` / `ambiguous`).
+- Models return `{verdict, confidence, reasoning}`. Scored on (a) strict verdict match against ground truth and (b) Opus-4.7-as-judge on cited metrics, edge-case awareness, hallucinated dates.
+- Separately tracks **dangerous errors** (would move money wrong) vs **over-cautious errors** (refuses a clear verdict). Dangerous-error rate is the KPI, not accuracy.
+- Runs 5 models in parallel: Opus 4.7, Sonnet 4.6, Haiku 4.5, GPT-5, Gemini 2.5 Pro.
+- Multi-trial mode (`--trials 3`) to measure self-consistency on the same prompt.
 
-| #   | name                       | tests                                               |
-| --- | -------------------------- | --------------------------------------------------- |
-| 01  | clear_recovery_hit         | happy path — unambiguous Whoop recovery threshold   |
-| 02  | clear_sleep_miss           | Oura sleep duration, clear miss                     |
-| 03  | boundary_recovery_exact    | 70 vs 70.0 vs 69.8 edge cases                       |
-| 04  | missing_day_whoop          | strap not worn one day — should flag ambiguous      |
-| 05  | multi_metric_composite     | recovery AND sleep, both conditions                 |
-| 06  | streak_vs_total            | "5 consecutive" vs "5 total" — trap case            |
-| 07  | oura_sleep_commitment      | same logic as 02 but richer Oura payload            |
-| 08  | strap_gaming               | suspicious missing-data pattern on high-strain days |
-| 09  | week_boundary_edge         | data around midnight of window end                  |
-| 10  | aggregate_exercise_minutes | sum across workouts, unit conversion                |
+## Results
+
+Final 5-model sweep, 29 cases, strict prompt, Opus judge:
+
+| Model          | Accuracy    | Dangerous | Over-cautious | Judge | Cost  |
+| -------------- | ----------- | --------: | ------------: | ----: | ----- |
+| **Opus 4.7**   | 76% (22/29) |         1 |             3 |   8.9 | $1.54 |
+| Gemini 2.5 Pro | 76% (22/29) |         1 |             6 |   7.9 | $0.13 |
+| GPT-5          | 72% (21/29) |         1 |             7 |   8.2 | $0.80 |
+| Sonnet 4.6     | 72% (21/29) |         2 |             6 |   8.7 | $0.36 |
+| Haiku 4.5      | 69% (20/29) |         0 |             6 |   8.4 | $0.11 |
+
+3-trial verification: Opus holds 97% self-consistency, Haiku degrades to 91% with occasional JSON parse failures. Full trajectory, prompt-variant A/B, and the recommended three-stage production stack (deterministic gate → Opus → Gemini) in `FINDINGS.md`.
+
+## Why this exists
+
+Keep (prediction markets settled by biometric APIs) only works if the oracle reading Whoop/Oura JSON is right. "Close enough" isn't close enough when the output writes money. This eval stress-tests the assumption on adversarial cases and recommends a cross-provider quorum where dangerous errors would require correlated failures across Anthropic and Google at once.
