@@ -1,31 +1,27 @@
 # biometric-json-eval
 
-Benchmark: can a frontier model read Whoop/Oura JSON correctly enough to settle a commitment market?
+29-case benchmark for settlement-grade biometric JSON interpretation. Built to validate the Keep oracle's settlement layer.
 
 ## Headline result
 
-**On 29 hand-adversarialised cases with the strict-schema prompt, Opus 4.7 scores 76% accuracy, 97% self-consistency across trials, and 1 dangerous error in 87 calls (~1.1%). A cross-provider quorum (Opus primary + Gemini 2.5 Pro confirmation) drops the dangerous-error rate to effectively zero at a marginal cost of ~$0.05 per settlement.** Telling the oracle to be "less cautious" breaks it: a surgical-looking `strict-v2` prompt lifted over-caution from 7 → 1 but pushed dangerous errors from 0 → 5 on both GPT-5 and Gemini. Safe behaviour and over-cautious behaviour are coupled at the prompt level.
+**Opus 4.7 + Gemini 2.5 Pro quorum → ~0 dangerous errors at ~$0.05/settlement.**
 
-## How to run
+On the 29-case strict-prompt sweep, Opus 4.7 hits 76% accuracy with 1 dangerous error in 87 calls (~1.1%) and 97% self-consistency across 3 trials. Adding Gemini 2.5 Pro as a cross-provider confirmation drops the residual dangerous-error rate to effectively zero — disagreement routes to human review.
 
-```bash
-source ~/.config/inbox-triage.env   # ANTHROPIC_API_KEY, OPENAI_API_KEY, GEMINI_API_KEY
-./eval.py --trials 3 --prompt strict          # recommended prod config: 5 models, 3 trials, Opus judge
-./eval.py --only-case 11_adversarial --skip-judge   # debug a single case
-./analyze.py results/run-<timestamp>-strict.json
-```
+## What "dangerous error" means
 
-## Method
+A settlement verdict that, if executed, would cause incorrect money movement: a false-positive `hit` on a missed commitment, or a false-negative `miss` on a met one. Distinct from "over-cautious" errors, where the model refuses a clear verdict. Dangerous-error rate is the KPI, not accuracy.
 
-- 29 JSON cases built from Whoop/Oura payload shapes plus 3 real Param pulls. Each case has a natural-language commitment, a UTC window, and a ground-truth verdict (`hit` / `miss` / `ambiguous`).
-- Models return `{verdict, confidence, reasoning}`. Scored on (a) strict verdict match against ground truth and (b) Opus-4.7-as-judge on cited metrics, edge-case awareness, hallucinated dates.
-- Separately tracks **dangerous errors** (would move money wrong) vs **over-cautious errors** (refuses a clear verdict). Dangerous-error rate is the KPI, not accuracy.
-- Runs 5 models in parallel: Opus 4.7, Sonnet 4.6, Haiku 4.5, GPT-5, Gemini 2.5 Pro.
-- Multi-trial mode (`--trials 3`) to measure self-consistency on the same prompt.
+## Methodology
 
-## Results
+- 29 hand-crafted edge cases drawn from real Whoop + Oura JSON shapes, plus 3 live Param pulls
+- Strict prompt template, single trial per model in the headline sweep; 3-trial reruns for self-consistency on Opus and Haiku
+- Quorum = 2-model agreement across Opus 4.7 and Gemini 2.5 Pro (cross-provider, uncorrelated failure modes); disagreement routes to human review
+- CI gate: exits non-zero if `dangerous_errors > 0`
 
-Final 5-model sweep, 29 cases, strict prompt, Opus judge:
+## Models tested
+
+5-model sweep, 29 cases, strict prompt, Opus-4.7 as judge:
 
 | Model          | Accuracy    | Dangerous | Over-cautious | Judge | Cost  |
 | -------------- | ----------- | --------: | ------------: | ----: | ----- |
@@ -35,8 +31,14 @@ Final 5-model sweep, 29 cases, strict prompt, Opus judge:
 | Sonnet 4.6     | 72% (21/29) |         2 |             6 |   8.7 | $0.36 |
 | Haiku 4.5      | 69% (20/29) |         0 |             6 |   8.4 | $0.11 |
 
-3-trial verification: Opus holds 97% self-consistency, Haiku degrades to 91% with occasional JSON parse failures. Full trajectory, prompt-variant A/B, and the recommended three-stage production stack (deterministic gate → Opus → Gemini) in `FINDINGS.md`.
+## Run
 
-## Why this exists
+```
+source ~/.config/inbox-triage.env && python eval.py
+```
 
-Keep (prediction markets settled by biometric APIs) only works if the oracle reading Whoop/Oura JSON is right. "Close enough" isn't close enough when the output writes money. This eval stress-tests the assumption on adversarial cases and recommends a cross-provider quorum where dangerous errors would require correlated failures across Anthropic and Google at once.
+Recommended production config: `./eval.py --trials 3 --prompt strict`. Single-case debug: `./eval.py --only-case 11_adversarial --skip-judge`. Full trajectory, prompt-variant A/B, and the recommended three-stage production stack (deterministic gate → Opus → Gemini) in [FINDINGS.md](FINDINGS.md).
+
+## Why this matters
+
+The biometric oracle problem is the load-bearing piece of any agentic system that has to make consequential decisions from physiological data. "Close enough" isn't close enough when the output writes money. This is the eval harness for that.
