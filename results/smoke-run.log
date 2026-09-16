@@ -1,0 +1,34 @@
+[eval] 10 case(s) x 2 model(s) = 20 calls
+[eval] case: clear_recovery_hit
+/Users/p/Code/biometric-json-eval/./eval.py:249: FutureWarning: 
+
+All support for the `google.generativeai` package has ended. It will no longer be receiving 
+updates or bug fixes. Please switch to the `google.genai` package as soon as possible.
+See README for more details:
+
+https://github.com/google-gemini/deprecated-generative-ai-python/blob/main/README.md
+
+  import google.generativeai as genai
+[eval] case: clear_sleep_miss
+[eval] case: boundary_recovery_exact
+[eval] case: missing_day_whoop
+[eval] case: multi_metric_composite
+[eval] case: streak_vs_total
+[eval] case: oura_sleep_commitment
+[eval] case: strap_gaming
+[eval] case: week_boundary_edge
+[eval] case: aggregate_exercise_minutes
+
+# biometric-json-eval
+
+| Model | Strict verdict accuracy | Avg judge score | Total cost |
+|-------|------------------------|-----------------|------------|
+| haiku | 0/0  | — | $0.0000 |
+| opus | 0/0  | — | $0.0000 |
+| sonnet | 0/0  | — | $0.0000 |
+| gemini | 8/10 (80%) | — | $0.0392 |
+| gpt | 4/10 (40%) | — | $0.1471 |
+
+Full results:
+  /Users/p/Code/biometric-json-eval/results/run-20260418-222707.json
+  /Users/p/Code/biometric-json-eval/results/run-20260418-222707.md

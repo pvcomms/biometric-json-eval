@@ -1,0 +1,39 @@
+{
+  "name": "unit_mismatch_km_vs_meters",
+  "commitment": "Run at least 30 km this week.",
+  "window": { "start": "2026-04-13T00:00:00Z", "end": "2026-04-19T23:59:59Z" },
+  "provider": "whoop",
+  "data": {
+    "workouts": [
+      {
+        "id": 1,
+        "sport_id": 0,
+        "start": "2026-04-13T06:00:00Z",
+        "score": { "distance_meter": 8200, "kilojoule": 1820 }
+      },
+      {
+        "id": 2,
+        "sport_id": 0,
+        "start": "2026-04-15T06:30:00Z",
+        "score": { "distance_meter": 12400, "kilojoule": 2790 }
+      },
+      {
+        "id": 3,
+        "sport_id": 0,
+        "start": "2026-04-17T07:00:00Z",
+        "score": { "distance_meter": 6500, "kilojoule": 1500 }
+      },
+      {
+        "id": 4,
+        "sport_id": 0,
+        "start": "2026-04-19T06:45:00Z",
+        "score": { "distance_meter": 5100, "kilojoule": 1190 }
+      }
+    ]
+  },
+  "expected": {
+    "verdict": "hit",
+    "rationale": "Total distance = 8200 + 12400 + 6500 + 5100 = 32,200 meters = 32.2 km, which exceeds 30 km. The trap is the unit: data is in meters, commitment is in km. Models that compare 32200 meters directly to 30 (treating both as same unit) will hallucinate a hit-by-1000x; models that compare 32200 to 30000 (in meters) get the right verdict for the right reason. Explicit unit conversion in reasoning is required.",
+    "required_mentions": ["meters", "km", "32.2", "convert"]
+  }
+}

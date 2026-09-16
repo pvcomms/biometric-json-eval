@@ -1,0 +1,76 @@
+{
+  "name": "missing_day_whoop",
+  "commitment": "Hit recovery score of 65 or higher on at least 6 of the 7 days this week.",
+  "window": { "start": "2026-04-13T00:00:00Z", "end": "2026-04-19T23:59:59Z" },
+  "provider": "whoop",
+  "data": {
+    "records": [
+      {
+        "cycle_id": 920,
+        "created_at": "2026-04-13T05:10:00Z",
+        "score": {
+          "user_calibrating": false,
+          "recovery_score": 78,
+          "resting_heart_rate": 53,
+          "hrv_rmssd_milli": 60.1
+        }
+      },
+      {
+        "cycle_id": 921,
+        "created_at": "2026-04-14T05:08:00Z",
+        "score": {
+          "user_calibrating": false,
+          "recovery_score": 72,
+          "resting_heart_rate": 54,
+          "hrv_rmssd_milli": 55.4
+        }
+      },
+      {
+        "cycle_id": 922,
+        "created_at": "2026-04-15T05:12:00Z",
+        "score": {
+          "user_calibrating": false,
+          "recovery_score": 68,
+          "resting_heart_rate": 55,
+          "hrv_rmssd_milli": 48.9
+        }
+      },
+      {
+        "cycle_id": 924,
+        "created_at": "2026-04-17T05:09:00Z",
+        "score": {
+          "user_calibrating": false,
+          "recovery_score": 81,
+          "resting_heart_rate": 52,
+          "hrv_rmssd_milli": 62.3
+        }
+      },
+      {
+        "cycle_id": 925,
+        "created_at": "2026-04-18T05:11:00Z",
+        "score": {
+          "user_calibrating": false,
+          "recovery_score": 75,
+          "resting_heart_rate": 53,
+          "hrv_rmssd_milli": 57.1
+        }
+      },
+      {
+        "cycle_id": 926,
+        "created_at": "2026-04-19T05:14:00Z",
+        "score": {
+          "user_calibrating": false,
+          "recovery_score": 70,
+          "resting_heart_rate": 54,
+          "hrv_rmssd_milli": 52.8
+        }
+      }
+    ]
+  },
+  "expected": {
+    "verdict": "ambiguous",
+    "rationale": "Only 6 cycles in the 7-day window. Apr 16 is MISSING from the data (cycle IDs jump 922 -> 924). All 6 present days hit 65+, so if Apr 16 is a legit no-strap day, commitment is technically 'missed' (only 6 confirmed hits, need 6; but we cannot confirm 6 without knowing Apr 16). More importantly, a settlement oracle should flag missing data rather than silently assume. Correct behavior: return ambiguous and require attestation or a fallback rule before settling.",
+    "required_mentions": ["missing", "Apr 16", "gap", "cycle"],
+    "trap": "Models may count only the 6 present days, see all 6 >=65, and call it a hit without noticing the missing day."
+  }
+}

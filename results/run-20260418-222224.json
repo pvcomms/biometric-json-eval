@@ -1,0 +1,35 @@
+{
+  "generated_at": "2026-04-18T22:22:24.113077+00:00",
+  "results": [
+    {
+      "case": "clear_recovery_hit",
+      "commitment": "Hit a Whoop recovery score of 70 or higher on at least 5 of the 7 days in this week.",
+      "expected_verdict": "hit",
+      "model_results": [
+        {
+          "case": "clear_recovery_hit",
+          "model": "gpt-5",
+          "output": "{\n  \"verdict\": \"hit\",\n  \"confidence\": 0.97,\n  \"reasoning\": \"Within the UTC window (2026-04-13 to 2026-04-19), there is one recovery record per day. Recovery scores \u226570 occurred on 2026-04-13 (82), 2026-04-14 (71), 2026-04-16 (88), 2026-04-17 (77), and 2026-04-19 (73), totaling 5 of 7 days, which meets the commitment.\",\n  \"cited_days\": [\"2026-04-13\", \"2026-04-14\", \"2026-04-16\", \"2026-04-17\", \"2026-04-19\"],\n  \"flags\": []\n}",
+          "parsed_verdict": "hit",
+          "parsed_confidence": 0.97,
+          "parsed_reasoning": "Within the UTC window (2026-04-13 to 2026-04-19), there is one recovery record per day. Recovery scores \u226570 occurred on 2026-04-13 (82), 2026-04-14 (71), 2026-04-16 (88), 2026-04-17 (77), and 2026-04-19 (73), totaling 5 of 7 days, which meets the commitment.",
+          "parsed_flags": [],
+          "parsed_cited_days": [
+            "2026-04-13",
+            "2026-04-14",
+            "2026-04-16",
+            "2026-04-17",
+            "2026-04-19"
+          ],
+          "latency_s": 14.622201919555664,
+          "input_tokens": 1102,
+          "output_tokens": 887,
+          "cost_usd": 0.0102475,
+          "error": null,
+          "scores": {},
+          "strict_match": true
+        }
+      ]
+    }
+  ]
+}

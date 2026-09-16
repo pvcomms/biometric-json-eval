@@ -1,0 +1,65 @@
+{
+  "name": "workout_sport_filter",
+  "commitment": "Complete at least 3 RUNNING workouts this week (sport_id=0 is Running in Whoop).",
+  "window": { "start": "2026-04-13T00:00:00Z", "end": "2026-04-19T23:59:59Z" },
+  "provider": "whoop",
+  "data": {
+    "records": [
+      {
+        "workout_id": 1501,
+        "start": "2026-04-13T06:30:00Z",
+        "end": "2026-04-13T07:22:00Z",
+        "sport_id": 0,
+        "score": { "strain": 11.2 }
+      },
+      {
+        "workout_id": 1502,
+        "start": "2026-04-14T18:05:00Z",
+        "end": "2026-04-14T18:48:00Z",
+        "sport_id": 45,
+        "score": { "strain": 14.1 }
+      },
+      {
+        "workout_id": 1503,
+        "start": "2026-04-15T06:15:00Z",
+        "end": "2026-04-15T07:05:00Z",
+        "sport_id": 1,
+        "score": { "strain": 12.3 }
+      },
+      {
+        "workout_id": 1504,
+        "start": "2026-04-16T17:30:00Z",
+        "end": "2026-04-16T18:10:00Z",
+        "sport_id": 0,
+        "score": { "strain": 10.8 }
+      },
+      {
+        "workout_id": 1505,
+        "start": "2026-04-17T06:20:00Z",
+        "end": "2026-04-17T07:35:00Z",
+        "sport_id": 1,
+        "score": { "strain": 15.2 }
+      },
+      {
+        "workout_id": 1506,
+        "start": "2026-04-18T17:30:00Z",
+        "end": "2026-04-18T18:15:00Z",
+        "sport_id": 45,
+        "score": { "strain": 13.7 }
+      },
+      {
+        "workout_id": 1507,
+        "start": "2026-04-19T08:00:00Z",
+        "end": "2026-04-19T08:55:00Z",
+        "sport_id": 0,
+        "score": { "strain": 11.5 }
+      }
+    ]
+  },
+  "expected": {
+    "verdict": "hit",
+    "rationale": "Filter workouts by sport_id=0 (Running): 1501 (Apr 13), 1504 (Apr 16), 1507 (Apr 19) = 3 running workouts. Threshold met exactly.",
+    "required_mentions": ["sport_id=0", "3 running", "filter"],
+    "trap": "Weak models may count all 7 workouts, or confuse sport_id meanings. 1 is Cycling, 45 is Weightlifting in Whoop's sport mapping."
+  }
+}

@@ -1,0 +1,116 @@
+{
+  "_synthetic": "SYNTHETIC FIXTURE. This file once held a live Whoop pull keyed to a real user_id. It was replaced before publication. Every user_id, cycle id, timestamp and physiological value below is fabricated. The JSON shape, field names, nesting, float precision and value ranges match the real Whoop /cycle payload exactly, so the case still exercises the same parsing difficulty and still scores to the same verdict. The synthetic user_id begins with 999. The boundary property of the original is preserved: the total clears the threshold whether or not the first cycle (which starts before the window opens) is counted.",
+  "name": "real_param_strain",
+  "commitment": "Accumulate at least 30 total strain points across cycles in the 7-day window April 11 through April 17.",
+  "window": { "start": "2026-04-11T00:00:00Z", "end": "2026-04-17T23:59:59Z" },
+  "provider": "whoop",
+  "data_source": "synthetic_fixture_v1_shape_matched_to_whoop_cycle",
+  "data": {
+    "records": [
+      {
+        "id": 9000041001,
+        "user_id": 999000001,
+        "start": "2026-04-10T23:41:18.220Z",
+        "end": "2026-04-11T18:02:53.410Z",
+        "timezone_offset": "+05:30",
+        "score_state": "SCORED",
+        "score": {
+          "strain": 4.212045,
+          "kilojoule": 5712.804,
+          "average_heart_rate": 71,
+          "max_heart_rate": 127
+        }
+      },
+      {
+        "id": 9000041002,
+        "user_id": 999000001,
+        "start": "2026-04-11T18:02:53.410Z",
+        "end": "2026-04-12T19:34:07.860Z",
+        "timezone_offset": "+05:30",
+        "score_state": "SCORED",
+        "score": {
+          "strain": 6.118732,
+          "kilojoule": 8401.275,
+          "average_heart_rate": 78,
+          "max_heart_rate": 129
+        }
+      },
+      {
+        "id": 9000041003,
+        "user_id": 999000001,
+        "start": "2026-04-12T19:34:07.860Z",
+        "end": "2026-04-13T18:27:44.130Z",
+        "timezone_offset": "+05:30",
+        "score_state": "SCORED",
+        "score": {
+          "strain": 4.507391,
+          "kilojoule": 7104.6182,
+          "average_heart_rate": 74,
+          "max_heart_rate": 133
+        }
+      },
+      {
+        "id": 9000041004,
+        "user_id": 999000001,
+        "start": "2026-04-13T18:27:44.130Z",
+        "end": "2026-04-14T18:09:51.470Z",
+        "timezone_offset": "+05:30",
+        "score_state": "SCORED",
+        "score": {
+          "strain": 4.033864,
+          "kilojoule": 7488.302,
+          "average_heart_rate": 70,
+          "max_heart_rate": 119
+        }
+      },
+      {
+        "id": 9000041005,
+        "user_id": 999000001,
+        "start": "2026-04-14T18:09:51.470Z",
+        "end": "2026-04-15T20:15:39.980Z",
+        "timezone_offset": "+05:30",
+        "score_state": "SCORED",
+        "score": {
+          "strain": 4.361209,
+          "kilojoule": 8022.591,
+          "average_heart_rate": 73,
+          "max_heart_rate": 121
+        }
+      },
+      {
+        "id": 9000041006,
+        "user_id": 999000001,
+        "start": "2026-04-15T20:15:39.980Z",
+        "end": "2026-04-16T19:31:12.640Z",
+        "timezone_offset": "+05:30",
+        "score_state": "SCORED",
+        "score": {
+          "strain": 4.944518,
+          "kilojoule": 7690.1523,
+          "average_heart_rate": 80,
+          "max_heart_rate": 141
+        }
+      },
+      {
+        "id": 9000041007,
+        "user_id": 999000001,
+        "start": "2026-04-16T19:31:12.640Z",
+        "end": "2026-04-17T21:18:05.730Z",
+        "timezone_offset": "+05:30",
+        "score_state": "SCORED",
+        "score": {
+          "strain": 6.372255,
+          "kilojoule": 8619.407,
+          "average_heart_rate": 76,
+          "max_heart_rate": 137
+        }
+      }
+    ]
+  },
+  "expected": {
+    "verdict": "hit",
+    "rationale": "Sum of strain across the 7 Whoop cycles in window: 4.212+6.119+4.507+4.034+4.361+4.945+6.372 = 34.55. 34.55 >= 30 => hit. Note the boundary: the first cycle starts 2026-04-10T23:41Z, just before the window opens. Excluding it gives 30.34, which still clears 30, so the verdict holds under either boundary rule. Cycles do not align to calendar days - they wrap roughly 6-8 PM IST. Oracle must sum by cycle, not by day.",
+    "required_mentions": ["34.5", "sum", "7 cycles"],
+    "trap": "Don't confuse kilojoule with strain. Don't try to re-aggregate by calendar day. Sum the `strain` field across cycles whose start-time falls in window, and notice that the first cycle straddles the window boundary."
+  }
+}

@@ -1,0 +1,45 @@
+[eval] prompt variant: strict
+[eval] 29 case(s) x 2 model(s) x 3 trial(s) = 174 calls
+[eval] case: clear_recovery_hit
+[eval] case: clear_sleep_miss
+[eval] case: boundary_recovery_exact
+[eval] case: missing_day_whoop
+[eval] case: multi_metric_composite
+[eval] case: streak_vs_total
+[eval] case: oura_sleep_commitment
+[eval] case: strap_gaming
+[eval] case: week_boundary_edge
+[eval] case: aggregate_exercise_minutes
+[eval] case: adversarial_prompt_injection
+[eval] case: calories_unit_conversion
+[eval] case: duplicate_cycles
+[eval] case: pending_scoring_state
+[eval] case: workout_sport_filter
+[eval] case: long_window_month
+[eval] case: explicit_ambiguity
+[eval] case: hrv_trend
+[eval] case: timezone_ist
+[eval] case: mixed_units_confusion
+[eval] case: real_param_recovery
+[eval] case: real_param_strain
+[eval] case: cycle_rescored_midwindow
+[eval] case: unit_mismatch_km_vs_meters
+[eval] case: timezone_ist_window
+[eval] case: partial_day_window
+[eval] case: dst_boundary
+[eval] case: negative_artifact
+[eval] case: real_param_sleep
+
+# biometric-json-eval
+
+| Model | Strict verdict accuracy | Avg judge score | Total cost |
+|-------|------------------------|-----------------|------------|
+| haiku | 58/87 (67%) | 8.2 | $0.3222 |
+| opus | 64/87 (74%) | 8.7 | $4.5844 |
+| sonnet | 0/0  | — | $0.0000 |
+| gemini | 0/0  | — | $0.0000 |
+| gpt | 0/0  | — | $0.0000 |
+
+Full results:
+  /Users/p/Code/biometric-json-eval/results/run-20260419-001743-strict.json
+  /Users/p/Code/biometric-json-eval/results/run-20260419-001743-strict.md

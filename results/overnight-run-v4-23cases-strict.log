@@ -1,0 +1,60 @@
+[eval] prompt variant: strict
+[eval] 29 case(s) x 2 model(s) x 3 trial(s) = 174 calls
+[eval] case: clear_recovery_hit
+/Users/p/Code/biometric-json-eval/./eval.py:276: FutureWarning: 
+
+All support for the `google.generativeai` package has ended. It will no longer be receiving 
+updates or bug fixes. Please switch to the `google.genai` package as soon as possible.
+See README for more details:
+
+https://github.com/google-gemini/deprecated-generative-ai-python/blob/main/README.md
+
+  import google.generativeai as genai
+I0419 04:39:02.936916  941403 fork_posix.cc:71] Other threads are currently calling into gRPC, skipping fork() handlers
+I0419 04:39:02.942585  941402 fork_posix.cc:71] Other threads are currently calling into gRPC, skipping fork() handlers
+I0419 04:39:02.945186  941404 fork_posix.cc:71] Other threads are currently calling into gRPC, skipping fork() handlers
+I0419 04:39:02.954752  941404 fork_posix.cc:71] Other threads are currently calling into gRPC, skipping fork() handlers
+I0419 04:39:02.957420  941403 fork_posix.cc:71] Other threads are currently calling into gRPC, skipping fork() handlers
+I0419 04:39:02.961328  941402 fork_posix.cc:71] Other threads are currently calling into gRPC, skipping fork() handlers
+[eval] case: clear_sleep_miss
+[eval] case: boundary_recovery_exact
+[eval] case: missing_day_whoop
+[eval] case: multi_metric_composite
+[eval] case: streak_vs_total
+[eval] case: oura_sleep_commitment
+[eval] case: strap_gaming
+[eval] case: week_boundary_edge
+[eval] case: aggregate_exercise_minutes
+[eval] case: adversarial_prompt_injection
+[eval] case: calories_unit_conversion
+[eval] case: duplicate_cycles
+[eval] case: pending_scoring_state
+[eval] case: workout_sport_filter
+[eval] case: long_window_month
+[eval] case: explicit_ambiguity
+[eval] case: hrv_trend
+[eval] case: timezone_ist
+[eval] case: mixed_units_confusion
+[eval] case: real_param_recovery
+[eval] case: real_param_strain
+[eval] case: cycle_rescored_midwindow
+[eval] case: real_param_sleep
+[eval] case: unit_mismatch_km_vs_meters
+[eval] case: timezone_ist_window
+[eval] case: partial_day_window
+[eval] case: dst_boundary
+[eval] case: negative_artifact
+
+# biometric-json-eval
+
+| Model | Strict verdict accuracy | Avg judge score | Total cost |
+|-------|------------------------|-----------------|------------|
+| haiku | 0/0  | — | $0.0000 |
+| opus | 0/0  | — | $0.0000 |
+| sonnet | 0/0  | — | $0.0000 |
+| gemini | 67/87 (77%) | 8.0 | $0.3865 |
+| gpt | 65/87 (75%) | 8.4 | $2.4024 |
+
+Full results:
+  /Users/p/Code/biometric-json-eval/results/run-20260418-232900-strict.json
+  /Users/p/Code/biometric-json-eval/results/run-20260418-232900-strict.md

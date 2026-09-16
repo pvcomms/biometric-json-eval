@@ -1,0 +1,114 @@
+{
+  "name": "oura_sleep_commitment",
+  "commitment": "Hit an Oura sleep score of 80 or higher on at least 5 of 7 nights this week.",
+  "window": { "start": "2026-04-13T00:00:00Z", "end": "2026-04-19T23:59:59Z" },
+  "provider": "oura",
+  "data": {
+    "data": [
+      {
+        "id": "dss-01",
+        "day": "2026-04-13",
+        "score": 84,
+        "contributors": {
+          "deep_sleep": 78,
+          "efficiency": 92,
+          "latency": 88,
+          "rem_sleep": 81,
+          "restfulness": 79,
+          "timing": 85,
+          "total_sleep": 82
+        }
+      },
+      {
+        "id": "dss-02",
+        "day": "2026-04-14",
+        "score": 88,
+        "contributors": {
+          "deep_sleep": 85,
+          "efficiency": 93,
+          "latency": 90,
+          "rem_sleep": 87,
+          "restfulness": 82,
+          "timing": 88,
+          "total_sleep": 89
+        }
+      },
+      {
+        "id": "dss-03",
+        "day": "2026-04-15",
+        "score": 67,
+        "contributors": {
+          "deep_sleep": 55,
+          "efficiency": 81,
+          "latency": 72,
+          "rem_sleep": 60,
+          "restfulness": 58,
+          "timing": 78,
+          "total_sleep": 65
+        }
+      },
+      {
+        "id": "dss-04",
+        "day": "2026-04-16",
+        "score": 81,
+        "contributors": {
+          "deep_sleep": 75,
+          "efficiency": 90,
+          "latency": 84,
+          "rem_sleep": 78,
+          "restfulness": 77,
+          "timing": 82,
+          "total_sleep": 80
+        }
+      },
+      {
+        "id": "dss-05",
+        "day": "2026-04-17",
+        "score": 76,
+        "contributors": {
+          "deep_sleep": 70,
+          "efficiency": 88,
+          "latency": 80,
+          "rem_sleep": 72,
+          "restfulness": 75,
+          "timing": 79,
+          "total_sleep": 74
+        }
+      },
+      {
+        "id": "dss-06",
+        "day": "2026-04-18",
+        "score": 85,
+        "contributors": {
+          "deep_sleep": 80,
+          "efficiency": 91,
+          "latency": 87,
+          "rem_sleep": 82,
+          "restfulness": 80,
+          "timing": 84,
+          "total_sleep": 86
+        }
+      },
+      {
+        "id": "dss-07",
+        "day": "2026-04-19",
+        "score": 82,
+        "contributors": {
+          "deep_sleep": 77,
+          "efficiency": 89,
+          "latency": 85,
+          "rem_sleep": 80,
+          "restfulness": 78,
+          "timing": 83,
+          "total_sleep": 81
+        }
+      }
+    ]
+  },
+  "expected": {
+    "verdict": "hit",
+    "rationale": "Top-level Oura daily_sleep score >= 80: Apr 13 (84), Apr 14 (88), Apr 16 (81), Apr 18 (85), Apr 19 (82) = 5 nights. Meets 5-of-7 threshold exactly.",
+    "required_mentions": ["5 nights", "80 threshold", "top-level score"],
+    "trap": "Model must use the top-level `score` field, not a contributor sub-score. Using `total_sleep` contributor would misread Apr 19 (81 -> ok) but could confuse on edge cases."
+  }
+}

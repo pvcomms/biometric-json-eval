@@ -1,0 +1,108 @@
+{
+  "_synthetic": "SYNTHETIC FIXTURE. This file once held a live Whoop pull keyed to a real user_id. It was replaced before publication. Every user_id, cycle_id, sleep_id, timestamp and physiological value below is fabricated. The JSON shape, field names, nesting, float precision and value ranges match the real Whoop /recovery payload exactly, so the case still exercises the same parsing difficulty and still scores to the same verdict. Synthetic sleep_ids all begin with the marker 'fa4e'; the synthetic user_id begins with 999.",
+  "name": "real_param_recovery",
+  "commitment": "Hit recovery score 70 or higher on at least 3 days between April 13 and April 18 (6-day window).",
+  "window": { "start": "2026-04-13T00:00:00Z", "end": "2026-04-18T23:59:59Z" },
+  "provider": "whoop",
+  "data_source": "synthetic_fixture_v1_shape_matched_to_whoop_recovery",
+  "data": {
+    "records": [
+      {
+        "cycle_id": 9000041003,
+        "sleep_id": "fa4e0003-1b7c-4a2e-9d51-3c08a51e7b60",
+        "user_id": 999000001,
+        "created_at": "2026-04-13T01:38:12.514Z",
+        "score_state": "SCORED",
+        "score": {
+          "user_calibrating": false,
+          "recovery_score": 54,
+          "resting_heart_rate": 64,
+          "hrv_rmssd_milli": 37.812,
+          "spo2_percentage": 96.07692,
+          "skin_temp_celsius": 33.941
+        }
+      },
+      {
+        "cycle_id": 9000041004,
+        "sleep_id": "fa4e0004-2c8d-4b3f-8e62-7d19b6420c51",
+        "user_id": 999000001,
+        "created_at": "2026-04-13T21:26:47.803Z",
+        "score_state": "SCORED",
+        "score": {
+          "user_calibrating": false,
+          "recovery_score": 12,
+          "resting_heart_rate": 58,
+          "hrv_rmssd_milli": 24.617355,
+          "spo2_percentage": 94.8,
+          "skin_temp_celsius": 34.402917
+        }
+      },
+      {
+        "cycle_id": 9000041005,
+        "sleep_id": "fa4e0005-3d9e-4c40-9f73-2ea47c1358d9",
+        "user_id": 999000001,
+        "created_at": "2026-04-15T02:19:05.271Z",
+        "score_state": "SCORED",
+        "score": {
+          "user_calibrating": false,
+          "recovery_score": 78,
+          "resting_heart_rate": 57,
+          "hrv_rmssd_milli": 41.90387,
+          "spo2_percentage": 96.84615,
+          "skin_temp_celsius": 33.216
+        }
+      },
+      {
+        "cycle_id": 9000041006,
+        "sleep_id": "fa4e0006-4eaf-4d51-8a84-5b93e07fa16d",
+        "user_id": 999000001,
+        "created_at": "2026-04-16T01:42:33.019Z",
+        "score_state": "SCORED",
+        "score": {
+          "user_calibrating": false,
+          "recovery_score": 26,
+          "resting_heart_rate": 69,
+          "hrv_rmssd_milli": 23.884201,
+          "spo2_percentage": 93.1,
+          "skin_temp_celsius": 33.872584
+        }
+      },
+      {
+        "cycle_id": 9000041007,
+        "sleep_id": "fa4e0007-5fb0-4e62-9b95-8c20d94b6e37",
+        "user_id": 999000001,
+        "created_at": "2026-04-17T02:41:58.662Z",
+        "score_state": "SCORED",
+        "score": {
+          "user_calibrating": false,
+          "recovery_score": 63,
+          "resting_heart_rate": 62,
+          "hrv_rmssd_milli": 34.729516,
+          "spo2_percentage": 95.53846,
+          "skin_temp_celsius": 33.407333
+        }
+      },
+      {
+        "cycle_id": 9000041008,
+        "sleep_id": "fa4e0008-60c1-4f73-8ca6-1f65ba38c204",
+        "user_id": 999000001,
+        "created_at": "2026-04-18T03:04:26.148Z",
+        "score_state": "SCORED",
+        "score": {
+          "user_calibrating": false,
+          "recovery_score": 47,
+          "resting_heart_rate": 65,
+          "hrv_rmssd_milli": 29.15644,
+          "spo2_percentage": 94.92308,
+          "skin_temp_celsius": 33.128
+        }
+      }
+    ]
+  },
+  "expected": {
+    "verdict": "miss",
+    "rationale": "Synthetic Whoop-shaped recovery data, Apr 13-18 2026. Recovery scores in window: 54 (4/13 01:38Z), 12 (4/13 21:26Z - two cycles on the same calendar day; the late-evening one is the sleep assigned to the 4/13 IST evening), 78 (4/15), 26 (4/16), 63 (4/17), 47 (4/18). Only 1 day hit >= 70 (Apr 15 at 78). Threshold requires 3. Verdict: miss. Also note the two-cycles-on-Apr-13 pattern: Whoop creates a short extra cycle when the user goes to bed well after a nap, and a settlement oracle must decide whether to count the nap cycle or only the primary sleep cycle.",
+    "required_mentions": ["1 day", "78", "two cycles", "Apr 13"],
+    "trap": "There are two cycles on Apr 13. A naive model may count sleep_id fa4e0003 (recovery 54) as 'Apr 13' and cycle 9000041004 (recovery 12) as 'Apr 14 morning' - but created_at is the assignment date, not the wake date. Oracle should clarify the counting rule. Apr 14 has no cycle at all."
+  }
+}

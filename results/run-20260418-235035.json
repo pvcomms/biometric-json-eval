@@ -1,0 +1,36 @@
+{
+  "generated_at": "2026-04-18T23:50:35.703093+00:00",
+  "results": [
+    {
+      "case": "clear_recovery_hit",
+      "commitment": "Hit a Whoop recovery score of 70 or higher on at least 5 of the 7 days in this week.",
+      "expected_verdict": "hit",
+      "model_results": [
+        {
+          "case": "clear_recovery_hit",
+          "model": "claude-haiku-4-5-20251001",
+          "output": "```json\n{\n  \"verdict\": \"hit\",\n  \"confidence\": 0.99,\n  \"reasoning\": \"The commitment requires a recovery score \u226570 on at least 5 of 7 days within the window 2026-04-13 to 2026-04-19 UTC. All 7 records fall within this window and are dated on consecutive days (Apr 13\u201319). Extracting recovery_score values: Apr 13: 82 (\u2713), Apr 14: 71 (\u2713), Apr 15: 45 (\u2717), Apr 16: 88 (\u2713), Apr 17: 77 (\u2713), Apr 18: 38 (\u2717), Apr 19: 73 (\u2713). This yields 5 days meeting the threshold (82, 71, 88, 77, 73), satisfying the requirement of at least 5 days. user_calibrating is false for all records, indicating data quality is good.\",\n  \"cited_days\": [\n    \"2026-04-13\",\n    \"2026-04-14\",\n    \"2026-04-16\",\n    \"2026-04-17\",\n    \"2026-04-19\"\n  ],\n  \"flags\": []\n}\n```",
+          "parsed_verdict": "hit",
+          "parsed_confidence": 0.99,
+          "parsed_reasoning": "The commitment requires a recovery score \u226570 on at least 5 of 7 days within the window 2026-04-13 to 2026-04-19 UTC. All 7 records fall within this window and are dated on consecutive days (Apr 13\u201319). Extracting recovery_score values: Apr 13: 82 (\u2713), Apr 14: 71 (\u2713), Apr 15: 45 (\u2717), Apr 16: 88 (\u2713), Apr 17: 77 (\u2713), Apr 18: 38 (\u2717), Apr 19: 73 (\u2713). This yields 5 days meeting the threshold (82, 71, 88, 77, 73), satisfying the requirement of at least 5 days. user_calibrating is false for all records, indicating data quality is good.",
+          "parsed_flags": [],
+          "parsed_cited_days": [
+            "2026-04-13",
+            "2026-04-14",
+            "2026-04-16",
+            "2026-04-17",
+            "2026-04-19"
+          ],
+          "latency_s": 3.178622007369995,
+          "input_tokens": 1281,
+          "output_tokens": 305,
+          "cost_usd": 0.002806,
+          "error": null,
+          "scores": {},
+          "strict_match": true
+        }
+      ]
+    }
+  ],
+  "prompt_variant": "default"
+}

@@ -1,0 +1,51 @@
+{
+  "name": "streak_vs_total",
+  "commitment": "Hit recovery score of 70 or higher on 5 CONSECUTIVE days at some point this week.",
+  "window": { "start": "2026-04-13T00:00:00Z", "end": "2026-04-19T23:59:59Z" },
+  "provider": "whoop",
+  "data": {
+    "records": [
+      {
+        "cycle_id": 940,
+        "created_at": "2026-04-13T05:10:00Z",
+        "score": { "recovery_score": 82 }
+      },
+      {
+        "cycle_id": 941,
+        "created_at": "2026-04-14T05:08:00Z",
+        "score": { "recovery_score": 78 }
+      },
+      {
+        "cycle_id": 942,
+        "created_at": "2026-04-15T05:12:00Z",
+        "score": { "recovery_score": 55 }
+      },
+      {
+        "cycle_id": 943,
+        "created_at": "2026-04-16T05:09:00Z",
+        "score": { "recovery_score": 73 }
+      },
+      {
+        "cycle_id": 944,
+        "created_at": "2026-04-17T05:14:00Z",
+        "score": { "recovery_score": 80 }
+      },
+      {
+        "cycle_id": 945,
+        "created_at": "2026-04-18T05:11:00Z",
+        "score": { "recovery_score": 77 }
+      },
+      {
+        "cycle_id": 946,
+        "created_at": "2026-04-19T05:07:00Z",
+        "score": { "recovery_score": 74 }
+      }
+    ]
+  },
+  "expected": {
+    "verdict": "miss",
+    "rationale": "6 of 7 days are >=70 (total), but the commitment asks for 5 CONSECUTIVE. The break on Apr 15 (55) splits the week into two runs: Apr 13-14 (2 days) and Apr 16-19 (4 days). Longest consecutive run is 4 days. 4 < 5, so this is a miss.",
+    "required_mentions": ["consecutive", "4 days", "broken by Apr 15"],
+    "trap": "Weak models may count total hits (6) and call this a hit. Commitment specifies consecutive."
+  }
+}

@@ -1,0 +1,40 @@
+[eval] 10 case(s) x 2 model(s) x 3 trial(s) = 60 calls
+[eval] case: clear_recovery_hit
+/Users/p/Code/biometric-json-eval/./eval.py:251: FutureWarning: 
+
+All support for the `google.generativeai` package has ended. It will no longer be receiving 
+updates or bug fixes. Please switch to the `google.genai` package as soon as possible.
+See README for more details:
+
+https://github.com/google-gemini/deprecated-generative-ai-python/blob/main/README.md
+
+  import google.generativeai as genai
+I0419 04:01:02.197942  827172 fork_posix.cc:71] Other threads are currently calling into gRPC, skipping fork() handlers
+I0419 04:01:02.202678  827174 fork_posix.cc:71] Other threads are currently calling into gRPC, skipping fork() handlers
+I0419 04:01:02.206123  827173 fork_posix.cc:71] Other threads are currently calling into gRPC, skipping fork() handlers
+I0419 04:01:02.218398  827172 fork_posix.cc:71] Other threads are currently calling into gRPC, skipping fork() handlers
+I0419 04:01:02.223680  827173 fork_posix.cc:71] Other threads are currently calling into gRPC, skipping fork() handlers
+I0419 04:01:02.227858  827174 fork_posix.cc:71] Other threads are currently calling into gRPC, skipping fork() handlers
+[eval] case: clear_sleep_miss
+[eval] case: boundary_recovery_exact
+[eval] case: missing_day_whoop
+[eval] case: multi_metric_composite
+[eval] case: streak_vs_total
+[eval] case: oura_sleep_commitment
+[eval] case: strap_gaming
+[eval] case: week_boundary_edge
+[eval] case: aggregate_exercise_minutes
+
+# biometric-json-eval
+
+| Model | Strict verdict accuracy | Avg judge score | Total cost |
+|-------|------------------------|-----------------|------------|
+| haiku | 0/0  | — | $0.0000 |
+| opus | 0/0  | — | $0.0000 |
+| sonnet | 0/0  | — | $0.0000 |
+| gemini | 26/30 (87%) | 8.5 | $0.1196 |
+| gpt | 23/30 (77%) | 8.7 | $0.6969 |
+
+Full results:
+  /Users/p/Code/biometric-json-eval/results/run-20260418-223824.json
+  /Users/p/Code/biometric-json-eval/results/run-20260418-223824.md

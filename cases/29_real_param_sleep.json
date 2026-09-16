@@ -1,0 +1,174 @@
+{
+  "_synthetic": "SYNTHETIC FIXTURE. This file once held a live Whoop pull keyed to a real user_id. It was replaced before publication. Every user_id, cycle_id, sleep id, timestamp and physiological value below is fabricated. The JSON shape, field names, nesting, ragged stage_summary schema, float precision and value ranges match the real Whoop /sleep payload exactly, so the case still exercises the same parsing difficulty and still scores to the same verdict. Synthetic sleep ids all begin with the marker 'fa4e'; the synthetic user_id begins with 999. The three traps of the original are preserved: one nap=true record, one cycle_id appearing on two records, and only the first record carrying the full stage breakdown.",
+  "name": "real_param_sleep",
+  "commitment": "Hit a Whoop sleep_performance_percentage of 70 or higher on at least 3 nights in the window April 11-17 (7 nights).",
+  "window": { "start": "2026-04-11T00:00:00Z", "end": "2026-04-17T23:59:59Z" },
+  "provider": "whoop",
+  "data_source": "synthetic_fixture_v1_shape_matched_to_whoop_sleep",
+  "data": {
+    "records": [
+      {
+        "id": "fa4e0007-5fb0-4e62-9b95-8c20d94b6e37",
+        "cycle_id": 9000041007,
+        "user_id": 999000001,
+        "start": "2026-04-16T19:31:12.640Z",
+        "end": "2026-04-17T02:22:47.910Z",
+        "timezone_offset": "+05:30",
+        "nap": false,
+        "score_state": "SCORED",
+        "score": {
+          "stage_summary": {
+            "total_in_bed_time_milli": 24695330,
+            "total_awake_time_milli": 2489110,
+            "total_light_sleep_time_milli": 9411870,
+            "total_slow_wave_sleep_time_milli": 4318460,
+            "total_rem_sleep_time_milli": 8475890,
+            "sleep_cycle_count": 6,
+            "disturbance_count": 5
+          },
+          "sleep_performance_percentage": 76,
+          "sleep_consistency_percentage": 72,
+          "sleep_efficiency_percentage": 89.921547
+        }
+      },
+      {
+        "id": "fa4e0006-4eaf-4d51-8a84-5b93e07fa16d",
+        "cycle_id": 9000041006,
+        "user_id": 999000001,
+        "start": "2026-04-15T20:15:39.980Z",
+        "end": "2026-04-16T00:33:04.520Z",
+        "timezone_offset": "+05:30",
+        "nap": false,
+        "score_state": "SCORED",
+        "score": {
+          "stage_summary": {
+            "total_in_bed_time_milli": 15444520,
+            "total_awake_time_milli": 1012370,
+            "sleep_cycle_count": 1,
+            "disturbance_count": 9
+          },
+          "sleep_performance_percentage": 52,
+          "sleep_consistency_percentage": 61,
+          "sleep_efficiency_percentage": 93.445118
+        }
+      },
+      {
+        "id": "fa4e0005-3d9e-4c40-9f73-2ea47c1358d9",
+        "cycle_id": 9000041005,
+        "user_id": 999000001,
+        "start": "2026-04-14T18:09:51.470Z",
+        "end": "2026-04-15T01:29:16.880Z",
+        "timezone_offset": "+05:30",
+        "nap": false,
+        "score_state": "SCORED",
+        "score": {
+          "stage_summary": {
+            "total_in_bed_time_milli": 26364880,
+            "total_awake_time_milli": 3047510,
+            "sleep_cycle_count": 4,
+            "disturbance_count": 8
+          },
+          "sleep_performance_percentage": 81,
+          "sleep_consistency_percentage": 66,
+          "sleep_efficiency_percentage": 88.441376
+        }
+      },
+      {
+        "id": "fa4e0009-71d2-4a84-9db7-4c71e05af928",
+        "cycle_id": 9000041004,
+        "user_id": 999000001,
+        "start": "2026-04-13T22:37:41.330Z",
+        "end": "2026-04-14T00:04:12.190Z",
+        "timezone_offset": "+05:30",
+        "nap": true,
+        "score_state": "SCORED",
+        "score": {
+          "stage_summary": {
+            "total_in_bed_time_milli": 5190860,
+            "total_awake_time_milli": 174000,
+            "sleep_cycle_count": 0,
+            "disturbance_count": 1
+          },
+          "sleep_performance_percentage": 26,
+          "sleep_consistency_percentage": 57,
+          "sleep_efficiency_percentage": 96.647301
+        }
+      },
+      {
+        "id": "fa4e0004-2c8d-4b3f-8e62-7d19b6420c51",
+        "cycle_id": 9000041004,
+        "user_id": 999000001,
+        "start": "2026-04-13T18:27:44.130Z",
+        "end": "2026-04-13T20:36:52.470Z",
+        "timezone_offset": "+05:30",
+        "nap": false,
+        "score_state": "SCORED",
+        "score": {
+          "stage_summary": {
+            "total_in_bed_time_milli": 7748340,
+            "total_awake_time_milli": 622080,
+            "sleep_cycle_count": 0,
+            "disturbance_count": 4
+          },
+          "sleep_performance_percentage": 33,
+          "sleep_consistency_percentage": 63,
+          "sleep_efficiency_percentage": 91.973614
+        }
+      },
+      {
+        "id": "fa4e0003-1b7c-4a2e-9d51-3c08a51e7b60",
+        "cycle_id": 9000041003,
+        "user_id": 999000001,
+        "start": "2026-04-12T19:34:07.860Z",
+        "end": "2026-04-13T01:31:18.640Z",
+        "timezone_offset": "+05:30",
+        "nap": false,
+        "score_state": "SCORED",
+        "score": {
+          "stage_summary": {
+            "total_in_bed_time_milli": 21430790,
+            "total_awake_time_milli": 801230,
+            "sleep_cycle_count": 2,
+            "disturbance_count": 12
+          },
+          "sleep_performance_percentage": 65,
+          "sleep_consistency_percentage": 63,
+          "sleep_efficiency_percentage": 96.261398
+        }
+      },
+      {
+        "id": "fa4e0002-82e3-4b95-8ec8-9a58cf1d3072",
+        "cycle_id": 9000041002,
+        "user_id": 999000001,
+        "start": "2026-04-11T18:02:53.410Z",
+        "end": "2026-04-12T00:41:27.050Z",
+        "timezone_offset": "+05:30",
+        "nap": false,
+        "score_state": "SCORED",
+        "score": {
+          "stage_summary": {
+            "total_in_bed_time_milli": 23186440,
+            "total_awake_time_milli": 1578620,
+            "sleep_cycle_count": 3,
+            "disturbance_count": 14
+          },
+          "sleep_performance_percentage": 67,
+          "sleep_consistency_percentage": 54,
+          "sleep_efficiency_percentage": 93.190842
+        }
+      }
+    ]
+  },
+  "expected": {
+    "verdict": "ambiguous",
+    "rationale": "Synthetic Whoop-shaped sleep data, Apr 11-17. Non-nap sleep records with performance >= 70: Apr 17 (76) and Apr 15 (81) = 2 nights. That is under the 3-night threshold. BUT the payload also contains a nap=true record (Apr 14 nap, performance 26) and fragmentary same-cycle records - cycle_id 9000041004 appears twice, once as a 2-hour evening session and once as the nap. A good oracle should (a) exclude nap=true records from counting nights, (b) flag the duplicate cycle_id as a data-model question, and (c) note that under any interpretation the count is 2 nights >= 70, below the 3-night threshold. The ambiguity is whether the Apr 12 evening sleep (fa4e0003, performance 65) plus the fragmented Apr 13 pair counts as one legitimate night or two. Safe oracle returns ambiguous and asks for a sleep-definition clarification.",
+    "required_mentions": [
+      "nap",
+      "cycle_id appears twice",
+      "2 nights",
+      "Apr 15",
+      "Apr 17"
+    ],
+    "trap": "Must filter nap=true before counting. Must handle duplicate cycle_id (fragmented sleep). Only the first record carries the full stage breakdown, so a model that sums stages to derive performance will fail on the rest. May confuse sleep_performance with sleep_efficiency."
+  }
+}

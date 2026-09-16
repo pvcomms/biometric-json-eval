@@ -1,0 +1,64 @@
+{
+  "name": "timezone_ist_window",
+  "commitment": "Sleep at least 7 hours every night this week, where 'night' is local IST (UTC+05:30).",
+  "window": { "start": "2026-04-12T18:30:00Z", "end": "2026-04-19T18:29:59Z" },
+  "provider": "oura",
+  "data": {
+    "sleep": [
+      {
+        "id": "s1",
+        "bedtime_start": "2026-04-12T17:30:00Z",
+        "bedtime_end": "2026-04-13T01:00:00Z",
+        "total_sleep_duration": 25200,
+        "score": 80
+      },
+      {
+        "id": "s2",
+        "bedtime_start": "2026-04-13T18:00:00Z",
+        "bedtime_end": "2026-04-14T02:00:00Z",
+        "total_sleep_duration": 27000,
+        "score": 84
+      },
+      {
+        "id": "s3",
+        "bedtime_start": "2026-04-14T17:45:00Z",
+        "bedtime_end": "2026-04-15T01:00:00Z",
+        "total_sleep_duration": 25200,
+        "score": 78
+      },
+      {
+        "id": "s4",
+        "bedtime_start": "2026-04-15T18:15:00Z",
+        "bedtime_end": "2026-04-16T01:30:00Z",
+        "total_sleep_duration": 25200,
+        "score": 79
+      },
+      {
+        "id": "s5",
+        "bedtime_start": "2026-04-16T17:55:00Z",
+        "bedtime_end": "2026-04-17T01:00:00Z",
+        "total_sleep_duration": 25200,
+        "score": 77
+      },
+      {
+        "id": "s6",
+        "bedtime_start": "2026-04-17T18:00:00Z",
+        "bedtime_end": "2026-04-18T01:30:00Z",
+        "total_sleep_duration": 26400,
+        "score": 81
+      },
+      {
+        "id": "s7",
+        "bedtime_start": "2026-04-18T17:50:00Z",
+        "bedtime_end": "2026-04-19T01:00:00Z",
+        "total_sleep_duration": 25200,
+        "score": 80
+      }
+    ]
+  },
+  "expected": {
+    "verdict": "hit",
+    "rationale": "All 7 sessions ≥ 25,200 s = 7.0 hours. The trap is the IST window: Apr 13 IST midnight = Apr 12 18:30 UTC. A model that treats the window as UTC days will mis-attribute sleeps to the wrong nights and may double-count or miss sessions. Required correct moves: recognize the +05:30 offset, anchor each sleep to the IST 'night of', confirm 7 distinct IST nights covered.",
+    "required_mentions": ["IST", "+05:30", "7.0 hours"]
+  }
+}

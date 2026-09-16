@@ -1,0 +1,58 @@
+{
+  "name": "explicit_ambiguity",
+  "commitment": "Maintain a healthy sleep schedule all week (or the equivalent).",
+  "window": { "start": "2026-04-13T00:00:00Z", "end": "2026-04-19T23:59:59Z" },
+  "provider": "oura",
+  "data": {
+    "data": [
+      {
+        "id": "ea-01",
+        "day": "2026-04-13",
+        "score": 82,
+        "contributors": { "total_sleep": 78, "efficiency": 92 }
+      },
+      {
+        "id": "ea-02",
+        "day": "2026-04-14",
+        "score": 75,
+        "contributors": { "total_sleep": 70, "efficiency": 90 }
+      },
+      {
+        "id": "ea-03",
+        "day": "2026-04-15",
+        "score": 88,
+        "contributors": { "total_sleep": 85, "efficiency": 94 }
+      },
+      {
+        "id": "ea-04",
+        "day": "2026-04-16",
+        "score": 65,
+        "contributors": { "total_sleep": 60, "efficiency": 82 }
+      },
+      {
+        "id": "ea-05",
+        "day": "2026-04-17",
+        "score": 80,
+        "contributors": { "total_sleep": 76, "efficiency": 91 }
+      },
+      {
+        "id": "ea-06",
+        "day": "2026-04-18",
+        "score": 85,
+        "contributors": { "total_sleep": 82, "efficiency": 93 }
+      },
+      {
+        "id": "ea-07",
+        "day": "2026-04-19",
+        "score": 72,
+        "contributors": { "total_sleep": 68, "efficiency": 89 }
+      }
+    ]
+  },
+  "expected": {
+    "verdict": "ambiguous",
+    "rationale": "The commitment has undefined terms: 'healthy sleep schedule' has no threshold, and 'or the equivalent' is a catch-all escape clause. An oracle cannot settle this deterministically — it must refuse and require a well-formed commitment. A weak model may invent a threshold (e.g., 'average score >= 75') and confidently settle, which is exactly what a real settlement oracle MUST NOT do.",
+    "required_mentions": ["undefined", "threshold", "equivalent", "refuse"],
+    "trap": "Models prefer decisiveness. Here the correct move is to refuse."
+  }
+}

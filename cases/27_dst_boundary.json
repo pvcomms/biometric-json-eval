@@ -1,0 +1,99 @@
+{
+  "name": "dst_boundary",
+  "commitment": "Sleep at least 7 hours every night this week, anchored to America/New_York local time.",
+  "window": { "start": "2026-03-08T05:00:00Z", "end": "2026-03-15T03:59:59Z" },
+  "provider": "whoop",
+  "data": {
+    "sleep_records": [
+      {
+        "id": "n1",
+        "start": "2026-03-08T03:00:00Z",
+        "end": "2026-03-08T11:00:00Z",
+        "score": {
+          "stage_summary": {
+            "total_in_bed_time_milli": 28800000,
+            "total_awake_time_milli": 1800000
+          },
+          "sleep_performance_percentage": 88
+        }
+      },
+      {
+        "id": "n2",
+        "start": "2026-03-09T04:00:00Z",
+        "end": "2026-03-09T11:30:00Z",
+        "score": {
+          "stage_summary": {
+            "total_in_bed_time_milli": 27000000,
+            "total_awake_time_milli": 1200000
+          },
+          "sleep_performance_percentage": 86
+        }
+      },
+      {
+        "id": "n3",
+        "start": "2026-03-10T04:30:00Z",
+        "end": "2026-03-10T11:45:00Z",
+        "score": {
+          "stage_summary": {
+            "total_in_bed_time_milli": 26100000,
+            "total_awake_time_milli": 1500000
+          },
+          "sleep_performance_percentage": 80
+        }
+      },
+      {
+        "id": "n4",
+        "start": "2026-03-11T04:15:00Z",
+        "end": "2026-03-11T11:30:00Z",
+        "score": {
+          "stage_summary": {
+            "total_in_bed_time_milli": 26100000,
+            "total_awake_time_milli": 1200000
+          },
+          "sleep_performance_percentage": 82
+        }
+      },
+      {
+        "id": "n5",
+        "start": "2026-03-12T04:00:00Z",
+        "end": "2026-03-12T11:30:00Z",
+        "score": {
+          "stage_summary": {
+            "total_in_bed_time_milli": 27000000,
+            "total_awake_time_milli": 1500000
+          },
+          "sleep_performance_percentage": 84
+        }
+      },
+      {
+        "id": "n6",
+        "start": "2026-03-13T04:00:00Z",
+        "end": "2026-03-13T11:00:00Z",
+        "score": {
+          "stage_summary": {
+            "total_in_bed_time_milli": 25200000,
+            "total_awake_time_milli": 1800000
+          },
+          "sleep_performance_percentage": 78
+        }
+      },
+      {
+        "id": "n7",
+        "start": "2026-03-14T04:00:00Z",
+        "end": "2026-03-14T11:00:00Z",
+        "score": {
+          "stage_summary": {
+            "total_in_bed_time_milli": 25200000,
+            "total_awake_time_milli": 1500000
+          },
+          "sleep_performance_percentage": 79
+        }
+      }
+    ]
+  },
+  "expected": {
+    "verdict": "ambiguous",
+    "rationale": "DST started in America/New_York on Mar 8 2026 (EST→EDT, +1h). The week's window crosses the boundary. Actual sleep durations: subtract awake time from in-bed: n1=27000s, n2=25800s, n3=24600s, n4=24900s, n5=25500s, n6=23400s, n7=23700s. Two nights (n6, n7) are below 25200s (7h). However, the 'every night' interpretation depends on whether sleep_performance_percentage suffices vs. raw duration, and the DST shift means the night labeled by some clocks as 'Mar 8 night' may be 23h or 25h long. The honest verdict here is ambiguous — flag the DST crossing, the duration calculation method (in_bed vs. asleep vs. duration_minus_awake), and ask for an explicit rule before settling.",
+    "required_mentions": ["DST", "ambiguous", "spring forward"]
+  }
+}

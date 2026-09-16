@@ -1,0 +1,74 @@
+{
+  "name": "calories_unit_conversion",
+  "commitment": "Burn at least 12,000 total calories (kcal) this week across all workouts.",
+  "window": { "start": "2026-04-13T00:00:00Z", "end": "2026-04-19T23:59:59Z" },
+  "provider": "whoop",
+  "data": {
+    "records": [
+      {
+        "cycle_id": 1201,
+        "start": "2026-04-13T05:00:00Z",
+        "end": "2026-04-14T05:00:00Z",
+        "score": {
+          "strain": 14.2,
+          "kilojoule": 10450,
+          "average_heart_rate": 78
+        }
+      },
+      {
+        "cycle_id": 1202,
+        "start": "2026-04-14T05:00:00Z",
+        "end": "2026-04-15T05:00:00Z",
+        "score": {
+          "strain": 15.8,
+          "kilojoule": 11200,
+          "average_heart_rate": 82
+        }
+      },
+      {
+        "cycle_id": 1203,
+        "start": "2026-04-15T05:00:00Z",
+        "end": "2026-04-16T05:00:00Z",
+        "score": { "strain": 8.1, "kilojoule": 5800, "average_heart_rate": 65 }
+      },
+      {
+        "cycle_id": 1204,
+        "start": "2026-04-16T05:00:00Z",
+        "end": "2026-04-17T05:00:00Z",
+        "score": { "strain": 9.8, "kilojoule": 6900, "average_heart_rate": 68 }
+      },
+      {
+        "cycle_id": 1205,
+        "start": "2026-04-17T05:00:00Z",
+        "end": "2026-04-18T05:00:00Z",
+        "score": { "strain": 13.1, "kilojoule": 9800, "average_heart_rate": 76 }
+      },
+      {
+        "cycle_id": 1206,
+        "start": "2026-04-18T05:00:00Z",
+        "end": "2026-04-19T05:00:00Z",
+        "score": {
+          "strain": 14.9,
+          "kilojoule": 10800,
+          "average_heart_rate": 80
+        }
+      },
+      {
+        "cycle_id": 1207,
+        "start": "2026-04-19T05:00:00Z",
+        "end": "2026-04-20T05:00:00Z",
+        "score": {
+          "strain": 13.7,
+          "kilojoule": 10100,
+          "average_heart_rate": 79
+        }
+      }
+    ]
+  },
+  "expected": {
+    "verdict": "hit",
+    "rationale": "Whoop reports energy as kilojoules (kJ). Sum = 10450+11200+5800+6900+9800+10800+10100 = 65050 kJ. Convert: 65050 / 4.184 = 15,547 kcal. 15547 >= 12000 => hit. A weak model may treat kilojoule values as if they were kcal (sum=65050, trivially hit) OR confuse the conversion direction (divide by 4.184 instead of multiply, or vice versa).",
+    "required_mentions": ["kilojoule", "kcal", "4.184", "15547"],
+    "trap": "Unit conversion kJ -> kcal. 1 kcal = 4.184 kJ, so kcal = kJ / 4.184."
+  }
+}
